@@ -19,9 +19,9 @@ const CONTENT = `{
             "keywords": ["backend", "koa", "graphql", "nodejs", "js"]
         },
         {
-            "name": "ro-website",
+            "name": "website",
             "description": "This website 👀",
-            "url": "https://github.com/rodrigo-garcia-leon/ro-website",
+            "url": "https://github.com/rodrigo-garcia-leon/website",
             "keywords": ["frontend", "haunted", "lit-html", "snowpack", "webcomponents", "js"]
         },
         {
