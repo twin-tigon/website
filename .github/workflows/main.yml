@@ -13,6 +13,8 @@ jobs:
         uses: actions/checkout@master
       - name: Install Dependencies
         run: npm install
+      - name: Remove node_modules
+        run: rm -rf node_modules
       - name: Archive Production Artifact
         uses: actions/upload-artifact@master
         with:
