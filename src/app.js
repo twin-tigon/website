@@ -1,16 +1,12 @@
-import { html } from "lit-html";
-import { component, useState } from "haunted";
-import { ANCHOR_STYLES, FONT_STYLES, SCROLLBAR_STYLES } from "./style.js";
-import "./source-editor.js";
-import "./html-renderer.js";
+import { html } from 'lit-html';
+import { component, useState } from 'haunted';
+import { ANCHOR_STYLES, FONT_STYLES, SCROLLBAR_STYLES } from './style.js';
+import './source-editor.js';
+import './html-renderer.js';
 
 const STYLE = html`
   <style>
-    ${ANCHOR_STYLES}
-    ${FONT_STYLES}
-    ${SCROLLBAR_STYLES}
-
-    :host {
+    ${ANCHOR_STYLES} ${FONT_STYLES} ${SCROLLBAR_STYLES} :host {
       background-color: black;
       display: flex;
       flex-direction: column;
@@ -51,13 +47,12 @@ function App() {
         .setSource=${setSource}
         ?hidden=${hideEditor}
       ></rodrigogarcia-source-editor>
-      <rodrigogarcia-html-renderer
-        .source=${source}
-      ></rodrigogarcia-html-renderer>
+      <rodrigogarcia-html-renderer .source=${source}></rodrigogarcia-html-renderer>
     </main>
     <footer>
-      <a href="#"
-        @click=${e => {
+      <a
+        href="#"
+        @click=${() => {
           setHideEditor(!hideEditor);
         }}
       >
@@ -67,4 +62,4 @@ function App() {
   `;
 }
 
-customElements.define("rodrigogarcia-app", component(App));
+customElements.define('rodrigogarcia-app', component(App));

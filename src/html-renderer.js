@@ -1,6 +1,8 @@
-import { html } from "lit-html";
-import { component, useState } from "haunted";
-import { ANCHOR_STYLES, FONT_STYLES, COLORS } from "./style.js";
+/* eslint lit/no-invalid-html: 0 */
+
+import { html } from 'lit-html';
+import { component, useState } from 'haunted';
+import { ANCHOR_STYLES, FONT_STYLES, COLORS } from './style.js';
 
 const STYLE = html`
   <style>
@@ -30,7 +32,7 @@ const STYLE = html`
     }
 
     li:first-of-type::before {
-      content: "";
+      content: '';
     }
 
     li:first-of-type {
@@ -38,7 +40,7 @@ const STYLE = html`
     }
 
     li::before {
-      content: "| ";
+      content: '| ';
     }
 
     p {
@@ -112,14 +114,14 @@ const STYLE = html`
   </style>
 `;
 
-const IMG_URL = "/img/me.jpg";
-const NAME_EMAIL = "Email";
+const IMG_URL = '/img/me.jpg';
+const NAME_EMAIL = 'Email';
 
 function HtmlRenderer({ source }) {
   const [selectedKeywords, setSelectedKeywords] = useState([]);
 
   if (!source) {
-    return "";
+    return '';
   }
 
   const { name, description, contact, projects } = source;
@@ -127,13 +129,13 @@ function HtmlRenderer({ source }) {
     selectedKeywords.length === 0
       ? projects
       : projects.filter(({ keywords }) =>
-          keywords.some(keyword => selectedKeywords.includes(keyword))
+          keywords.some(keyword => selectedKeywords.includes(keyword)),
         );
 
-  const email = contact.find(({ name }) => name === NAME_EMAIL);
-  const socialMedia = contact.filter(({ name }) => name !== NAME_EMAIL);
+  const email = contact.find(({ name: contactName }) => contactName === NAME_EMAIL);
+  const socialMedia = contact.filter(({ name: socialMediaName }) => socialMediaName !== NAME_EMAIL);
   const keywords = [
-    ...new Set(projects.map(({ keywords }) => keywords).flat())
+    ...new Set(projects.map(({ keywords: projectKeywords }) => projectKeywords).flat()),
   ];
 
   return html`
@@ -146,10 +148,10 @@ function HtmlRenderer({ source }) {
         <hr />
         <ul>
           ${socialMedia.map(
-            ({ name, value }) =>
+            ({ name: socialMediaName, value }) =>
               html`
-                <li><a href="${value}">${name}</a></li>
-              `
+                <li><a href="${value}">${socialMediaName}</a></li>
+              `,
           )}
         </ul>
         <p><a href="mailo:${email.value}">${email.value}</a></p>
@@ -162,23 +164,23 @@ function HtmlRenderer({ source }) {
                 <a
                   href="#"
                   @click="${e => {
-                    const keyword = e.target.innerHTML.replace(/<!---->/g, "");
+                    const preKeyword = e.target.innerHTML.replace(/<!---->/g, '');
 
-                    setSelectedKeywords([keyword]);
+                    setSelectedKeywords([preKeyword]);
                   }}"
                   >${keyword}</a
                 >
-              `
+              `,
           )}
         </div>
         <div id="cards">
           ${filteredProjects.map(
-            ({ name, description, url }) => html`
+            ({ name: projectName, description: projectDescription, url }) => html`
               <div class="project">
-                <h3><a href=${url}>${name}</a></h3>
-                <h4>${description}</h4>
+                <h3><a href=${url}>${projectName}</a></h3>
+                <h4>${projectDescription}</h4>
               </div>
-            `
+            `,
           )}
         </div>
       </section>
@@ -186,4 +188,4 @@ function HtmlRenderer({ source }) {
   `;
 }
 
-customElements.define("rodrigogarcia-html-renderer", component(HtmlRenderer));
+customElements.define('rodrigogarcia-html-renderer', component(HtmlRenderer));

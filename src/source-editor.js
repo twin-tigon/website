@@ -1,6 +1,6 @@
-import { html } from "lit-html";
-import { component, useEffect } from "haunted";
-import { COLORS } from "./style.js";
+import { html } from 'lit-html';
+import { component, useEffect } from 'haunted';
+import { COLORS } from './style.js';
 
 const CONTENT = `{
     "name": "Rodrigo García León",
@@ -109,7 +109,7 @@ const STYLE = html`
 
     pre {
       color: ${COLORS.PRIMARY};
-      font-family: "Space Mono", monospace;
+      font-family: 'Space Mono', monospace;
       font-size: 14px;
     }
   </style>
@@ -127,13 +127,14 @@ function SourceEditor({ setSource }) {
       contenteditable="true"
       @keyup=${e => {
         // remove lit-html comment nodes
-        const innerHTML = e.target.innerHTML.replace(/<!---->/g, "");
+        const innerHTML = e.target.innerHTML.replace(/<!---->/g, '');
 
         let source;
         try {
           source = JSON.parse(innerHTML);
-        } catch (e) {
-          console.error(e);
+        } catch (error) {
+          // eslint-disable-next-line
+          console.error(error);
           return;
         }
 
@@ -146,4 +147,4 @@ ${CONTENT}
   `;
 }
 
-customElements.define("rodrigogarcia-source-editor", component(SourceEditor));
+customElements.define('rodrigogarcia-source-editor', component(SourceEditor));
