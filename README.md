@@ -12,5 +12,7 @@ My website
 - [ ] check pre
 - [ ] make filters toggleable
 - [ ] add houdini cards animation
-- [ ] add cheat code easter egg
+- [ ] add cheat code prince megahit easter egg
+- [ ] update 404 page
+- [ ] fix formatting issues
 - [ ] frontend checklist
