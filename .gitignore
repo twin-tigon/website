@@ -1,0 +1,7 @@
+.DS_Store
+.vscode
+.firebase
+node_modules
+web_modules
+yarn-error.log
+firebase-debug.log

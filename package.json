@@ -1,0 +1,31 @@
+{
+  "name": "rodrigogarcia-website",
+  "version": "1.0.0",
+  "description": "My personal website",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rodrigo-garcia-leon/rodrigogarcia-website.git"
+  },
+  "scripts": {
+    "start": "es-dev-server --app-index index.html --watch --open",
+    "prepare": "snowpack"
+  },
+  "author": "Rodrigo García <yo@rodrigogarcia.me>",
+  "license": "MIT",
+  "dependencies": {
+    "es-module-shims": "^0.4.6",
+    "haunted": "^4.7.0",
+    "lit-html": "^1.1.2"
+  },
+  "devDependencies": {
+    "es-dev-server": "^1.38.3",
+    "snowpack": "^1.2.0"
+  },
+  "snowpack": {
+    "webDependencies": [
+      "haunted",
+      "lit-html",
+      "es-module-shims"
+    ]
+  }
+}
