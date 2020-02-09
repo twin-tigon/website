@@ -19,5 +19,6 @@ export const FONT_STYLES = html`
 export const SCROLLBAR_STYLES = html`
   ::-webkit-scrollbar { width: 4px; height: 4px; } ::-webkit-scrollbar-track { background: black; }
   ::-webkit-scrollbar-thumb { background-color: ${COLORS.PRIMARY}; border-radius: 2px; }
-  ::-webkit-scrollbar-corner { background: black; }
+  ::-webkit-scrollbar-corner { background: black; } :host { scrollbar-color: ${COLORS.PRIMARY}
+  black; scrollbar-width: thin; }
 `;
