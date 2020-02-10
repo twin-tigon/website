@@ -16,3 +16,5 @@ My website
 - [ ] update 404 page
 - [ ] fix formatting issues
 - [ ] frontend checklist
+- [ ] use google storage for firebase
+- [ ] use browserstack
