@@ -7,9 +7,9 @@ const CONTENT = `{
     "description": "Full Stack Developer 🙌✨",
     "projects": [
         {
-            "name": "react-hnpwa",
+            "name": "hn-pwa",
             "description": "Hacker News PWA built with React Hooks",
-            "url": "https://github.com/rodrigo-garcia-leon/react-hnpwa",
+            "url": "https://github.com/rodrigo-garcia-leon/hn-pwa",
             "keywords": ["frontend", "react", "pwa", "js"]
         },
         {
@@ -31,15 +31,15 @@ const CONTENT = `{
             "keywords": ["frontend", "svelte", "pwa", "js"]
         },
         {
-            "name": "todo-lists",
+            "name": "todo-app",
             "description": "Todo app built with React Native and Django",
-            "url": "https://github.com/rodrigo-garcia-leon/todo-lists",
+            "url": "https://github.com/rodrigo-garcia-leon/todo-app",
             "keywords": ["react-native", "django", "postgresql", "js", "python"]
         },
         {
-            "name": "gcp-devops",
-            "description": "Collection of scripts to manage Google Cloud Platform and Kubernetes",
-            "url": "https://github.com/rodrigo-garcia-leon/gcp-devops",
+            "name": "cloud",
+            "description": "Collection of scripts to manage Google Cloud Platform and Kubernetes ☁️",
+            "url": "https://github.com/rodrigo-garcia-leon/cloud",
             "keywords": ["devops", "gcp", "kubernetes", "shell"]
         },
         {
@@ -52,10 +52,10 @@ const CONTENT = `{
             "name": "web-hacks",
             "description": "Web Hacks 🕸🤓",
             "url": "https://github.com/rodrigo-garcia-leon/web-hacks",
-            "keywords": ["frontend", "js"]
+            "keywords": ["frontend", "houdini", "js"]
         },
         {
-            "name": "tictactoe-rust",
+            "name": "tictactoe-cli",
             "description": "Tic-tac-toe implementation in Rust",
             "url": "https://github.com/rodrigo-garcia-leon/tictactoe-rust",
             "keywords": ["cli", "gamedev", "rust"]
