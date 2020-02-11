@@ -7,9 +7,9 @@ const CONTENT = `{
     "description": "Full Stack Developer 🙌✨",
     "projects": [
         {
-            "name": "hn-pwa",
+            "name": "hn-app",
             "description": "Hacker News PWA built with React Hooks",
-            "url": "https://github.com/rodrigo-garcia-leon/hn-pwa",
+            "url": "https://github.com/rodrigo-garcia-leon/hn-app",
             "keywords": ["frontend", "react", "pwa", "js"]
         },
         {
@@ -25,9 +25,9 @@ const CONTENT = `{
             "keywords": ["frontend", "haunted", "lit-html", "snowpack", "webcomponents", "js"]
         },
         {
-            "name": "hn-hiring-explorer",
+            "name": "hiring-explorer-app",
             "description": "Hacker News Hiring Explorer PWA built with Svelte",
-            "url": "https://github.com/rodrigo-garcia-leon/hn-hiring-explorer",
+            "url": "https://github.com/rodrigo-garcia-leon/hiring-explorer-app",
             "keywords": ["frontend", "svelte", "pwa", "js"]
         },
         {
