@@ -1,6 +1,6 @@
 import { html } from 'lit-html';
 import { component, useEffect } from 'haunted';
-import { COLORS } from './style.js';
+import { COLORS, FONTS, WIDTHS, SPACERS } from './style.js';
 
 const CONTENT = `{
     "name": "Rodrigo García León",
@@ -102,15 +102,20 @@ const CONTENT = `{
 const STYLE = html`
   <style>
     :host {
-      margin: 0;
-      padding: 0;
       overflow: scroll;
     }
 
     pre {
-      color: ${COLORS.PRIMARY};
+      color: ${COLORS[2]};
       font-family: 'Space Mono', monospace;
-      font-size: 14px;
+      font-size: ${FONTS[1]};
+      margin: ${SPACERS[5]};
+    }
+
+    @media screen and (min-width: ${WIDTHS[3]}) {
+      pre {
+        margin: 0;
+      }
     }
   </style>
 `;
@@ -147,4 +152,4 @@ ${CONTENT}
   `;
 }
 
-customElements.define('rodrigogarcia-source-editor', component(SourceEditor));
+customElements.define('source-editor', component(SourceEditor));

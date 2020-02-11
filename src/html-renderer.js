@@ -2,14 +2,14 @@
 
 import { html } from 'lit-html';
 import { component, useState } from 'haunted';
-import { ANCHOR_STYLES, FONT_STYLES, COLORS } from './style.js';
+import { ANCHOR_STYLES, FONT_STYLES, LIST_STYLES, COLORS, SPACERS, WIDTHS } from './style.js';
 
 const STYLE = html`
   <style>
-    ${ANCHOR_STYLES} ${FONT_STYLES} :host {
-      display: block;
-      width: 100%;
-      margin: 0;
+    ${ANCHOR_STYLES} ${FONT_STYLES} ${LIST_STYLES} :host {
+      display: flex;
+      flex-direction: column;
+      margin: 0 auto;
     }
 
     img {
@@ -17,98 +17,51 @@ const STYLE = html`
     }
 
     hr {
-      color: ${COLORS.PRIMARY};
-    }
-
-    ul {
-      display: flex;
-      list-style-type: none;
-      padding: 0;
-      margin-bottom: 8px;
-    }
-
-    li {
-      padding-left: 4px;
-    }
-
-    li:first-of-type::before {
-      content: '';
-    }
-
-    li:first-of-type {
-      padding-left: 0;
-    }
-
-    li::before {
-      content: '| ';
-    }
-
-    p {
-      margin-top: 0;
-    }
-
-    #main {
-      display: flex;
-      margin: 0 auto;
-      width: 90%;
-      height: 95%;
-      flex-flow: row wrap;
-    }
-
-    section {
-      margin: 0;
+      color: ${COLORS[2]};
     }
 
     #me {
-      padding-right: 32px;
+      padding-right: ${SPACERS[5]};
     }
 
-    #projects {
-      display: flex;
-      flex-flow: column;
-      width: 100%;
-      height: 100%;
+    #keywords a {
+      margin-right: ${SPACERS[5]};
     }
 
     #cards {
       display: flex;
       flex-flow: row wrap;
-      width: 100%;
-      height: 100%;
       align-content: flex-start;
     }
 
-    #keywords {
-      padding-bottom: 32px;
-    }
-
-    #keywords a {
-      font-size: 18px;
-      margin-right: 16px;
-    }
-
     .project {
-      border: 2px ${COLORS.PRIMARY} solid;
+      border: ${SPACERS[2]} ${COLORS[2]} solid;
       height: 250px;
       width: 250px;
-      margin: 0 16px 32px 0;
-      padding: 8px 16px;
+      margin: 0 ${SPACERS[6]} ${SPACERS[6]} 0;
+      padding: ${SPACERS[5]};
     }
 
-    @media screen and (min-width: 600px) {
+    @media screen and (min-width: ${WIDTHS[1]}) {
       img {
         width: 400px;
       }
     }
 
-    @media screen and (min-width: 1500px) {
-      #main {
-        flex-flow: row;
-        width: 70%;
+    @media screen and (min-width: ${WIDTHS[2]}) {
+      :host {
+        flex-direction: row;
+        padding: 0 5%;
       }
 
-      #keywords a {
-        font-size: 20px;
+      #me {
+        padding-right: ${SPACERS[7]};
+      }
+    }
+
+    @media screen and (min-width: ${WIDTHS[3]}) {
+      :host {
+        padding: 0 10%;
       }
     }
   </style>
@@ -140,24 +93,24 @@ function HtmlRenderer({ source }) {
 
   return html`
     ${STYLE}
-    <div id="main">
-      <section id="me">
-        <img src="${IMG_URL}" />
-        <h1>${name}</h1>
-        <h2>${description}</h2>
-        <hr />
-        <ul>
-          ${socialMedia.map(
-            ({ name: socialMediaName, value }) =>
-              html`
-                <li><a href="${value}">${socialMediaName}</a></li>
-              `,
-          )}
-        </ul>
-        <p><a href="mailo:${email.value}">${email.value}</a></p>
-      </section>
-      <section id="projects">
-        <div id="keywords">
+    <section id="me">
+      <img src="${IMG_URL}" />
+      <h1>${name}</h1>
+      <p>${description}</p>
+      <hr />
+      <ul>
+        ${socialMedia.map(
+          ({ name: socialMediaName, value }) =>
+            html`
+              <li><a href="${value}">${socialMediaName}</a></li>
+            `,
+        )}
+      </ul>
+      <p><a href="mailo:${email.value}">${email.value}</a></p>
+    </section>
+    <section id="projects">
+      <section id="keywords">
+        <p>
           ${keywords.map(
             keyword =>
               html`
@@ -172,20 +125,20 @@ function HtmlRenderer({ source }) {
                 >
               `,
           )}
-        </div>
-        <div id="cards">
-          ${filteredProjects.map(
-            ({ name: projectName, description: projectDescription, url }) => html`
-              <div class="project">
-                <h3><a href=${url}>${projectName}</a></h3>
-                <h4>${projectDescription}</h4>
-              </div>
-            `,
-          )}
-        </div>
+        </p>
       </section>
-    </div>
+      <section id="cards">
+        ${filteredProjects.map(
+          ({ name: projectName, description: projectDescription, url }) => html`
+            <span class="project">
+              <h2><a href=${url}>${projectName}</a></h2>
+              <p>${projectDescription}</p>
+            </span>
+          `,
+        )}
+      </section>
+    </section>
   `;
 }
 
-customElements.define('rodrigogarcia-html-renderer', component(HtmlRenderer));
+customElements.define('html-renderer', component(HtmlRenderer));

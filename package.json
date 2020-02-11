@@ -1,10 +1,10 @@
 {
-  "name": "rodrigogarcia-website",
+  "name": "website",
   "version": "1.0.0",
   "description": "My personal website",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/rodrigo-garcia-leon/rodrigogarcia-website.git"
+    "url": "git+https://github.com/rodrigo-garcia-leon/website-app.git"
   },
   "scripts": {
     "start": "es-dev-server --app-index index.html --watch --open",
