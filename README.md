@@ -1,13 +1,14 @@
-# website-app
+# website
 
 My website
 
 ## todo
 
-- [ ] check security issues with innerHTML
+- [x] check security issues with innerHTML
 - [ ] check a11y
 - [x] parametrize font-size and spacers
 - [ ] try second color
+- [ ] adjust design tokens
 - [x] source editor responsive
 - [ ] check pre
 - [ ] make filters toggleable
