@@ -7,8 +7,8 @@ My website
 - [x] check security issues with innerHTML
 - [ ] check a11y
 - [x] parametrize font-size and spacers
-- [ ] try second color
-- [ ] adjust design tokens
+- [x] try second color
+- [x] adjust design tokens
 - [x] source editor responsive
 - [ ] check pre
 - [ ] make filters toggleable

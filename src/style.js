@@ -23,9 +23,9 @@ export const ANCHOR_STYLES = html`
 
 export const FONT_STYLES = html`
   :host { font-family: "Bitter", serif; color: ${COLORS[1]}; font-size: ${FONTS[2]}; } h1 {
-  font-size: ${FONTS[3]}; color: ${COLORS[2]}; font-weight: 700; margin: 16px auto 0 auto; } h2 {
-  font-size: ${FONTS[2]}; font-weight: 700; margin-top: 0; } @media screen and (min-width:
-  ${WIDTHS[1]}) { h1 { font-size: ${FONTS[4]}; } h2 { font-size: ${FONTS[3]}; } }
+  font-size: ${FONTS[3]}; color: ${COLORS[2]}; font-weight: 700; } h2 { font-size: ${FONTS[2]};
+  font-weight: 700; } @media screen and (min-width: ${WIDTHS[1]}) { h1 { font-size: ${FONTS[4]}; }
+  h2 { font-size: ${FONTS[3]}; } }
 `;
 
 export const SCROLLBAR_STYLES = html`

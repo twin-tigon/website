@@ -24,6 +24,18 @@ const STYLE = html`
       padding-right: ${SPACERS[5]};
     }
 
+    #me h1 {
+      margin-bottom: 0;
+    }
+
+    #me p {
+      margin-top: ${SPACERS[4]};
+    }
+
+    #keywords p {
+      margin-top: 0;
+    }
+
     #keywords a {
       margin-right: ${SPACERS[5]};
     }
@@ -130,10 +142,10 @@ function HtmlRenderer({ source }) {
       <section id="cards">
         ${filteredProjects.map(
           ({ name: projectName, description: projectDescription, url }) => html`
-            <span class="project">
+            <div class="project">
               <h2><a href=${url}>${projectName}</a></h2>
               <p>${projectDescription}</p>
-            </span>
+            </div>
           `,
         )}
       </section>
