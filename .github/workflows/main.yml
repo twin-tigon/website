@@ -15,8 +15,6 @@ jobs:
         uses: borales/actions-yarn@v2.0.0
         with:
           cmd: install
-      - name: Run Snowpack for production
-        run: npm run prepare:production
       - name: Remove node_modules
         run: sudo rm -rf node_modules
       - name: Archive Production Artifact
