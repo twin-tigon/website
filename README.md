@@ -19,3 +19,4 @@ My website
 - [ ] use google storage for firebase
 - [ ] use browserstack
 - [x] update firebase.json
+- [ ] add ascii image to console.log
