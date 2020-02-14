@@ -18,3 +18,4 @@ My website
 - [ ] frontend checklist
 - [ ] use google storage for firebase
 - [ ] use browserstack
+- [ ] update firebase.json
