@@ -75,7 +75,7 @@ const CONTENT = `{
         {
             "name": "cv",
             "description": "My CV",
-            "url": "https://github.com/rodrigo-garcia-leon/my-cv",
+            "url": "https://github.com/rodrigo-garcia-leon/cv",
             "keywords": ["cv"]
         }
     ],
