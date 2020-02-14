@@ -9,6 +9,7 @@
   "scripts": {
     "start": "es-dev-server --app-index index.html --watch --open",
     "prepare": "snowpack",
+    "prepare:production": "snowpack --clean --optimize",
     "lint:eslint": "eslint --ext .js,.html . --ignore-path .gitignore",
     "format:eslint": "eslint --ext .js,.html . --fix --ignore-path .gitignore",
     "lint:prettier": "prettier \"**/*.js\" --check --ignore-path .gitignore",
