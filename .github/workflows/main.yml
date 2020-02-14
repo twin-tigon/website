@@ -12,7 +12,9 @@ jobs:
       - name: Checkout Repo
         uses: actions/checkout@master
       - name: Install Dependencies
-        run: npm install
+        uses: borales/actions-yarn@v2.0.0
+        with:
+          cmd: install
       - name: Remove node_modules
         run: rm -rf node_modules
       - name: Archive Production Artifact
