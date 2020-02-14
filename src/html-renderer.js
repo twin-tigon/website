@@ -17,7 +17,7 @@ const STYLE = html`
     }
 
     hr {
-      color: ${COLORS[2]};
+      border-color: ${COLORS[2]};
     }
 
     #me {
