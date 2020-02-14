@@ -16,7 +16,7 @@ jobs:
         with:
           cmd: install
       - name: Remove node_modules
-        run: rm -rf node_modules
+        run: sudo rm -rf node_modules
       - name: Archive Production Artifact
         uses: actions/upload-artifact@master
         with:
