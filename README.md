@@ -2,6 +2,8 @@
 
 My website
 
+![Main](https://github.com/rodrigo-garcia-leon/website/workflows/Main/badge.svg)
+
 ## todo
 
 - [x] check security issues with innerHTML
