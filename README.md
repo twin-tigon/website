@@ -22,3 +22,4 @@ My website
 - [ ] use browserstack
 - [x] update firebase.json
 - [ ] add ascii image to console.log
+- [ ] connect to cms
