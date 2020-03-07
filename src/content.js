@@ -21,7 +21,7 @@ export const CONTENT = `{
             "keywords": ["frontend", "haunted", "lit-html", "snowpack", "webcomponents", "js"]
         },
         {
-            "name": "hiring-explorer",
+            "name": "hiring-explorer-app",
             "description": "Hacker News Hiring Explorer PWA built with Svelte",
             "url": "https://github.com/rodrigo-garcia-leon/hiring-explorer-app",
             "keywords": ["frontend", "svelte", "pwa", "js"]
