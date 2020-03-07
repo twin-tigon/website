@@ -15,6 +15,12 @@ export const CONTENT = `{
             "keywords": ["backend", "koa", "graphql", "nodejs", "js"]
         },
         {
+            "name": "cloud",
+            "description": "Collection of scripts to manage Google Cloud Platform and Kubernetes ☁️",
+            "url": "https://github.com/rodrigo-garcia-leon/cloud",
+            "keywords": ["devops", "gcp", "kubernetes", "shell"]
+        },
+        {
             "name": "website",
             "description": "This website 👀",
             "url": "https://github.com/rodrigo-garcia-leon/website",
@@ -31,12 +37,6 @@ export const CONTENT = `{
             "description": "Todo app built with React Native and Django",
             "url": "https://github.com/rodrigo-garcia-leon/todo-app",
             "keywords": ["react-native", "django", "postgresql", "js", "python"]
-        },
-        {
-            "name": "cloud",
-            "description": "Collection of scripts to manage Google Cloud Platform and Kubernetes ☁️",
-            "url": "https://github.com/rodrigo-garcia-leon/cloud",
-            "keywords": ["devops", "gcp", "kubernetes", "shell"]
         },
         {
             "name": "glissando-app",
