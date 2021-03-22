@@ -27,18 +27,6 @@ export const CONTENT = `{
             "keywords": ["frontend", "haunted", "lit-html", "snowpack", "webcomponents", "js"]
         },
         {
-            "name": "hiring-explorer-app",
-            "description": "Hacker News Hiring Explorer PWA built with Svelte",
-            "url": "https://github.com/rodrigo-garcia-leon/hiring-explorer-app",
-            "keywords": ["frontend", "svelte", "pwa", "js"]
-        },
-        {
-            "name": "todo-app",
-            "description": "Todo app built with React Native and Django",
-            "url": "https://github.com/rodrigo-garcia-leon/todo-app",
-            "keywords": ["react-native", "django", "postgresql", "js", "python"]
-        },
-        {
             "name": "glissando-app",
             "description": "A web-based digital audio workstation using the web platform APIs (Web Audio, Web MIDI) and WebAssembly",
             "url": "https://github.com/glissando-daw/glissando-app",
