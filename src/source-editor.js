@@ -4,7 +4,7 @@ import { COLORS, FONTS, WIDTHS, SPACERS } from './style.js';
 import { CONTENT } from './content.js';
 import { removeLitComments } from './utils.js';
 
-const STYLE = css`
+const STYLES = css`
   :host {
     overflow: scroll;
   }
@@ -25,7 +25,7 @@ const STYLE = css`
 
 class SourceEditor extends LitElement {
   static get styles() {
-    return STYLE;
+    return [STYLES];
   }
 
   updateSource() {

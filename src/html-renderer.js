@@ -3,79 +3,77 @@ import { html, css, LitElement } from 'lit';
 import { ANCHOR_STYLES, FONT_STYLES, LIST_STYLES, COLORS, SPACERS, WIDTHS } from './style.js';
 import { removeLitComments } from './utils.js';
 
-const STYLE = css`
-    ${ANCHOR_STYLES} ${FONT_STYLES} ${LIST_STYLES}
-    
-    :host {
-      display: flex;
-      flex-direction: column;
-      margin: 0 auto;
-    }
+const STYLES = css`
+  :host {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+  }
 
+  img {
+    width: 100%;
+  }
+
+  hr {
+    border-color: ${COLORS[2]};
+  }
+
+  #me {
+    padding-right: ${SPACERS[5]};
+  }
+
+  #me h1 {
+    margin-bottom: 0;
+  }
+
+  #me p {
+    margin-top: ${SPACERS[4]};
+  }
+
+  #keywords p {
+    margin-top: 0;
+  }
+
+  #keywords a {
+    margin-right: ${SPACERS[5]};
+  }
+
+  #cards {
+    display: flex;
+    flex-flow: row wrap;
+    align-content: flex-start;
+  }
+
+  .project {
+    border: ${SPACERS[2]} ${COLORS[2]} solid;
+    height: 250px;
+    width: 250px;
+    margin: 0 ${SPACERS[6]} ${SPACERS[6]} 0;
+    padding: ${SPACERS[5]};
+  }
+
+  @media screen and (min-width: ${WIDTHS[1]}) {
     img {
-      width: 100%;
+      width: 400px;
     }
+  }
 
-    hr {
-      border-color: ${COLORS[2]};
+  @media screen and (min-width: ${WIDTHS[2]}) {
+    :host {
+      flex-direction: row;
+      padding: 0 5%;
     }
 
     #me {
-      padding-right: ${SPACERS[5]};
+      padding-right: ${SPACERS[7]};
     }
+  }
 
-    #me h1 {
-      margin-bottom: 0;
+  @media screen and (min-width: ${WIDTHS[3]}) {
+    :host {
+      padding: 0 10%;
     }
-
-    #me p {
-      margin-top: ${SPACERS[4]};
-    }
-
-    #keywords p {
-      margin-top: 0;
-    }
-
-    #keywords a {
-      margin-right: ${SPACERS[5]};
-    }
-
-    #cards {
-      display: flex;
-      flex-flow: row wrap;
-      align-content: flex-start;
-    }
-
-    .project {
-      border: ${SPACERS[2]} ${COLORS[2]} solid;
-      height: 250px;
-      width: 250px;
-      margin: 0 ${SPACERS[6]} ${SPACERS[6]} 0;
-      padding: ${SPACERS[5]};
-    }
-
-    @media screen and (min-width: ${WIDTHS[1]}) {
-      img {
-        width: 400px;
-      }
-    }
-
-    @media screen and (min-width: ${WIDTHS[2]}) {
-      :host {
-        flex-direction: row;
-        padding: 0 5%;
-      }
-
-      #me {
-        padding-right: ${SPACERS[7]};
-      }
-    }
-
-    @media screen and (min-width: ${WIDTHS[3]}) {
-      :host {
-        padding: 0 10%;
-      }
-    }
+  }
 `;
 
 const IMG_URL = '/img/me.jpg';
@@ -83,7 +81,7 @@ const NAME_EMAIL = 'Email';
 
 class HtmlRenderer extends LitElement {
   static get styles() {
-    return STYLE;
+    return [ANCHOR_STYLES, FONT_STYLES, LIST_STYLES, STYLES];
   }
 
   static get properties() {
