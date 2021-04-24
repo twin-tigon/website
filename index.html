@@ -24,19 +24,10 @@
         height: 100%;
       }
     </style>
-    <script defer src="./web_modules/es-module-shims.js"></script>
-    <script type="importmap-shim">
-      {
-        "imports": {
-          "haunted": "./web_modules/haunted.js",
-          "lit-html": "./web_modules/lit-html.js"
-        }
-      }
-    </script>
   </head>
 
   <body>
     <website-app></website-app>
-    <script src="./src/app.js" type="module-shim"></script>
+    <script src="./src/app.js" type="module"></script>
   </body>
 </html>
