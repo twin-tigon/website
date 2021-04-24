@@ -14,7 +14,7 @@ export default {
       module: true,
       warnings: true,
     }),
-    copy({ patterns: ['**/*.{jpg,png,ico,webmanifest}', '*.svg', '404.html'] }),
+    copy({ patterns: ['img/**/*', '404.html'] }),
   ],
   output: {
     dir: 'dist',
