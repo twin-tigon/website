@@ -1,6 +1,7 @@
 import { html, css, LitElement } from 'lit';
 
 import { ANCHOR_STYLES, FONT_STYLES, LIST_STYLES, COLORS, SPACERS, WIDTHS } from './style.js';
+import { removeLitComments } from './utils.js';
 
 const STYLE = css`
     ${ANCHOR_STYLES} ${FONT_STYLES} ${LIST_STYLES}
@@ -88,6 +89,7 @@ class HtmlRenderer extends LitElement {
   static get properties() {
     return {
       source: { type: Object },
+      _selectedKeywords: { type: Array, state: true },
     };
   }
 
@@ -99,10 +101,9 @@ class HtmlRenderer extends LitElement {
   }
 
   onClick(event) {
-    const preKeyword = event.target.innerHTML.replace(/<!---->/g, '');
-    this._selectedKeywords = [preKeyword];
+    const preKeyword = removeLitComments(event.target.innerHTML);
 
-    this.requestUpdate();
+    this._selectedKeywords = [preKeyword];
   }
 
   render() {

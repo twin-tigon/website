@@ -71,6 +71,13 @@ class App extends LitElement {
     return STYLE;
   }
 
+  static get properties() {
+    return {
+      _source: { type: Object, state: true },
+      _hideEditor: { type: Boolean, state: true },
+    };
+  }
+
   constructor() {
     super();
 
@@ -78,16 +85,13 @@ class App extends LitElement {
     this._hideEditor = true;
   }
 
-  setSource(source) {
+  onSourceChanged(event) {
+    const { source } = event.detail;
     this._source = source;
-
-    this.requestUpdate();
   }
 
-  onClick() {
+  toggleEditorVisibility() {
     this._hideEditor = !this._hideEditor;
-
-    this.requestUpdate();
   }
 
   render() {
@@ -95,12 +99,12 @@ class App extends LitElement {
       <main>
         <html-renderer .source=${this._source}></html-renderer>
         <source-editor
-          .setSource=${s => this.setSource(s)}
+          @source-changed=${e => this.onSourceChanged(e)}
           ?hidden=${this._hideEditor}
         ></source-editor>
       </main>
       <footer>
-        <a href="#" @click=${e => this.onClick(e)}>
+        <a href="#" @click=${() => this.toggleEditorVisibility()}>
           source
         </a>
       </footer>

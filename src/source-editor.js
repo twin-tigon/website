@@ -2,6 +2,7 @@ import { html, css, LitElement } from 'lit';
 
 import { COLORS, FONTS, WIDTHS, SPACERS } from './style.js';
 import { CONTENT } from './content.js';
+import { removeLitComments } from './utils.js';
 
 const STYLE = css`
   :host {
@@ -27,29 +28,9 @@ class SourceEditor extends LitElement {
     return STYLE;
   }
 
-  static get properties() {
-    return {
-      setSource: { type: Object },
-    };
-  }
-
-  constructor() {
-    super();
-
-    this.setSource = null;
-  }
-
-  connectedCallback() {
-    super.connectedCallback();
-
-    if (this.setSource) {
-      this.setSource(JSON.parse(CONTENT));
-    }
-  }
-
-  onKeyUp(event) {
-    // remove lit-html comment nodes
-    const content = event.target.innerHTML.replace(/<!---->/g, '');
+  updateSource() {
+    const pre = this.shadowRoot.getElementById('source-editor');
+    const content = removeLitComments(pre.innerHTML);
 
     let source;
     try {
@@ -60,14 +41,24 @@ class SourceEditor extends LitElement {
       return;
     }
 
-    if (this.setSource) {
-      this.setSource(source);
-    }
+    const event = new CustomEvent('source-changed', {
+      detail: {
+        source,
+      },
+      bubbles: true,
+      composed: true,
+    });
+
+    this.dispatchEvent(event);
+  }
+
+  firstUpdated() {
+    this.updateSource();
   }
 
   render() {
     return html`
-      <pre id="source-editor" contenteditable="true" @keyup=${e => this.onKeyUp(e)}>
+      <pre id="source-editor" contenteditable="true" @keyup=${() => this.updateSource()}>
 ${CONTENT}
     </pre
       >
