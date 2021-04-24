@@ -1,12 +1,11 @@
-/* eslint lit/no-invalid-html: 0 */
+import { html, css, LitElement } from 'lit';
 
-import { html } from 'lit-html';
-import { component, useState } from 'haunted';
 import { ANCHOR_STYLES, FONT_STYLES, LIST_STYLES, COLORS, SPACERS, WIDTHS } from './style.js';
 
-const STYLE = html`
-  <style>
-    ${ANCHOR_STYLES} ${FONT_STYLES} ${LIST_STYLES} :host {
+const STYLE = css`
+    ${ANCHOR_STYLES} ${FONT_STYLES} ${LIST_STYLES}
+    
+    :host {
       display: flex;
       flex-direction: column;
       margin: 0 auto;
@@ -76,81 +75,97 @@ const STYLE = html`
         padding: 0 10%;
       }
     }
-  </style>
 `;
 
 const IMG_URL = '/img/me.jpg';
 const NAME_EMAIL = 'Email';
 
-function HtmlRenderer({ source }) {
-  const [selectedKeywords, setSelectedKeywords] = useState([]);
-
-  if (!source) {
-    return '';
+class HtmlRenderer extends LitElement {
+  static get styles() {
+    return STYLE;
   }
 
-  const { name, description, contact, projects } = source;
-  const filteredProjects =
-    selectedKeywords.length === 0
-      ? projects
-      : projects.filter(({ keywords }) =>
-          keywords.some(keyword => selectedKeywords.includes(keyword)),
-        );
+  static get properties() {
+    return {
+      source: { type: Object },
+    };
+  }
 
-  const email = contact.find(({ name: contactName }) => contactName === NAME_EMAIL);
-  const socialMedia = contact.filter(({ name: socialMediaName }) => socialMediaName !== NAME_EMAIL);
-  const keywords = [
-    ...new Set(projects.map(({ keywords: projectKeywords }) => projectKeywords).flat()),
-  ];
+  constructor() {
+    super();
 
-  return html`
-    ${STYLE}
-    <section id="me">
-      <img src="${IMG_URL}" />
-      <h1>${name}</h1>
-      <p>${description}</p>
-      <hr />
-      <ul>
-        ${socialMedia.map(
-          ({ name: socialMediaName, value }) =>
-            html`
-              <li><a href="${value}">${socialMediaName}</a></li>
-            `,
-        )}
-      </ul>
-      <p><a href="mailo:${email.value}">${email.value}</a></p>
-    </section>
-    <section id="projects">
-      <section id="keywords">
-        <p>
-          ${keywords.map(
-            keyword =>
+    this.source = null;
+    this._selectedKeywords = [];
+  }
+
+  onClick(event) {
+    const preKeyword = event.target.innerHTML.replace(/<!---->/g, '');
+    this._selectedKeywords = [preKeyword];
+
+    this.requestUpdate();
+  }
+
+  render() {
+    if (!this.source) {
+      return '';
+    }
+
+    const { name, description, contact, projects } = this.source;
+    const filteredProjects =
+      this._selectedKeywords.length === 0
+        ? projects
+        : projects.filter(({ keywords }) =>
+            keywords.some(keyword => this._selectedKeywords.includes(keyword)),
+          );
+
+    const email = contact.find(({ name: contactName }) => contactName === NAME_EMAIL);
+    const socialMedia = contact.filter(
+      ({ name: socialMediaName }) => socialMediaName !== NAME_EMAIL,
+    );
+    const keywords = [
+      ...new Set(projects.map(({ keywords: projectKeywords }) => projectKeywords).flat()),
+    ];
+
+    return html`
+      <section id="me">
+        <img src="${IMG_URL}" />
+        <h1>${name}</h1>
+        <p>${description}</p>
+        <hr />
+        <ul>
+          ${socialMedia.map(
+            ({ name: socialMediaName, value }) =>
               html`
-                <a
-                  href="#"
-                  @click="${e => {
-                    const preKeyword = e.target.innerHTML.replace(/<!---->/g, '');
-
-                    setSelectedKeywords([preKeyword]);
-                  }}"
-                  >${keyword}</a
-                >
+                <li><a href="${value}">${socialMediaName}</a></li>
               `,
           )}
-        </p>
+        </ul>
+        <p><a href="mailo:${email.value}">${email.value}</a></p>
       </section>
-      <section id="cards">
-        ${filteredProjects.map(
-          ({ name: projectName, description: projectDescription, url }) => html`
-            <div class="project">
-              <h2><a href=${url}>${projectName}</a></h2>
-              <p>${projectDescription}</p>
-            </div>
-          `,
-        )}
+      <section id="projects">
+        <section id="keywords">
+          <p>
+            ${keywords.map(
+              keyword =>
+                html`
+                  <a href="#" @click="${e => this.onClick(e)}">${keyword}</a>
+                `,
+            )}
+          </p>
+        </section>
+        <section id="cards">
+          ${filteredProjects.map(
+            ({ name: projectName, description: projectDescription, url }) => html`
+              <div class="project">
+                <h2><a href=${url}>${projectName}</a></h2>
+                <p>${projectDescription}</p>
+              </div>
+            `,
+          )}
+        </section>
       </section>
-    </section>
-  `;
+    `;
+  }
 }
 
-customElements.define('html-renderer', component(HtmlRenderer));
+customElements.define('html-renderer', HtmlRenderer);

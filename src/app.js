@@ -1,12 +1,13 @@
-import { html } from 'lit-html';
-import { component, useState } from 'haunted';
+import { html, css, LitElement } from 'lit';
+
 import { ANCHOR_STYLES, FONT_STYLES, SCROLLBAR_STYLES, COLORS, SPACERS, WIDTHS } from './style.js';
 import './source-editor.js';
 import './html-renderer.js';
 
-const STYLE = html`
-  <style>
-    ${ANCHOR_STYLES} ${FONT_STYLES} ${SCROLLBAR_STYLES} :host {
+const STYLE = css`
+    ${ANCHOR_STYLES} ${FONT_STYLES} ${SCROLLBAR_STYLES}
+    
+    :host {
       background-color: ${COLORS[0]};
       display: block;
       height: calc(100% - ${SPACERS[6]});
@@ -63,30 +64,48 @@ const STYLE = html`
         flex-shrink: 2;
       }
     }
-  </style>
 `;
 
-function App() {
-  const [source, setSource] = useState(null);
-  const [hideEditor, setHideEditor] = useState(true);
+class App extends LitElement {
+  static get styles() {
+    return STYLE;
+  }
 
-  return html`
-    ${STYLE}
-    <main>
-      <html-renderer .source=${source}></html-renderer>
-      <source-editor .setSource=${setSource} ?hidden=${hideEditor}></source-editor>
-    </main>
-    <footer>
-      <a
-        href="#"
-        @click=${() => {
-          setHideEditor(!hideEditor);
-        }}
-      >
-        source
-      </a>
-    </footer>
-  `;
+  constructor() {
+    super();
+
+    this._source = null;
+    this._hideEditor = true;
+  }
+
+  setSource(source) {
+    this._source = source;
+
+    this.requestUpdate();
+  }
+
+  onClick() {
+    this._hideEditor = !this._hideEditor;
+
+    this.requestUpdate();
+  }
+
+  render() {
+    return html`
+      <main>
+        <html-renderer .source=${this._source}></html-renderer>
+        <source-editor
+          .setSource=${s => this.setSource(s)}
+          ?hidden=${this._hideEditor}
+        ></source-editor>
+      </main>
+      <footer>
+        <a href="#" @click=${e => this.onClick(e)}>
+          source
+        </a>
+      </footer>
+    `;
+  }
 }
 
-customElements.define('website-app', component(App));
+customElements.define('website-app', App);

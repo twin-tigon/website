@@ -7,9 +7,9 @@
     "url": "git+https://github.com/rodrigo-garcia-leon/website-app.git"
   },
   "scripts": {
-    "start": "es-dev-server --app-index index.html --watch --open",
-    "prepare": "snowpack --clean --optimize",
-    "prepare:dev": "snowpack --clean",
+    "start": "wds --node-resolve --open",
+    "start:build": "wds --root-dir dist --open",
+    "build": "rm -rf dist && rollup -c rollup.config.js",
     "lint:eslint": "eslint --ext .js,.html . --ignore-path .gitignore",
     "format:eslint": "eslint --ext .js,.html . --fix --ignore-path .gitignore",
     "lint:prettier": "prettier \"**/*.js\" --check --ignore-path .gitignore",
@@ -20,25 +20,20 @@
   "author": "Rodrigo García <yo@rodrigogarcia.me>",
   "license": "MIT",
   "dependencies": {
-    "es-module-shims": "^0.4.6",
-    "haunted": "^4.7.0",
-    "lit-html": "^1.1.2"
+    "lit": "*"
   },
   "devDependencies": {
     "@open-wc/eslint-config": "^2.0.0",
     "@open-wc/prettier-config": "^0.1.10",
-    "es-dev-server": "^1.38.3",
+    "@vinicius73/rollup-plugin-skypack-resolver": "^2.1.0",
+    "@web/dev-server": "^0.1.15",
+    "@web/rollup-plugin-copy": "^0.2.0",
+    "@web/rollup-plugin-html": "^1.6.0",
     "eslint": "^6.1.0",
     "husky": "^1.0.0",
     "lint-staged": "^8.0.0",
-    "snowpack": "^1.2.0"
-  },
-  "snowpack": {
-    "webDependencies": [
-      "haunted",
-      "lit-html",
-      "es-module-shims"
-    ]
+    "rollup": "^2.45.2",
+    "rollup-plugin-terser": "^7.0.2"
   },
   "eslintConfig": {
     "extends": [
