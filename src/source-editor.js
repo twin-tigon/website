@@ -22,6 +22,7 @@ const STYLES = css`
     }
   }
 `;
+const INDENT_SIZE = 4;
 
 class SourceEditor extends LitElement {
   static get styles() {
@@ -59,7 +60,7 @@ class SourceEditor extends LitElement {
   render() {
     return html`
       <pre id="source-editor" contenteditable="true" @keyup=${() => this.updateSource()}>
-${CONTENT}
+${JSON.stringify(CONTENT, null, INDENT_SIZE)}
     </pre
       >
     `;
