@@ -2,7 +2,7 @@ import { html, css, LitElement } from 'lit';
 
 import { COLORS, FONTS, WIDTHS, SPACERS } from './style.js';
 import { CONTENT } from './content.js';
-import { removeLitComments } from './utils.js';
+import { removeLitComments } from './util.js';
 
 const STYLES = css`
   :host {
