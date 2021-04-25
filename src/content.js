@@ -24,7 +24,7 @@ export const CONTENT = {
       name: 'website',
       description: 'This website 👀',
       url: 'https://github.com/rodrigo-garcia-leon/website',
-      keywords: ['frontend', 'lit', 'skypack', 'rollup', 'webcomponents', 'js'],
+      keywords: ['frontend', 'lit', 'skypack', 'esbuild', 'webcomponents', 'js'],
     },
     {
       name: 'glissando-app',
