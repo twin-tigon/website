@@ -17,17 +17,42 @@ async function run() {
     Object.entries(allDependencies).filter(([, props]) => !props.dev),
   );
 
-  const skypackResolver = {
-    name: 'skypack-resolver',
-    setup(build) {
-      build.onResolve({ filter: PACKAGE_ID_REGEX }, async ({ path }) => {
-        const { version } = dependencies[path];
-        const body = await (await fetch(`${CDN_HOST}/${path}@${version}`)).text();
-        const [, url] = body.match(/Minified: (.+)/m);
+  const skypackResolver = () => {
+    const pending = {};
+    const cache = {};
 
-        return { path: url, external: true };
-      });
-    },
+    return {
+      name: 'skypack-resolver',
+      setup(build) {
+        build.onResolve({ filter: PACKAGE_ID_REGEX }, async ({ path }) => {
+          if (pending[path]) {
+            await pending[path].promise;
+          }
+
+          if (path in cache) {
+            return { path: cache[path], external: true };
+          }
+
+          pending[path] = (function newPending() {
+            let resolve = () => {};
+            const promise = new Promise(_resolve => {
+              resolve = _resolve;
+            });
+
+            return { promise, resolve };
+          })();
+
+          const { version } = dependencies[path];
+          const body = await (await fetch(`${CDN_HOST}/${path}@${version}`)).text();
+          const [, url] = body.match(/Minified: (.+)/m);
+
+          cache[path] = url;
+          pending[path].resolve();
+
+          return { path: url, external: true };
+        });
+      },
+    };
   };
 
   const minifyHtmlLiterals = {
@@ -54,7 +79,7 @@ async function run() {
     format: 'esm',
     bundle: true,
     minify: true,
-    plugins: [skypackResolver, minifyHtmlLiterals],
+    plugins: [skypackResolver(), minifyHtmlLiterals],
   }).catch(() => process.exit(1));
 }
 
