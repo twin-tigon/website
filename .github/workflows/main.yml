@@ -19,6 +19,8 @@ jobs:
         run: npm install
       - name: Build
         run: npm run build
+      - name: Copy
+        run: npm run copy
       - name: Archive Production Artifact
         uses: actions/upload-artifact@v2
         with:
