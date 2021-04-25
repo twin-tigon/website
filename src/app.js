@@ -1,22 +1,31 @@
 import { html, css, LitElement } from 'lit';
 
-import { ANCHOR_STYLES, FONT_STYLES, SCROLLBAR_STYLES, COLORS, SPACERS, WIDTHS } from './style.js';
+import {
+  ANCHOR_STYLES,
+  FONT_STYLES,
+  SCROLLBAR_STYLES,
+  FONT_SIZE,
+  FONT_FAMILY,
+  COLOR,
+  SPACER,
+  WIDTH,
+} from './style.js';
 import './source-editor.js';
 import './html-renderer.js';
 
 const STYLES = css`
   :host {
-    background-color: ${COLORS[0]};
+    background-color: ${COLOR[0]};
     display: block;
-    height: calc(100% - ${SPACERS[6]});
-    width: calc(100% - ${SPACERS[6]});
-    padding: ${SPACERS[5]};
+    height: calc(100% - ${SPACER[6]});
+    width: calc(100% - ${SPACER[6]});
+    padding: ${SPACER[5]};
   }
 
   main {
     display: flex;
     flex-direction: column;
-    height: calc(100% - ${SPACERS[7]});
+    height: calc(100% - ${SPACER[7]});
   }
 
   source-editor {
@@ -29,7 +38,7 @@ const STYLES = css`
   }
 
   footer {
-    height: calc(${SPACERS[7]});
+    height: calc(${SPACER[7]});
     position: relative;
   }
 
@@ -39,19 +48,19 @@ const STYLES = css`
     bottom: 0;
   }
 
-  @media screen and (min-width: ${WIDTHS[1]}) {
+  @media screen and (min-width: ${WIDTH[1]}) {
     :host {
-      height: calc(100% - ${SPACERS[7]});
-      width: calc(100% - ${SPACERS[7]});
-      padding: ${SPACERS[6]};
+      height: calc(100% - ${SPACER[7]});
+      width: calc(100% - ${SPACER[7]});
+      padding: ${SPACER[6]};
     }
   }
 
-  @media screen and (min-width: ${WIDTHS[3]}) {
+  @media screen and (min-width: ${WIDTH[3]}) {
     :host {
-      height: calc(100% - ${SPACERS[7]});
-      width: calc(100% - ${SPACERS[7]});
-      padding: ${SPACERS[6]};
+      height: calc(100% - ${SPACER[7]});
+      width: calc(100% - ${SPACER[7]});
+      padding: ${SPACER[6]};
     }
 
     main {
@@ -64,50 +73,56 @@ const STYLES = css`
   }
 `;
 
-class App extends LitElement {
-  static get styles() {
-    return [ANCHOR_STYLES, FONT_STYLES, SCROLLBAR_STYLES, STYLES];
+async function run() {
+  await window.document.fonts.load(`${FONT_SIZE[2]} ${FONT_FAMILY[0]}`);
+
+  class App extends LitElement {
+    static get styles() {
+      return [ANCHOR_STYLES, FONT_STYLES, SCROLLBAR_STYLES, STYLES];
+    }
+
+    static get properties() {
+      return {
+        _source: { type: Object, state: true },
+        _hideEditor: { type: Boolean, state: true },
+      };
+    }
+
+    constructor() {
+      super();
+
+      this._source = null;
+      this._hideEditor = true;
+    }
+
+    onSourceChanged(event) {
+      const { source } = event.detail;
+      this._source = source;
+    }
+
+    toggleEditorVisibility() {
+      this._hideEditor = !this._hideEditor;
+    }
+
+    render() {
+      return html`
+        <main>
+          <html-renderer .source=${this._source}></html-renderer>
+          <source-editor
+            @source-changed=${e => this.onSourceChanged(e)}
+            ?hidden=${this._hideEditor}
+          ></source-editor>
+        </main>
+        <footer>
+          <a href="#" @click=${() => this.toggleEditorVisibility()}>
+            source
+          </a>
+        </footer>
+      `;
+    }
   }
 
-  static get properties() {
-    return {
-      _source: { type: Object, state: true },
-      _hideEditor: { type: Boolean, state: true },
-    };
-  }
-
-  constructor() {
-    super();
-
-    this._source = null;
-    this._hideEditor = true;
-  }
-
-  onSourceChanged(event) {
-    const { source } = event.detail;
-    this._source = source;
-  }
-
-  toggleEditorVisibility() {
-    this._hideEditor = !this._hideEditor;
-  }
-
-  render() {
-    return html`
-      <main>
-        <html-renderer .source=${this._source}></html-renderer>
-        <source-editor
-          @source-changed=${e => this.onSourceChanged(e)}
-          ?hidden=${this._hideEditor}
-        ></source-editor>
-      </main>
-      <footer>
-        <a href="#" @click=${() => this.toggleEditorVisibility()}>
-          source
-        </a>
-      </footer>
-    `;
-  }
+  customElements.define('website-app', App);
 }
 
-customElements.define('website-app', App);
+run();

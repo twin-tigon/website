@@ -1,6 +1,6 @@
 import { html, css, LitElement } from 'lit';
 
-import { ANCHOR_STYLES, FONT_STYLES, LIST_STYLES, COLORS, SPACERS, WIDTHS } from './style.js';
+import { ANCHOR_STYLES, FONT_STYLES, LIST_STYLES, COLOR, SPACER, WIDTH } from './style.js';
 import { removeLitComments } from './util.js';
 
 const STYLES = css`
@@ -15,11 +15,11 @@ const STYLES = css`
   }
 
   hr {
-    border-color: ${COLORS[2]};
+    border-color: ${COLOR[2]};
   }
 
   #me {
-    padding-right: ${SPACERS[5]};
+    padding-right: ${SPACER[5]};
   }
 
   #me h1 {
@@ -27,7 +27,7 @@ const STYLES = css`
   }
 
   #me p {
-    margin-top: ${SPACERS[4]};
+    margin-top: ${SPACER[4]};
   }
 
   #keywords p {
@@ -35,7 +35,7 @@ const STYLES = css`
   }
 
   #keywords a {
-    margin-right: ${SPACERS[5]};
+    margin-right: ${SPACER[5]};
   }
 
   #cards {
@@ -45,31 +45,31 @@ const STYLES = css`
   }
 
   .project {
-    border: ${SPACERS[2]} ${COLORS[2]} solid;
+    border: ${SPACER[2]} ${COLOR[2]} solid;
     height: 250px;
     width: 250px;
-    margin: 0 ${SPACERS[6]} ${SPACERS[6]} 0;
-    padding: ${SPACERS[5]};
+    margin: 0 ${SPACER[6]} ${SPACER[6]} 0;
+    padding: ${SPACER[5]};
   }
 
-  @media screen and (min-width: ${WIDTHS[1]}) {
+  @media screen and (min-width: ${WIDTH[1]}) {
     img {
       width: 400px;
     }
   }
 
-  @media screen and (min-width: ${WIDTHS[2]}) {
+  @media screen and (min-width: ${WIDTH[2]}) {
     :host {
       flex-direction: row;
       padding: 0 5%;
     }
 
     #me {
-      padding-right: ${SPACERS[7]};
+      padding-right: ${SPACER[7]};
     }
   }
 
-  @media screen and (min-width: ${WIDTHS[3]}) {
+  @media screen and (min-width: ${WIDTH[3]}) {
     :host {
       padding: 0 10%;
     }

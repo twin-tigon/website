@@ -1,6 +1,6 @@
 import { html, css, LitElement } from 'lit';
 
-import { FONT_STYLES, WIDTHS, SPACERS } from './style.js';
+import { FONT_STYLES, WIDTH, SPACER } from './style.js';
 import { CONTENT } from './content.js';
 import { removeLitComments } from './util.js';
 
@@ -10,10 +10,10 @@ const STYLES = css`
   }
 
   pre {
-    margin: ${SPACERS[5]};
+    margin: ${SPACER[5]};
   }
 
-  @media screen and (min-width: ${WIDTHS[3]}) {
+  @media screen and (min-width: ${WIDTH[3]}) {
     pre {
       margin: 0;
     }

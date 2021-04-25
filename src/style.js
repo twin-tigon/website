@@ -1,10 +1,11 @@
 import { css } from 'lit';
 
-export const COLORS = [css`#000000`, css`#01b4bd`, css`#12eae4`];
+export const COLOR = [css`#000000`, css`#01b4bd`, css`#12eae4`];
 
-export const FONTS = [css`0`, css`14px`, css`18px`, css`24px`, css`32px`];
+export const FONT_SIZE = [css`0`, css`14px`, css`18px`, css`24px`, css`32px`];
+export const FONT_FAMILY = [css`Bitter`, css`Space Mono`];
 
-export const SPACERS = [
+export const SPACER = [
   css`0`, // 0
   css`1px`, // 1
   css`2px`, // 2
@@ -15,64 +16,64 @@ export const SPACERS = [
   css`64px`, // 7
 ];
 
-export const WIDTHS = [css`0`, css`500px`, css`1000px`, css`1500px`];
+export const WIDTH = [css`0`, css`500px`, css`1000px`, css`1500px`];
 
 export const ANCHOR_STYLES = css`
   a {
-    color: ${COLORS[1]};
+    color: ${COLOR[1]};
   }
   a:visited {
-    color: ${COLORS[2]};
+    color: ${COLOR[2]};
   }
 `;
 
 export const FONT_STYLES = css`
   :host {
-    font-family: 'Bitter', serif;
-    color: ${COLORS[1]};
-    font-size: ${FONTS[2]};
+    font-family: ${FONT_FAMILY[0]}, serif;
+    color: ${COLOR[1]};
+    font-size: ${FONT_SIZE[2]};
   }
   h1 {
-    font-size: ${FONTS[3]};
-    color: ${COLORS[2]};
+    font-size: ${FONT_SIZE[3]};
+    color: ${COLOR[2]};
     font-weight: 700;
   }
   h2 {
-    font-size: ${FONTS[2]};
+    font-size: ${FONT_SIZE[2]};
     font-weight: 700;
   }
   pre {
-    color: ${COLORS[2]};
-    font-family: 'Space Mono', monospace;
-    font-size: ${FONTS[1]};
+    color: ${COLOR[2]};
+    font-family: ${FONT_FAMILY[1]}, monospace;
+    font-size: ${FONT_SIZE[1]};
   }
-  @media screen and (min-width: ${WIDTHS[1]}) {
+  @media screen and (min-width: ${WIDTH[1]}) {
     h1 {
-      font-size: ${FONTS[4]};
+      font-size: ${FONT_SIZE[4]};
     }
     h2 {
-      font-size: ${FONTS[3]};
+      font-size: ${FONT_SIZE[3]};
     }
   }
 `;
 
 export const SCROLLBAR_STYLES = css`
   ::-webkit-scrollbar {
-    width: ${SPACERS[3]};
-    height: ${SPACERS[3]};
+    width: ${SPACER[3]};
+    height: ${SPACER[3]};
   }
   ::-webkit-scrollbar-track {
-    background: ${COLORS[0]};
+    background: ${COLOR[0]};
   }
   ::-webkit-scrollbar-thumb {
-    background-color: ${COLORS[1]};
-    border-radius: ${SPACERS[2]};
+    background-color: ${COLOR[1]};
+    border-radius: ${SPACER[2]};
   }
   ::-webkit-scrollbar-corner {
-    background: ${COLORS[0]};
+    background: ${COLOR[0]};
   }
   :host {
-    scrollbar-color: ${COLORS[0]};
+    scrollbar-color: ${COLOR[0]};
     scrollbar-width: thin;
   }
 `;
@@ -82,10 +83,10 @@ export const LIST_STYLES = css`
     display: flex;
     list-style-type: none;
     padding: 0;
-    margin-bottom: ${SPACERS[4]};
+    margin-bottom: ${SPACER[4]};
   }
   li {
-    padding-left: ${SPACERS[3]};
+    padding-left: ${SPACER[3]};
   }
   li:first-of-type::before {
     content: '';
