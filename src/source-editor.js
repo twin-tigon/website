@@ -27,7 +27,7 @@ class SourceEditor extends LitElement {
   }
 
   updateSource() {
-    const pre = this.shadowRoot.getElementById('source-editor');
+    const pre = this.renderRoot.getElementById('source-editor');
     const content = removeLitComments(pre.innerHTML);
 
     let source;
