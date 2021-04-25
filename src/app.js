@@ -74,7 +74,14 @@ const STYLES = css`
 `;
 
 async function run() {
-  await window.document.fonts.load(`${FONT_SIZE[2]} ${FONT_FAMILY[0]}`);
+  await Promise.all(
+    [
+      `${FONT_SIZE[2]} ${FONT_FAMILY[0]}`,
+      `${FONT_SIZE[3]} ${FONT_FAMILY[0]}`,
+      `${FONT_SIZE[4]} ${FONT_FAMILY[0]}`,
+      `${FONT_SIZE[1]} ${FONT_FAMILY[1]}`,
+    ].map(async font => window.document.fonts.load(font)),
+  );
 
   class App extends LitElement {
     static get styles() {
