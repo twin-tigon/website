@@ -41,6 +41,11 @@ export const FONT_STYLES = css`
     font-size: ${FONTS[2]};
     font-weight: 700;
   }
+  pre {
+    color: ${COLORS[2]};
+    font-family: 'Space Mono', monospace;
+    font-size: ${FONTS[1]};
+  }
   @media screen and (min-width: ${WIDTHS[1]}) {
     h1 {
       font-size: ${FONTS[4]};

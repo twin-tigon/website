@@ -1,6 +1,6 @@
 import { html, css, LitElement } from 'lit';
 
-import { COLORS, FONTS, WIDTHS, SPACERS } from './style.js';
+import { FONT_STYLES, WIDTHS, SPACERS } from './style.js';
 import { CONTENT } from './content.js';
 import { removeLitComments } from './util.js';
 
@@ -10,9 +10,6 @@ const STYLES = css`
   }
 
   pre {
-    color: ${COLORS[2]};
-    font-family: 'Space Mono', monospace;
-    font-size: ${FONTS[1]};
     margin: ${SPACERS[5]};
   }
 
@@ -26,7 +23,7 @@ const INDENT_SIZE = 4;
 
 class SourceEditor extends LitElement {
   static get styles() {
-    return [STYLES];
+    return [FONT_STYLES, STYLES];
   }
 
   updateSource() {
