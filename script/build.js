@@ -3,8 +3,10 @@
 import { build as esBuild } from 'esbuild'; // eslint-disable-line
 import { readFile } from 'fs/promises';
 import fetch from 'node-fetch'; // eslint-disable-line
+import { minifyHTMLLiterals } from 'minify-html-literals'; // eslint-disable-line
 
 const PACKAGE_ID_REGEX = /^@?(([a-z0-9]+-?)+\/?)+$/;
+const JS_FILES_REGEX = /\.js$/;
 const CDN_HOST = 'https://cdn.skypack.dev';
 
 async function run() {
@@ -28,13 +30,31 @@ async function run() {
     },
   };
 
+  const minifyHtmlLiterals = {
+    name: 'minify-html-literals',
+    setup(build) {
+      build.onLoad({ filter: JS_FILES_REGEX }, async ({ path }) => {
+        const content = (await readFile(path)).toString();
+        const result = minifyHTMLLiterals(content, {
+          fileName: path,
+          shouldMinifyCSS: template => template.tag === 'css',
+        });
+
+        return {
+          contents: result ? result.code : content,
+          loader: 'js',
+        };
+      });
+    },
+  };
+
   esBuild({
     entryPoints: ['src/app.js'],
     outfile: 'dist/src/app.js',
     format: 'esm',
     bundle: true,
     minify: true,
-    plugins: [skypackResolver],
+    plugins: [skypackResolver, minifyHtmlLiterals],
   }).catch(() => process.exit(1));
 }
 

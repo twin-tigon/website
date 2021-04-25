@@ -45,10 +45,15 @@ const STYLES = css`
   }
 
   .project {
-    border: ${SPACER[2]} ${COLOR[2]} solid;
+    border-width: ${SPACER[2]};
+    border-color: ${COLOR[2]};
+    border-style: solid;
     height: 250px;
     width: 250px;
-    margin: 0 ${SPACER[6]} ${SPACER[6]} 0;
+    margin-top: 0;
+    margin-right: ${SPACER[6]};
+    margin-bottom: ${SPACER[6]};
+    margin-left: 0;
     padding: ${SPACER[5]};
   }
 

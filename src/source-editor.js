@@ -57,8 +57,7 @@ class SourceEditor extends LitElement {
   render() {
     return html`
       <pre id="source-editor" contenteditable="true" @keyup=${() => this.updateSource()}>
-${JSON.stringify(CONTENT, null, INDENT_SIZE)}
-    </pre
+${JSON.stringify(CONTENT, null, INDENT_SIZE)}</pre
       >
     `;
   }
