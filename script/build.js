@@ -2,9 +2,10 @@
 
 import { build as esBuild } from 'esbuild'; // eslint-disable-line
 import { readFile } from 'fs/promises';
+import fetch from 'node-fetch'; // eslint-disable-line
 
 const PACKAGE_ID_REGEX = /^@?(([a-z0-9]+-?)+\/?)+$/;
-const CDN_HOST = 'https://jspm.dev';
+const CDN_HOST = 'https://cdn.skypack.dev';
 
 async function run() {
   const { dependencies: allDependencies } = JSON.parse(
@@ -14,12 +15,14 @@ async function run() {
     Object.entries(allDependencies).filter(([, props]) => !props.dev),
   );
 
-  const jspmResolver = {
-    name: 'jspm-resolver',
+  const skypackResolver = {
+    name: 'skypack-resolver',
     setup(build) {
-      build.onResolve({ filter: PACKAGE_ID_REGEX }, ({ path }) => {
+      build.onResolve({ filter: PACKAGE_ID_REGEX }, async ({ path }) => {
         const { version } = dependencies[path];
-        const url = `${CDN_HOST}/${path}@${version}`;
+        const body = await (await fetch(`${CDN_HOST}/${path}@${version}`)).text();
+        const [, url] = body.match(/Minified: (.+)/m);
+
         return { path: url, external: true };
       });
     },
@@ -31,7 +34,7 @@ async function run() {
     format: 'esm',
     bundle: true,
     minify: true,
-    plugins: [jspmResolver],
+    plugins: [skypackResolver],
   }).catch(() => process.exit(1));
 }
 

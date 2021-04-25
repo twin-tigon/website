@@ -32,7 +32,8 @@
     "eslint": "^6.1.0",
     "globby": "^6.1.0",
     "husky": "^1.0.0",
-    "lint-staged": "^8.0.0"
+    "lint-staged": "^8.0.0",
+    "node-fetch": "^2.6.1"
   },
   "eslintConfig": {
     "extends": [
