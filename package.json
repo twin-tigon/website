@@ -9,7 +9,7 @@
   },
   "scripts": {
     "start": "wds --node-resolve --open",
-    "start:build": "wds --root-dir dist --open",
+    "start:dist": "wds --root-dir dist --open",
     "build": "rm -rf dist && ./script/build.js",
     "copy": "./script/copy.js",
     "lint:eslint": "eslint --ext .js,.html . --ignore-path .gitignore",
