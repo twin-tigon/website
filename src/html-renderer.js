@@ -77,6 +77,7 @@ const STYLES = css`
 `;
 
 const IMG_URL = '/img/me.jpg';
+const IMG_ALT = 'me';
 const NAME_EMAIL = 'Email';
 
 class HtmlRenderer extends LitElement {
@@ -127,7 +128,7 @@ class HtmlRenderer extends LitElement {
 
     return html`
       <section id="me">
-        <img src="${IMG_URL}" />
+        <img src="${IMG_URL}" alt="${IMG_ALT}" />
         <h1>${name}</h1>
         <p>${description}</p>
         <hr />
