@@ -34,8 +34,6 @@ class SourceEditor extends LitElement {
     try {
       source = JSON.parse(content);
     } catch (error) {
-      // eslint-disable-next-line
-      console.error(error);
       return;
     }
 
