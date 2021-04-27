@@ -7,6 +7,7 @@ import { minifyHTMLLiterals } from 'minify-html-literals'; // eslint-disable-lin
 
 const PACKAGE_ID_REGEX = /^@?(([a-z0-9]+-?)+\/?)+$/;
 const JS_FILES_REGEX = /\.js$/;
+const MINIFIED_URL_REGEX = /Minified: (.+)/m;
 const CDN_HOST = 'https://cdn.skypack.dev';
 
 async function run() {
@@ -44,7 +45,7 @@ async function run() {
 
           const { version } = dependencies[path];
           const body = await (await fetch(`${CDN_HOST}/${path}@${version}`)).text();
-          const [, url] = body.match(/Minified: (.+)/m);
+          const [, url] = body.match(MINIFIED_URL_REGEX);
 
           cache[path] = url;
           pending[path].resolve();
