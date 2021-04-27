@@ -46,6 +46,12 @@ export const CONTENT = {
       keywords: ['cli', 'gamedev', 'rust'],
     },
     {
+      name: 'senescence',
+      description: 'Senescence is a narrative puzzle platformer made for GMTK Game Jam 2020 ',
+      url: 'https://github.com/rodrigo-garcia-leon/senescence',
+      keywords: ['gamedev', 'godot', 'game-jam', 'puzzle-game', 'platform-game'],
+    },
+    {
       name: 'thesis-matlab',
       description:
         'Collection of MATLAB scripts and toolboxes regarding my Master Thesis on psychoacoustics',
