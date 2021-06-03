@@ -1,61 +1,13 @@
 #!/usr/bin/env node
 
-import { build as esBuild } from 'esbuild'; // eslint-disable-line
 import { readFile } from 'fs/promises';
-import fetch from 'node-fetch'; // eslint-disable-line
+import { build as esBuild } from 'esbuild'; // eslint-disable-line
+import { skypackResolver } from 'esbuild-skypack-resolver'; // eslint-disable-line
 import { minifyHTMLLiterals } from 'minify-html-literals'; // eslint-disable-line
 
-const PACKAGE_ID_REGEX = /^@?(([a-z0-9]+-?)+\/?)+$/;
 const JS_FILES_REGEX = /\.js$/;
-const MINIFIED_URL_REGEX = /Minified: (.+)/m;
-const CDN_HOST = 'https://cdn.skypack.dev';
 
 async function run() {
-  const { dependencies: allDependencies } = JSON.parse(
-    (await readFile(`${process.cwd()}/package-lock.json`)).toString(),
-  );
-  const dependencies = Object.fromEntries(
-    Object.entries(allDependencies).filter(([, props]) => !props.dev),
-  );
-
-  const skypackResolver = () => {
-    const pending = {};
-    const cache = {};
-
-    return {
-      name: 'skypack-resolver',
-      setup(build) {
-        build.onResolve({ filter: PACKAGE_ID_REGEX }, async ({ path }) => {
-          if (pending[path]) {
-            await pending[path].promise;
-          }
-
-          if (path in cache) {
-            return { path: cache[path], external: true };
-          }
-
-          pending[path] = (function newPending() {
-            let resolve = () => {};
-            const promise = new Promise(_resolve => {
-              resolve = _resolve;
-            });
-
-            return { promise, resolve };
-          })();
-
-          const { version } = dependencies[path];
-          const body = await (await fetch(`${CDN_HOST}/${path}@${version}`)).text();
-          const [, url] = body.match(MINIFIED_URL_REGEX);
-
-          cache[path] = url;
-          pending[path].resolve();
-
-          return { path: url, external: true };
-        });
-      },
-    };
-  };
-
   const minifyHtmlLiterals = {
     name: 'minify-html-literals',
     setup(build) {
