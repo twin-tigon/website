@@ -27,6 +27,12 @@ export const CONTENT = {
       keywords: ['frontend', 'lit', 'skypack', 'esbuild', 'webcomponents', 'js'],
     },
     {
+      name: 'esbuild-skypack-resolver',
+      description: 'An esbuild plugin to resolve package names to Skypack CDN URLs',
+      url: 'https://github.com/rodrigo-garcia-leon/esbuild-skypack-resolver',
+      keywords: ['esbuild', 'esbuild-plugin', 'skypack', 'typescript'],
+    },
+    {
       name: 'glissando-app',
       description:
         'A web-based digital audio workstation using the web platform APIs (Web Audio, Web MIDI) and WebAssembly',
