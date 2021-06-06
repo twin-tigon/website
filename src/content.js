@@ -33,17 +33,17 @@ export const CONTENT = {
       keywords: ['esbuild', 'esbuild-plugin', 'skypack', 'typescript'],
     },
     {
+      name: 'web-hacks',
+      description: 'Web Hacks 🕸🤓',
+      url: 'https://github.com/rodrigo-garcia-leon/web-hacks',
+      keywords: ['frontend', 'houdini', 'js'],
+    },
+    {
       name: 'glissando-app',
       description:
         'A web-based digital audio workstation using the web platform APIs (Web Audio, Web MIDI) and WebAssembly',
       url: 'https://github.com/glissando-daw/glissando-app',
       keywords: ['frontend', 'web-audio', 'wasm', 'rust', 'js'],
-    },
-    {
-      name: 'web-hacks',
-      description: 'Web Hacks 🕸🤓',
-      url: 'https://github.com/rodrigo-garcia-leon/web-hacks',
-      keywords: ['frontend', 'houdini', 'js'],
     },
     {
       name: 'tictactoe-cli',
