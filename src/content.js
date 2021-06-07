@@ -39,10 +39,10 @@ export const CONTENT = {
       keywords: ['frontend', 'houdini', 'js'],
     },
     {
-      name: 'glissando-app',
+      name: 'glissando-daw',
       description:
         'A web-based digital audio workstation using the web platform APIs (Web Audio, Web MIDI) and WebAssembly',
-      url: 'https://github.com/glissando-daw/glissando-app',
+      url: 'https://github.com/glissando-daw/glissando-daw',
       keywords: ['frontend', 'web-audio', 'wasm', 'rust', 'js'],
     },
     {
