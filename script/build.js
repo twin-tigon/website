@@ -71,7 +71,7 @@ async function run() {
     format: 'esm',
     bundle: true,
     minify: true,
-    plugins: [skypackResolver(), minifyHtmlLiterals, preloadDeepImports()],
+    plugins: [skypackResolver(), minifyHtmlLiterals, await preloadDeepImports()],
   }).catch(() => process.exit(1));
 }
 
