@@ -1,11 +1,14 @@
 #!/usr/bin/env node
 
-import { readFile } from 'fs/promises';
+import { readFile, writeFile } from 'fs/promises';
 import { build as esBuild } from 'esbuild'; // eslint-disable-line
 import { skypackResolver } from 'esbuild-skypack-resolver'; // eslint-disable-line
 import { minifyHTMLLiterals } from 'minify-html-literals'; // eslint-disable-line
+import { init, parse } from 'es-module-lexer'; // eslint-disable-line
+import fetch from 'node-fetch/lib/index.mjs'; // eslint-disable-line
 
 const JS_FILES_REGEX = /\.js$/;
+const CDN_URL = 'https://cdn.skypack.dev';
 
 async function run() {
   const minifyHtmlLiterals = {
@@ -26,13 +29,49 @@ async function run() {
     },
   };
 
+  async function preloadDeepImports() {
+    await init;
+
+    return {
+      name: 'preload-deep-imports',
+      setup(build) {
+        build.onEnd(async () => {
+          const outfile = (await readFile(build.initialOptions.outfile)).toString();
+          const [fileImports] = parse(outfile);
+
+          const unique = (element, index, array) => array.indexOf(element) === index;
+          const imports = fileImports.map(({ n }) => n).filter(unique);
+
+          const deepImports = (
+            await Promise.all(
+              imports.map(async id => {
+                const sourceCode = await (await fetch(id)).text();
+                const [relativeImports] = parse(sourceCode);
+                const absoluteImports = relativeImports.map(({ n }) => `${CDN_URL}${n}`);
+
+                return absoluteImports;
+              }),
+            )
+          )
+            .flat()
+            .filter(unique);
+
+          writeFile(
+            build.initialOptions.outfile,
+            `${outfile}${deepImports.map(id => `import"${id}"`).join(';')}`,
+          );
+        });
+      },
+    };
+  }
+
   esBuild({
     entryPoints: ['src/app.js'],
     outfile: 'dist/src/app.js',
     format: 'esm',
     bundle: true,
     minify: true,
-    plugins: [skypackResolver(), minifyHtmlLiterals],
+    plugins: [skypackResolver(), minifyHtmlLiterals, preloadDeepImports()],
   }).catch(() => process.exit(1));
 }
 
