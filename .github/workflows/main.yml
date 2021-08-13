@@ -19,10 +19,6 @@ jobs:
         run: npm ci
       - name: Build
         run: npm run build
-      - name: Copy
-        run: npm run copy
-      - name: Minify
-        run: npm run minify
       - name: Archive Production Artifact
         uses: actions/upload-artifact@v2
         with:
