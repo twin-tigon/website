@@ -104,6 +104,7 @@ async function run() {
 
     onSourceChanged(event) {
       const { source } = event.detail;
+
       this._source = source;
     }
 

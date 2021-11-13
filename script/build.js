@@ -55,6 +55,7 @@ async function run() {
           )
             .flat()
             .filter(unique);
+          // TODO: filter also fileImports
 
           writeFile(
             build.initialOptions.outfile,
@@ -71,7 +72,9 @@ async function run() {
     format: 'esm',
     bundle: true,
     minify: true,
-    plugins: [skypackResolver(), minifyHtmlLiterals, await preloadDeepImports()],
+    plugins: [false && minifyHtmlLiterals, skypackResolver(), await preloadDeepImports()].filter(
+      Boolean,
+    ),
   }).catch(() => process.exit(1));
 }
 
