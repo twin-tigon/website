@@ -9,7 +9,7 @@ import {
   COLOR,
   SPACER,
   WIDTH,
-} from './style.js';
+} from './styles.js';
 import './source-editor.js';
 import './html-renderer.js';
 

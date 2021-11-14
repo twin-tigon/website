@@ -1,7 +1,7 @@
 import { html, css, LitElement } from 'lit';
 
-import { ANCHOR_STYLES, FONT_STYLES, LIST_STYLES, COLOR, SPACER, WIDTH } from './style.js';
-import { removeLitComments } from './util.js';
+import { ANCHOR_STYLES, FONT_STYLES, LIST_STYLES, COLOR, SPACER, WIDTH } from './styles.js';
+import { removeLitComments } from './utils.js';
 
 const STYLES = css`
   :host {

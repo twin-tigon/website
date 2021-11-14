@@ -1,8 +1,8 @@
 import { html, css, LitElement } from 'lit';
 
-import { FONT_STYLES, WIDTH, SPACER } from './style.js';
+import { FONT_STYLES, WIDTH, SPACER } from './styles.js';
 import { CONTENT } from './content.js';
-import { removeLitComments } from './util.js';
+import { removeLitComments } from './utils.js';
 
 const STYLES = css`
   :host {
