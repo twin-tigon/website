@@ -1,22 +1,28 @@
-import { css } from 'lit';
+import { css, unsafeCSS } from 'lit';
 
-export const COLOR = [css`#000000`, css`#01b4bd`, css`#12eae4`];
+export const COLOR = [unsafeCSS`#000000`, unsafeCSS`#01b4bd`, unsafeCSS`#12eae4`];
 
-export const FONT_SIZE = [css`0`, css`14px`, css`18px`, css`24px`, css`32px`];
-export const FONT_FAMILY = [css`Bitter`, css`Space Mono`];
+export const FONT_SIZE = [
+  unsafeCSS`0`,
+  unsafeCSS`14px`,
+  unsafeCSS`18px`,
+  unsafeCSS`24px`,
+  unsafeCSS`32px`,
+];
+export const FONT_FAMILY = [unsafeCSS`Bitter`, unsafeCSS`Space Mono`];
 
 export const SPACER = [
-  css`0`, // 0
-  css`1px`, // 1
-  css`2px`, // 2
-  css`4px`, // 3
-  css`8px`, // 4
-  css`16px`, // 5
-  css`32px`, // 6
-  css`64px`, // 7
+  unsafeCSS`0`, // 0
+  unsafeCSS`1px`, // 1
+  unsafeCSS`2px`, // 2
+  unsafeCSS`4px`, // 3
+  unsafeCSS`8px`, // 4
+  unsafeCSS`16px`, // 5
+  unsafeCSS`32px`, // 6
+  unsafeCSS`64px`, // 7
 ];
 
-export const WIDTH = [css`0`, css`500px`, css`1000px`, css`1500px`];
+export const WIDTH = [unsafeCSS`0`, unsafeCSS`500px`, unsafeCSS`1000px`, unsafeCSS`1500px`];
 
 export const ANCHOR_STYLES = css`
   a {

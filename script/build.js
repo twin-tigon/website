@@ -3,7 +3,7 @@
 import { readFile, writeFile } from 'fs/promises';
 import { build as esBuild } from 'esbuild'; // eslint-disable-line
 import { skypackResolver } from 'esbuild-skypack-resolver'; // eslint-disable-line
-import { minifyHTMLLiterals } from 'minify-html-literals'; // eslint-disable-line
+import { minifyHTMLLiterals, defaultMinifyOptions } from 'minify-html-literals'; // eslint-disable-line
 import { init, parse } from 'es-module-lexer'; // eslint-disable-line
 import fetch from 'node-fetch/lib/index.mjs'; // eslint-disable-line
 
@@ -18,6 +18,11 @@ async function run() {
         const content = (await readFile(path)).toString();
         const result = minifyHTMLLiterals(content, {
           fileName: path,
+          minifyOptions: {
+            ...defaultMinifyOptions,
+            collapseWhitespace: true,
+            conservativeCollapse: true,
+          },
           shouldMinifyCSS: template => template.tag === 'css',
         });
 
@@ -55,7 +60,6 @@ async function run() {
           )
             .flat()
             .filter(unique);
-          // TODO: filter also fileImports
 
           writeFile(
             build.initialOptions.outfile,
@@ -72,9 +76,7 @@ async function run() {
     format: 'esm',
     bundle: true,
     minify: true,
-    plugins: [false && minifyHtmlLiterals, skypackResolver(), await preloadDeepImports()].filter(
-      Boolean,
-    ),
+    plugins: [minifyHtmlLiterals, skypackResolver(), await preloadDeepImports()],
   }).catch(() => process.exit(1));
 }
 
