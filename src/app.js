@@ -108,7 +108,9 @@ async function run() {
       this._source = source;
     }
 
-    toggleEditorVisibility() {
+    toggleEditorVisibility(event) {
+      event.preventDefault();
+
       this._hideEditor = !this._hideEditor;
     }
 
@@ -117,12 +119,12 @@ async function run() {
         <main>
           <html-renderer .source=${this._source}></html-renderer>
           <source-editor
-            @source-changed=${e => this.onSourceChanged(e)}
+            @source-changed=${event => this.onSourceChanged(event)}
             ?hidden=${this._hideEditor}
           ></source-editor>
         </main>
         <footer>
-          <a href="#" @click=${() => this.toggleEditorVisibility()}>
+          <a href="#" @click=${event => this.toggleEditorVisibility(event)}>
             source
           </a>
         </footer>
