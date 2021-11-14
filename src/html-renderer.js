@@ -35,6 +35,7 @@ const STYLES = css`
   }
 
   #keywords a {
+    color: ${COLOR[1]};
     margin-right: ${SPACER[5]};
   }
 
@@ -163,7 +164,10 @@ class HtmlRenderer extends LitElement {
                   <a
                     href="#"
                     @click="${e => this.onClick(e)}"
-                    class=${this._selectedKeywords.includes(keyword) ? 'selected' : ''}
+                    class=${this._selectedKeywords.includes(keyword) ||
+                    !this._selectedKeywords.length
+                      ? 'selected'
+                      : ''}
                     >${keyword}</a
                   >
                 `,
