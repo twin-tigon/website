@@ -9,6 +9,19 @@
     ],
     "headers": [
       {
+        "source": "**",
+        "headers": [
+          {
+            "key": "Access-Control-Allow-Origin",
+            "value": "https://rodrigogarcia.me"
+          },
+          {
+            "key": "Content-Security-Policy",
+            "value": "default-src 'self'; connect-src 'self' https://cdn.skypack.dev; font-src 'self' https://fonts.gstatic.com; script-src 'self' 'unsafe-inline' https://cdn.skypack.dev; style-src 'self' 'unsafe-inline'"
+          }
+        ]
+      },
+      {
         "source": "**/*.@(jpg|jpeg|gif|png)",
         "headers": [
           {
