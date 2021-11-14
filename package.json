@@ -29,14 +29,16 @@
     "lit": "2.0.0-rc.1"
   },
   "devDependencies": {
-    "@open-wc/eslint-config": "^2.0.0",
+    "@open-wc/eslint-config": "^7.0.0",
     "@open-wc/prettier-config": "^0.1.10",
     "@web/dev-server": "^0.1.15",
     "chrome-launcher": "^0.14.0",
     "es-module-lexer": "^0.4.1",
     "esbuild": "^0.11.14",
     "esbuild-skypack-resolver": "^1.0.13",
-    "eslint": "^6.1.0",
+    "eslint": "^8.2.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-lit-a11y": "^2.2.0",
     "globby": "^6.1.0",
     "html-minifier": "^4.0.0",
     "husky": "^1.0.0",
