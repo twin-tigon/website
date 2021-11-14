@@ -38,6 +38,10 @@ const STYLES = css`
     margin-right: ${SPACER[5]};
   }
 
+  #keywords a.selected {
+    color: ${COLOR[2]};
+  }
+
   #cards {
     display: flex;
     flex-flow: row wrap;
@@ -105,9 +109,10 @@ class HtmlRenderer extends LitElement {
   }
 
   onClick(event) {
+    event.preventDefault();
     const preKeyword = removeLitComments(event.target.innerHTML);
 
-    this._selectedKeywords = [preKeyword];
+    this._selectedKeywords = this._selectedKeywords.includes(preKeyword) ? [] : [preKeyword];
   }
 
   render() {
@@ -153,7 +158,12 @@ class HtmlRenderer extends LitElement {
             ${keywords.map(
               keyword =>
                 html`
-                  <a href="#" @click="${e => this.onClick(e)}">${keyword}</a>
+                  <a
+                    href="#"
+                    @click="${e => this.onClick(e)}"
+                    class=${this._selectedKeywords.includes(keyword) ? 'selected' : ''}
+                    >${keyword}</a
+                  >
                 `,
             )}
           </p>
