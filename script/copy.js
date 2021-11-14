@@ -4,7 +4,7 @@ import globby from 'globby'; // eslint-disable-line
 import { dirname } from 'path';
 import { copyFile, mkdir } from 'fs/promises';
 
-const PATTERNS = ['img/**/*', 'index.html'];
+const PATTERNS = ['assets/**/*', 'index.html'];
 const OUTPUT_DIR = 'dist';
 
 async function run() {

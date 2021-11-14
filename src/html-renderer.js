@@ -81,7 +81,7 @@ const STYLES = css`
   }
 `;
 
-const IMG_URL = '/img/me.jpg';
+const IMG_URL = '/assets/me.jpg';
 const IMG_ALT = 'me';
 const NAME_EMAIL = 'Email';
 
