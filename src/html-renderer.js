@@ -146,7 +146,9 @@ class HtmlRenderer extends LitElement {
           ${socialMedia.map(
             ({ name: socialMediaName, value }) =>
               html`
-                <li><a href="${value}">${socialMediaName}</a></li>
+                <li>
+                  <a href="${value}" rel="noopener noreferrer nofollow">${socialMediaName}</a>
+                </li>
               `,
           )}
         </ul>
@@ -172,7 +174,7 @@ class HtmlRenderer extends LitElement {
           ${filteredProjects.map(
             ({ name: projectName, description: projectDescription, url }) => html`
               <div class="project">
-                <h2><a href=${url}>${projectName}</a></h2>
+                <h2><a href=${url} rel="noopener noreferrer nofollow">${projectName}</a></h2>
                 <p>${projectDescription}</p>
               </div>
             `,
