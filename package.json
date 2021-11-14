@@ -18,9 +18,9 @@
     "format:prettier": "prettier \"**/*.js\" --write --ignore-path .gitignore",
     "build": "npm run build:clean && npm run build:build && npm run build:copy && npm run build:minify",
     "build:clean": "rm -rf dist",
-    "build:build": "./script/build.js",
-    "build:copy": "./script/copy.js",
-    "build:minify": "./script/minify.js",
+    "build:build": "./scripts/build.js",
+    "build:copy": "./scripts/copy.js",
+    "build:minify": "./scripts/minify.js",
     "test:performance": "./test/performance.js"
   },
   "author": "Rodrigo García <yo@rodrigogarcia.me>",
