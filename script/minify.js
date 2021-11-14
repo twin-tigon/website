@@ -4,7 +4,7 @@ import globby from 'globby'; // eslint-disable-line
 import { readFile, writeFile } from 'fs/promises';
 import { minify } from 'html-minifier'; // eslint-disable-line
 
-const PATTERNS = ['**/*.html'];
+const PATTERNS = ['index.html'];
 const OUTPUT_DIR = 'dist';
 
 async function run() {
