@@ -155,7 +155,7 @@ class HtmlRenderer extends LitElement {
               `,
           )}
         </ul>
-        <p><a href="mailo:${email.value}">${email.value}</a></p>
+        <p><a href="mailto:${email.value}">${email.value}</a></p>
       </section>
 
       <section id="projects">
