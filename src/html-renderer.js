@@ -65,14 +65,14 @@ const STYLES = css`
   @media screen and (min-width: ${WIDTH[2]}) {
     :host {
       flex-direction: row;
-      padding: 0 5%;
+      padding: 0 ${SPACER[7]};
       gap: ${SPACER[7]};
     }
   }
 
   @media screen and (min-width: ${WIDTH[3]}) {
     :host {
-      padding: 0 10%;
+      padding: 0 ${SPACER[8]};
     }
   }
 `;

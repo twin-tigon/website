@@ -25,6 +25,7 @@ export const SPACER = [
   unsafeCSS`16px`,
   unsafeCSS`32px`,
   unsafeCSS`64px`,
+  unsafeCSS`256px`,
 ];
 
 export const WIDTH = [unsafeCSS`0`, unsafeCSS`500px`, unsafeCSS`1000px`, unsafeCSS`1500px`];
