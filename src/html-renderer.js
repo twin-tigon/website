@@ -8,6 +8,7 @@ const STYLES = css`
     display: flex;
     flex-direction: column;
     margin: 0 auto;
+    gap: ${SPACER[5]};
   }
 
   img {
@@ -16,10 +17,6 @@ const STYLES = css`
 
   hr {
     border-color: ${COLOR[3]};
-  }
-
-  #me {
-    padding-right: ${SPACER[5]};
   }
 
   #me h1 {
@@ -47,6 +44,7 @@ const STYLES = css`
     display: flex;
     flex-flow: row wrap;
     align-content: flex-start;
+    gap: ${SPACER[6]};
   }
 
   .project {
@@ -55,10 +53,6 @@ const STYLES = css`
     border-style: solid;
     height: 250px;
     width: 250px;
-    margin-top: 0;
-    margin-right: ${SPACER[6]};
-    margin-bottom: ${SPACER[6]};
-    margin-left: 0;
     padding: ${SPACER[5]};
   }
 
@@ -72,10 +66,7 @@ const STYLES = css`
     :host {
       flex-direction: row;
       padding: 0 5%;
-    }
-
-    #me {
-      padding-right: ${SPACER[7]};
+      gap: ${SPACER[7]};
     }
   }
 
