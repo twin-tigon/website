@@ -63,7 +63,7 @@ async function run() {
 
           writeFile(
             build.initialOptions.outfile,
-            `${outfile}${deepImports.map(id => `import"${id}"`).join(';')}`,
+            `${outfile};${deepImports.map(id => `import"${id}"`).join(';')};`,
           );
         });
       },

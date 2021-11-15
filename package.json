@@ -26,7 +26,7 @@
   "author": "Rodrigo García <yo@rodrigogarcia.me>",
   "license": "MIT",
   "dependencies": {
-    "lit": "2.0.0-rc.1"
+    "lit": "^2.0.2"
   },
   "devDependencies": {
     "@open-wc/eslint-config": "^7.0.0",
