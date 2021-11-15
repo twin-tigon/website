@@ -8,8 +8,8 @@
     "url": "git+https://github.com/rodrigo-garcia-leon/website-app.git"
   },
   "scripts": {
-    "start": "wds --node-resolve --open",
-    "start:dist": "wds --root-dir dist --open",
+    "start": "wds --node-resolve --open --watch",
+    "start:dist": "wds --root-dir dist --open --watch",
     "lint": "npm run lint:eslint && npm run lint:prettier",
     "lint:eslint": "eslint --ext .js,.html . --ignore-path .gitignore",
     "lint:prettier": "prettier \"**/*.js\" --check --ignore-path .gitignore",
