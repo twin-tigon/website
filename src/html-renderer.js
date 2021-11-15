@@ -148,13 +148,16 @@ class HtmlRenderer extends LitElement {
             ({ name: socialMediaName, value }) =>
               html`
                 <li>
-                  <a href="${value}" rel="noopener noreferrer nofollow">${socialMediaName}</a>
+                  <a href="${value}" target="_blank" rel="noopener noreferrer nofollow"
+                    >${socialMediaName}</a
+                  >
                 </li>
               `,
           )}
         </ul>
         <p><a href="mailo:${email.value}">${email.value}</a></p>
       </section>
+
       <section id="projects">
         <section id="keywords">
           <p>
@@ -174,11 +177,16 @@ class HtmlRenderer extends LitElement {
             )}
           </p>
         </section>
+
         <section id="cards">
           ${filteredProjects.map(
             ({ name: projectName, description: projectDescription, url }) => html`
               <div class="project">
-                <h2><a href=${url} rel="noopener noreferrer nofollow">${projectName}</a></h2>
+                <h2>
+                  <a href=${url} target="_blank" rel="noopener noreferrer nofollow"
+                    >${projectName}</a
+                  >
+                </h2>
                 <p>${projectDescription}</p>
               </div>
             `,
