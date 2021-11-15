@@ -18,9 +18,10 @@ import './html-renderer.js';
 const STYLES = css`
   :host {
     background-color: ${COLOR[0]};
+    box-sizing: border-box;
     display: block;
-    height: calc(100% - ${SPACER[6]});
-    width: calc(100% - ${SPACER[6]});
+    height: 100%;
+    width: 100%;
     padding: ${SPACER[5]};
   }
 
@@ -32,15 +33,18 @@ const STYLES = css`
 
   source-editor {
     flex-shrink: 1;
+    overflow: scroll;
+    scrollbar-width: thin;
   }
 
   html-renderer {
     flex-shrink: 1;
     overflow-y: scroll;
+    scrollbar-width: thin;
   }
 
   footer {
-    height: calc(${SPACER[7]});
+    height: ${SPACER[7]};
     position: relative;
   }
 
@@ -52,16 +56,12 @@ const STYLES = css`
 
   @media screen and (min-width: ${WIDTH[1]}) {
     :host {
-      height: calc(100% - ${SPACER[7]});
-      width: calc(100% - ${SPACER[7]});
       padding: ${SPACER[6]};
     }
   }
 
   @media screen and (min-width: ${WIDTH[3]}) {
     :host {
-      height: calc(100% - ${SPACER[7]});
-      width: calc(100% - ${SPACER[7]});
       padding: ${SPACER[6]};
     }
 

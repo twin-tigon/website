@@ -89,10 +89,6 @@ export const SCROLLBAR_STYLES = css`
   ::-webkit-scrollbar-corner {
     background: ${COLOR[0]};
   }
-  :host {
-    scrollbar-color: ${COLOR[0]};
-    scrollbar-width: thin;
-  }
 `;
 
 export const LIST_STYLES = css`
