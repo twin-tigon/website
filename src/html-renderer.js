@@ -15,7 +15,7 @@ const STYLES = css`
   }
 
   hr {
-    border-color: ${COLOR[2]};
+    border-color: ${COLOR[3]};
   }
 
   #me {
@@ -35,12 +35,12 @@ const STYLES = css`
   }
 
   #keywords a {
-    color: ${COLOR[1]};
+    color: ${COLOR[2]};
     margin-right: ${SPACER[5]};
   }
 
   #keywords a.selected {
-    color: ${COLOR[2]};
+    color: ${COLOR[3]};
   }
 
   #cards {
@@ -51,7 +51,7 @@ const STYLES = css`
 
   .project {
     border-width: ${SPACER[2]};
-    border-color: ${COLOR[2]};
+    border-color: ${COLOR[3]};
     border-style: solid;
     height: 250px;
     width: 250px;

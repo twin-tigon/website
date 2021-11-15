@@ -1,6 +1,11 @@
 import { css, unsafeCSS } from 'lit';
 
-export const COLOR = [unsafeCSS`#000000`, unsafeCSS`#01b4bd`, unsafeCSS`#12eae4`];
+export const COLOR = [
+  unsafeCSS`#000000`,
+  unsafeCSS`rgb(0 207 218 / 11%)`,
+  unsafeCSS`#01b4bd`,
+  unsafeCSS`#12eae4`,
+];
 
 export const FONT_SIZE = [
   unsafeCSS`0`,
@@ -26,22 +31,28 @@ export const WIDTH = [unsafeCSS`0`, unsafeCSS`500px`, unsafeCSS`1000px`, unsafeC
 
 export const ANCHOR_STYLES = css`
   a {
-    color: ${COLOR[1]};
+    color: ${COLOR[2]};
   }
   a:visited {
-    color: ${COLOR[2]};
+    color: ${COLOR[3]};
   }
 `;
 
 export const FONT_STYLES = css`
   :host {
     font-family: '${FONT_FAMILY[0]}', serif;
-    color: ${COLOR[1]};
+    color: ${COLOR[2]};
     font-size: ${FONT_SIZE[2]};
+  }
+  ::-moz-selection {
+    background: ${COLOR[1]};
+  }
+  ::selection {
+    background: ${COLOR[1]};
   }
   h1 {
     font-size: ${FONT_SIZE[3]};
-    color: ${COLOR[2]};
+    color: ${COLOR[3]};
     font-weight: 700;
   }
   h2 {
@@ -49,7 +60,7 @@ export const FONT_STYLES = css`
     font-weight: 700;
   }
   pre {
-    color: ${COLOR[2]};
+    color: ${COLOR[3]};
     font-family: '${FONT_FAMILY[1]}', monospace;
     font-size: ${FONT_SIZE[1]};
   }
@@ -72,7 +83,7 @@ export const SCROLLBAR_STYLES = css`
     background: ${COLOR[0]};
   }
   ::-webkit-scrollbar-thumb {
-    background-color: ${COLOR[1]};
+    background-color: ${COLOR[2]};
     border-radius: ${SPACER[2]};
   }
   ::-webkit-scrollbar-corner {
