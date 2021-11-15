@@ -24,7 +24,7 @@ async function run() {
       `<style>${fonts}</style>`,
     )
     .replace(
-      '<script src="src/app.js" type="module"></script>',
+      '<script src="/src/app.js" type="module"></script>',
       `<script type="module">${app}</script>`,
     );
 
