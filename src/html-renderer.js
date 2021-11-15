@@ -27,13 +27,29 @@ const STYLES = css`
     margin-top: ${SPACER[4]};
   }
 
-  #keywords p {
-    margin-top: 0;
+  #me ul {
+    margin-top: ${SPACER[4]};
+    margin-bottom: 0;
+  }
+
+  #me li {
+    padding-right: ${SPACER[3]};
+  }
+
+  #me li:last-of-type {
+    padding-right: 0;
+  }
+
+  #me li::before {
+    content: '| ';
+  }
+
+  #me li:first-of-type::before {
+    content: '';
   }
 
   #keywords a {
     color: ${COLOR[2]};
-    margin-right: ${SPACER[5]};
   }
 
   #keywords a.selected {
@@ -158,21 +174,23 @@ class HtmlRenderer extends LitElement {
 
       <section id="projects">
         <section id="keywords">
-          <p>
+          <ul>
             ${keywords.map(
               keyword =>
                 html`
-                  <a
-                    href="#"
-                    @click="${e => this.onClick(e)}"
-                    class=${!this._selectedKeyword || this._selectedKeyword === keyword
-                      ? 'selected'
-                      : ''}
-                    >${keyword}</a
-                  >
+                  <li>
+                    <a
+                      href="#"
+                      @click="${e => this.onClick(e)}"
+                      class=${!this._selectedKeyword || this._selectedKeyword === keyword
+                        ? 'selected'
+                        : ''}
+                      >${keyword}</a
+                    >
+                  </li>
                 `,
             )}
-          </p>
+          </ul>
         </section>
 
         <section id="cards">

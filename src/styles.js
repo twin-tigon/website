@@ -94,21 +94,16 @@ export const SCROLLBAR_STYLES = css`
 
 export const LIST_STYLES = css`
   ul {
-    display: flex;
+    display: inline-block;
     list-style-type: none;
     padding: 0;
-    margin-bottom: ${SPACER[4]};
+    margin-top: 0;
   }
   li {
-    padding-left: ${SPACER[3]};
+    display: inline;
+    padding-right: ${SPACER[5]};
   }
-  li:first-of-type::before {
-    content: '';
-  }
-  li:first-of-type {
-    padding-left: 0;
-  }
-  li::before {
-    content: '| ';
+  li:last-of-type {
+    padding-right: 0;
   }
 `;
