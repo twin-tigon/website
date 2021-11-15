@@ -98,7 +98,7 @@ class HtmlRenderer extends LitElement {
   static get properties() {
     return {
       source: { type: Object },
-      _selectedKeywords: { type: Array, state: true },
+      _selectedKeyword: { type: String, state: true },
     };
   }
 
@@ -106,14 +106,14 @@ class HtmlRenderer extends LitElement {
     super();
 
     this.source = null;
-    this._selectedKeywords = [];
+    this._selectedKeyword = null;
   }
 
   onClick(event) {
     event.preventDefault();
     const preKeyword = removeLitComments(event.target.innerHTML);
 
-    this._selectedKeywords = this._selectedKeywords.includes(preKeyword) ? [] : [preKeyword];
+    this._selectedKeyword = preKeyword === this._selectedKeyword ? null : preKeyword;
   }
 
   render() {
@@ -121,17 +121,24 @@ class HtmlRenderer extends LitElement {
       return '';
     }
 
-    const { name, description, contact, projects } = this.source;
-    const filteredProjects =
-      this._selectedKeywords.length === 0
-        ? projects
-        : projects.filter(({ keywords }) =>
-            keywords.some(keyword => this._selectedKeywords.includes(keyword)),
-          );
+    const { name, description, contactInfo, projects } = this.source;
+    const visibleProjects = this._selectedKeyword
+      ? projects.filter(({ keywords }) =>
+          keywords.some(keyword => this._selectedKeyword === keyword),
+        )
+      : projects;
 
-    const email = contact.find(({ name: contactName }) => contactName === NAME_EMAIL);
-    const socialMedia = contact.filter(
-      ({ name: socialMediaName }) => socialMediaName !== NAME_EMAIL,
+    const [email, socialMedia] = contactInfo.reduce(
+      (acc, curr) => {
+        if (curr.name === NAME_EMAIL) {
+          acc[0] = curr;
+        } else {
+          acc[1].push(curr);
+        }
+
+        return acc;
+      },
+      ['', []],
     );
     const keywords = [
       ...new Set(projects.map(({ keywords: projectKeywords }) => projectKeywords).flat()),
@@ -167,8 +174,7 @@ class HtmlRenderer extends LitElement {
                   <a
                     href="#"
                     @click="${e => this.onClick(e)}"
-                    class=${this._selectedKeywords.includes(keyword) ||
-                    !this._selectedKeywords.length
+                    class=${!this._selectedKeyword || this._selectedKeyword === keyword
                       ? 'selected'
                       : ''}
                     >${keyword}</a
@@ -179,7 +185,7 @@ class HtmlRenderer extends LitElement {
         </section>
 
         <section id="cards">
-          ${filteredProjects.map(
+          ${visibleProjects.map(
             ({ name: projectName, description: projectDescription, url }) => html`
               <div class="project">
                 <h2>

@@ -77,7 +77,7 @@ export const CONTENT = {
       keywords: ['cv'],
     },
   ],
-  contact: [
+  contactInfo: [
     {
       name: 'Twitter',
       value: 'https://twitter.com/garcialeonrodri',
