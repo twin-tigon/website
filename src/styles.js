@@ -17,14 +17,14 @@ export const FONT_SIZE = [
 export const FONT_FAMILY = [unsafeCSS`Bitter`, unsafeCSS`Space Mono`];
 
 export const SPACER = [
-  unsafeCSS`0`, // 0
-  unsafeCSS`1px`, // 1
-  unsafeCSS`2px`, // 2
-  unsafeCSS`4px`, // 3
-  unsafeCSS`8px`, // 4
-  unsafeCSS`16px`, // 5
-  unsafeCSS`32px`, // 6
-  unsafeCSS`64px`, // 7
+  unsafeCSS`0`,
+  unsafeCSS`1px`,
+  unsafeCSS`2px`,
+  unsafeCSS`4px`,
+  unsafeCSS`8px`,
+  unsafeCSS`16px`,
+  unsafeCSS`32px`,
+  unsafeCSS`64px`,
 ];
 
 export const WIDTH = [unsafeCSS`0`, unsafeCSS`500px`, unsafeCSS`1000px`, unsafeCSS`1500px`];
