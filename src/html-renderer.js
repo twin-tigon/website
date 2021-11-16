@@ -186,10 +186,10 @@ class HtmlRenderer extends LitElement {
                       href="#"
                       @click="${/**
                        *
-                       * @param {MouseEvent & { target: HTMLAnchorElement }} e
+                       * @param {MouseEvent & { target: HTMLAnchorElement }} event
                        * @returns
                        */
-                      e => this.onClick(e)}"
+                      event => this.onClick(event)}"
                       class=${!this._selectedKeyword || this._selectedKeyword === keyword
                         ? 'selected'
                         : ''}
