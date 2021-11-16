@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import globby from 'globby'; // eslint-disable-line
+import { globby } from 'globby'; // eslint-disable-line
 import { dirname } from 'path';
 import { copyFile, mkdir } from 'fs/promises';
 

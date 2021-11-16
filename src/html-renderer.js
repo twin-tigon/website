@@ -112,13 +112,25 @@ class HtmlRenderer extends LitElement {
   constructor() {
     super();
 
+    /**
+     * @type { import('./types').Content | null }
+     */
     this.source = null;
     this._selectedKeyword = null;
   }
 
+  /**
+   * @param {MouseEvent & { target: HTMLAnchorElement }} event
+   */
   onClick(event) {
     event.preventDefault();
-    const preKeyword = removeLitComments(event.target.innerHTML);
+
+    if (!event.target) {
+      return;
+    }
+
+    const anchor = event.target;
+    const preKeyword = removeLitComments(anchor.innerHTML);
 
     this._selectedKeyword = preKeyword === this._selectedKeyword ? null : preKeyword;
   }
@@ -135,18 +147,9 @@ class HtmlRenderer extends LitElement {
         )
       : projects;
 
-    const [email, socialMedia] = contactInfo.reduce(
-      (acc, curr) => {
-        if (curr.name === NAME_EMAIL) {
-          acc[0] = curr;
-        } else {
-          acc[1].push(curr);
-        }
+    const email = contactInfo.find(({ name: contactName }) => contactName === NAME_EMAIL);
+    const socialMedia = contactInfo.filter(({ name: contactName }) => contactName !== NAME_EMAIL);
 
-        return acc;
-      },
-      ['', []],
-    );
     const keywords = [
       ...new Set(projects.map(({ keywords: projectKeywords }) => projectKeywords).flat()),
     ];
@@ -169,7 +172,7 @@ class HtmlRenderer extends LitElement {
               `,
           )}
         </ul>
-        <p><a href="mailto:${email.value}">${email.value}</a></p>
+        <p><a href="mailto:${email?.value}">${email?.value}</a></p>
       </section>
 
       <section id="projects">
@@ -181,7 +184,12 @@ class HtmlRenderer extends LitElement {
                   <li>
                     <a
                       href="#"
-                      @click="${e => this.onClick(e)}"
+                      @click="${/**
+                       *
+                       * @param {MouseEvent & { target: HTMLAnchorElement }} e
+                       * @returns
+                       */
+                      e => this.onClick(e)}"
                       class=${!this._selectedKeyword || this._selectedKeyword === keyword
                         ? 'selected'
                         : ''}

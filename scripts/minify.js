@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 import { readFile, writeFile } from 'fs/promises';
-import fetch from 'node-fetch/lib/index.mjs'; // eslint-disable-line
+import fetch from 'node-fetch'; // eslint-disable-line
 import { minify } from 'html-minifier'; // eslint-disable-line
 import rimraf from 'rimraf'; // eslint-disable-line
 

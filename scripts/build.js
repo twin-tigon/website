@@ -5,7 +5,7 @@ import { build as esBuild } from 'esbuild'; // eslint-disable-line
 import { skypackResolver } from 'esbuild-skypack-resolver'; // eslint-disable-line
 import { minifyHTMLLiterals, defaultMinifyOptions } from 'minify-html-literals'; // eslint-disable-line
 import { init, parse } from 'es-module-lexer'; // eslint-disable-line
-import fetch from 'node-fetch/lib/index.mjs'; // eslint-disable-line
+import fetch from 'node-fetch'; // eslint-disable-line
 
 const JS_FILES_REGEX = /\.js$/;
 const CDN_URL = 'https://cdn.skypack.dev';
@@ -13,6 +13,9 @@ const CDN_URL = 'https://cdn.skypack.dev';
 async function run() {
   const minifyHtmlLiterals = {
     name: 'minify-html-literals',
+    /**
+     * @param { import("esbuild").PluginBuild } build
+     */
     setup(build) {
       build.onLoad({ filter: JS_FILES_REGEX }, async ({ path }) => {
         const content = (await readFile(path)).toString();
@@ -39,17 +42,35 @@ async function run() {
 
     return {
       name: 'preload-deep-imports',
+      /**
+       * @param { import("esbuild").PluginBuild } build
+       */
       setup(build) {
         build.onEnd(async () => {
+          if (!build.initialOptions.outfile) {
+            return;
+          }
+
           const outfile = (await readFile(build.initialOptions.outfile)).toString();
           const [fileImports] = parse(outfile);
 
+          /**
+           *
+           * @param {string | undefined} element
+           * @param {number} index
+           * @param {(string | undefined)[]} array
+           * @returns
+           */
           const unique = (element, index, array) => array.indexOf(element) === index;
           const imports = fileImports.map(({ n }) => n).filter(unique);
 
           const deepImports = (
             await Promise.all(
               imports.map(async id => {
+                if (!id) {
+                  return [];
+                }
+
                 const sourceCode = await (await fetch(id)).text();
                 const [relativeImports] = parse(sourceCode);
                 const absoluteImports = relativeImports.map(({ n }) => `${CDN_URL}${n}`);

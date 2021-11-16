@@ -1,3 +1,6 @@
+/**
+ * @type { import('./types').Content}
+ */
 export const CONTENT = {
   name: 'Rodrigo García León',
   description: 'Full Stack Developer 🙌✨',

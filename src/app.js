@@ -104,12 +104,20 @@ async function run() {
       this._hideEditor = true;
     }
 
+    /**
+     *
+     * @param {CustomEvent} event
+     */
     onSourceChanged(event) {
       const { source } = event.detail;
 
       this._source = source;
     }
 
+    /**
+     *
+     * @param {MouseEvent} event
+     */
     toggleEditorVisibility(event) {
       event.preventDefault();
 
@@ -121,12 +129,25 @@ async function run() {
         <main>
           <html-renderer .source=${this._source}></html-renderer>
           <source-editor
-            @source-changed=${event => this.onSourceChanged(event)}
+            @source-changed=${/**
+             *
+             * @param {CustomEvent} event
+             * @returns
+             */
+            event => this.onSourceChanged(event)}
             ?hidden=${this._hideEditor}
           ></source-editor>
         </main>
         <footer>
-          <a href="#" @click=${event => this.toggleEditorVisibility(event)}>
+          <a
+            href="#"
+            @click=${/**
+             *
+             * @param {MouseEvent} event
+             * @returns
+             */
+            event => this.toggleEditorVisibility(event)}
+          >
             source
           </a>
         </footer>
