@@ -155,7 +155,7 @@ class HtmlRenderer extends LitElement {
     ];
 
     return html`
-      <section id="me">
+      <div id="me">
         <img src="${IMG_URL}" alt="${IMG_ALT}" />
         <h1>${name}</h1>
         <p>${description}</p>
@@ -173,10 +173,10 @@ class HtmlRenderer extends LitElement {
           )}
         </ul>
         <p><a href="mailto:${email?.value}">${email?.value}</a></p>
-      </section>
+      </div>
 
-      <section id="projects">
-        <section id="keywords">
+      <div id="projects">
+        <div id="keywords">
           <ul>
             ${keywords.map(
               keyword =>
@@ -199,9 +199,9 @@ class HtmlRenderer extends LitElement {
                 `,
             )}
           </ul>
-        </section>
+        </div>
 
-        <section id="cards">
+        <div id="cards">
           ${visibleProjects.map(
             ({ name: projectName, description: projectDescription, url }) => html`
               <div class="project">
@@ -214,8 +214,8 @@ class HtmlRenderer extends LitElement {
               </div>
             `,
           )}
-        </section>
-      </section>
+        </div>
+      </div>
     `;
   }
 }
