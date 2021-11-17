@@ -19,32 +19,32 @@ const STYLES = css`
     border-color: ${COLOR[3]};
   }
 
-  #me h1 {
+  #details h1 {
     margin-bottom: 0;
   }
 
-  #me p {
+  #details p {
     margin-top: ${SPACER[4]};
   }
 
-  #me ul {
+  #details ul {
     margin-top: ${SPACER[4]};
     margin-bottom: 0;
   }
 
-  #me li {
+  #details li {
     padding-right: ${SPACER[3]};
   }
 
-  #me li:last-of-type {
+  #details li:last-of-type {
     padding-right: 0;
   }
 
-  #me li::before {
+  #details li::before {
     content: '| ';
   }
 
-  #me li:first-of-type::before {
+  #details li:first-of-type::before {
     content: '';
   }
 
@@ -155,7 +155,7 @@ class SourceRenderer extends LitElement {
     ];
 
     return html`
-      <div id="me">
+      <div id="details">
         <img src="${IMG_URL}" alt="${IMG_ALT}" />
         <h1>${name}</h1>
         <p>${description}</p>
