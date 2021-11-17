@@ -1,11 +1,11 @@
 #!/usr/bin/env node
 
 import { readFile, writeFile } from 'fs/promises';
-import { build as esBuild } from 'esbuild'; // eslint-disable-line
-import { skypackResolver } from 'esbuild-skypack-resolver'; // eslint-disable-line
-import { minifyHTMLLiterals, defaultMinifyOptions } from 'minify-html-literals'; // eslint-disable-line
-import { init, parse } from 'es-module-lexer'; // eslint-disable-line
-import fetch from 'node-fetch'; // eslint-disable-line
+import { build as esBuild } from 'esbuild';
+import { skypackResolver } from 'esbuild-skypack-resolver';
+import { minifyHTMLLiterals, defaultMinifyOptions } from 'minify-html-literals';
+import { init, parse } from 'es-module-lexer';
+import fetch from 'node-fetch';
 
 const JS_FILES_REGEX = /\.js$/;
 const CDN_URL = 'https://cdn.skypack.dev';

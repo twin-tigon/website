@@ -1,5 +1,3 @@
-/* eslint lit/no-invalid-html: "off" */
-
 import { html, css, LitElement } from 'lit';
 
 import {

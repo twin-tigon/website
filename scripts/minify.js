@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 
 import { readFile, writeFile } from 'fs/promises';
-import fetch from 'node-fetch'; // eslint-disable-line
-import { minify } from 'html-minifier'; // eslint-disable-line
-import rimraf from 'rimraf'; // eslint-disable-line
+import fetch from 'node-fetch';
+import { minify } from 'html-minifier';
+import rimraf from 'rimraf';
 
 const HTML_PATH = 'dist/index.html';
 const APP_PATH = 'dist/src/app.js';
