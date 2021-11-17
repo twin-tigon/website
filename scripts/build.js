@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 import { readFile, writeFile } from 'fs/promises';
-import { build as esBuild } from 'esbuild';
+import { build } from 'esbuild';
 import { skypackResolver } from 'esbuild-skypack-resolver';
 import { minifyHTMLLiterals, defaultMinifyOptions } from 'minify-html-literals';
 import { init, parse } from 'es-module-lexer';
@@ -14,10 +14,10 @@ async function run() {
   const minifyHtmlLiterals = {
     name: 'minify-html-literals',
     /**
-     * @param { import("esbuild").PluginBuild } build
+     * @param { import("esbuild").PluginBuild } pluginBuild
      */
-    setup(build) {
-      build.onLoad({ filter: JS_FILES_REGEX }, async ({ path }) => {
+    setup(pluginBuild) {
+      pluginBuild.onLoad({ filter: JS_FILES_REGEX }, async ({ path }) => {
         const content = (await readFile(path)).toString();
         const result = minifyHTMLLiterals(content, {
           fileName: path,
@@ -43,15 +43,15 @@ async function run() {
     return {
       name: 'preload-deep-imports',
       /**
-       * @param { import("esbuild").PluginBuild } build
+       * @param { import("esbuild").PluginBuild } pluginBuild
        */
-      setup(build) {
-        build.onEnd(async () => {
-          if (!build.initialOptions.outfile) {
+      setup(pluginBuild) {
+        pluginBuild.onEnd(async () => {
+          if (!pluginBuild.initialOptions.outfile) {
             return;
           }
 
-          const outfile = (await readFile(build.initialOptions.outfile)).toString();
+          const outfile = (await readFile(pluginBuild.initialOptions.outfile)).toString();
           const [fileImports] = parse(outfile);
 
           /**
@@ -83,7 +83,7 @@ async function run() {
             .filter(unique);
 
           writeFile(
-            build.initialOptions.outfile,
+            pluginBuild.initialOptions.outfile,
             `${outfile};${deepImports.map(id => `import"${id}"`).join(';')};`,
           );
         });
@@ -91,7 +91,7 @@ async function run() {
     };
   }
 
-  esBuild({
+  build({
     entryPoints: ['src/app.js'],
     outfile: 'dist/src/app.js',
     format: 'esm',
