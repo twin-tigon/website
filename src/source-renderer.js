@@ -97,7 +97,7 @@ const IMG_URL = '/assets/me.jpg';
 const IMG_ALT = 'me';
 const NAME_EMAIL = 'Email';
 
-class HtmlRenderer extends LitElement {
+class SourceRenderer extends LitElement {
   static get styles() {
     return [ANCHOR_STYLES, FONT_STYLES, LIST_STYLES, STYLES];
   }
@@ -220,4 +220,4 @@ class HtmlRenderer extends LitElement {
   }
 }
 
-customElements.define('html-renderer', HtmlRenderer);
+customElements.define('source-renderer', SourceRenderer);

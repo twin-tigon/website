@@ -11,7 +11,7 @@ import {
   WIDTH,
 } from './styles.js';
 import './source-editor.js';
-import './html-renderer.js';
+import './source-renderer.js';
 
 const STYLES = css`
   :host {
@@ -125,7 +125,7 @@ async function run() {
     render() {
       return html`
         <main>
-          <html-renderer .source=${this._source}></html-renderer>
+          <source-renderer .source=${this._source}></source-renderer>
           <source-editor
             @source-changed=${/**
              *

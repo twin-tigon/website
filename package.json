@@ -64,14 +64,6 @@
         "rules": {
           "import/no-extraneous-dependencies": "off"
         }
-      },
-      {
-        "files": [
-          "src/app.js"
-        ],
-        "rules": {
-          "lit/no-invalid-html": "off"
-        }
       }
     ]
   },
