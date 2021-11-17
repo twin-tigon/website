@@ -83,7 +83,7 @@ async function run() {
     ].map(async font => window.document.fonts.load(font)),
   );
 
-  class App extends LitElement {
+  class WebsiteApp extends LitElement {
     static get styles() {
       return [ANCHOR_STYLES, FONT_STYLES, SCROLLBAR_STYLES, STYLES];
     }
@@ -153,7 +153,7 @@ async function run() {
     }
   }
 
-  customElements.define('website-app', App);
+  customElements.define('website-app', WebsiteApp);
 }
 
 run();
