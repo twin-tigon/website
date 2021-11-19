@@ -1,6 +1,6 @@
 import { html, css, LitElement } from 'lit';
 
-import { FONT_STYLES, WIDTH, SPACER } from './styles.js';
+import { HOST_STYLES, FONT_STYLES } from './styles.js';
 import { CONTENT } from './content.js';
 import { removeLitComments } from './utils.js';
 
@@ -10,10 +10,10 @@ const STYLES = css`
   }
 
   pre {
-    margin: ${SPACER[5]};
+    margin: var(--spacer-4);
   }
 
-  @media screen and (min-width: ${WIDTH[3]}) {
+  @media screen and (min-width: 1500px) {
     pre {
       margin: 0;
     }
@@ -23,7 +23,7 @@ const INDENT_SIZE = 4;
 
 class SourceEditor extends LitElement {
   static get styles() {
-    return [FONT_STYLES, STYLES];
+    return [HOST_STYLES, FONT_STYLES, STYLES];
   }
 
   updateSource() {

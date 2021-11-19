@@ -1,6 +1,6 @@
 import { html, css, LitElement } from 'lit';
 
-import { ANCHOR_STYLES, FONT_STYLES, LIST_STYLES, COLOR, SPACER, WIDTH } from './styles.js';
+import { HOST_STYLES, ANCHOR_STYLES, FONT_STYLES, LIST_STYLES } from './styles.js';
 import { removeLitComments } from './utils.js';
 
 const STYLES = css`
@@ -8,7 +8,7 @@ const STYLES = css`
     display: flex;
     flex-direction: column;
     margin: 0 auto;
-    gap: ${SPACER[5]};
+    gap: var(--spacer-4);
   }
 
   img {
@@ -16,7 +16,7 @@ const STYLES = css`
   }
 
   hr {
-    border-color: ${COLOR[3]};
+    border-color: var(--color-4);
   }
 
   #details h1 {
@@ -24,16 +24,16 @@ const STYLES = css`
   }
 
   #details p {
-    margin-top: ${SPACER[4]};
+    margin-top: var(--spacer-3);
   }
 
   #details ul {
-    margin-top: ${SPACER[4]};
+    margin-top: var(--spacer-3);
     margin-bottom: 0;
   }
 
   #details li {
-    padding-right: ${SPACER[3]};
+    padding-right: var(--spacer-2);
   }
 
   #details li:last-of-type {
@@ -49,46 +49,46 @@ const STYLES = css`
   }
 
   #keywords a {
-    color: ${COLOR[2]};
+    color: var(--color-3);
   }
 
   #keywords a.selected {
-    color: ${COLOR[3]};
+    color: var(--color-4);
   }
 
   #cards {
     display: flex;
     flex-flow: row wrap;
     align-content: flex-start;
-    gap: ${SPACER[6]};
+    gap: var(--spacer-5);
   }
 
   .project {
-    border-width: ${SPACER[2]};
-    border-color: ${COLOR[3]};
+    border-width: var(--spacer-1);
+    border-color: var(--color-4);
     border-style: solid;
     height: 250px;
     width: 250px;
-    padding: ${SPACER[5]};
+    padding: var(--spacer-4);
   }
 
-  @media screen and (min-width: ${WIDTH[1]}) {
+  @media screen and (min-width: 500px) {
     img {
       width: 400px;
     }
   }
 
-  @media screen and (min-width: ${WIDTH[2]}) {
+  @media screen and (min-width: 1000px) {
     :host {
       flex-direction: row;
-      padding: 0 ${SPACER[7]};
-      gap: ${SPACER[7]};
+      padding: 0 var(--spacer-6);
+      gap: var(--spacer-6);
     }
   }
 
-  @media screen and (min-width: ${WIDTH[3]}) {
+  @media screen and (min-width: 1500px) {
     :host {
-      padding: 0 ${SPACER[8]};
+      padding: 0 var(--spacer-7);
     }
   }
 `;
@@ -99,7 +99,7 @@ const NAME_EMAIL = 'Email';
 
 class SourceRenderer extends LitElement {
   static get styles() {
-    return [ANCHOR_STYLES, FONT_STYLES, LIST_STYLES, STYLES];
+    return [HOST_STYLES, ANCHOR_STYLES, FONT_STYLES, LIST_STYLES, STYLES];
   }
 
   static get properties() {

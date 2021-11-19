@@ -1,94 +1,89 @@
-import { css, unsafeCSS } from 'lit';
+import { css } from 'lit';
 
-export const COLOR = [
-  unsafeCSS`#000000`,
-  unsafeCSS`rgb(0 207 218 / 11%)`,
-  unsafeCSS`#01b4bd`,
-  unsafeCSS`#12eae4`,
-];
+export const HOST_STYLES = css`
+  :host {
+    --color-1: #000000;
+    --color-2: rgb(0 207 218 / 11%);
+    --color-3: #01b4bd;
+    --color-4: #12eae4;
 
-export const FONT_SIZE = [
-  unsafeCSS`0`,
-  unsafeCSS`14px`,
-  unsafeCSS`18px`,
-  unsafeCSS`24px`,
-  unsafeCSS`32px`,
-];
-export const FONT_FAMILY = [unsafeCSS`Bitter`, unsafeCSS`Space Mono`];
+    --font-family-1: 'Bitter', serif;
+    --font-family-2: 'Space Mono', monospace;
 
-export const SPACER = [
-  unsafeCSS`0`,
-  unsafeCSS`1px`,
-  unsafeCSS`2px`,
-  unsafeCSS`4px`,
-  unsafeCSS`8px`,
-  unsafeCSS`16px`,
-  unsafeCSS`32px`,
-  unsafeCSS`64px`,
-  unsafeCSS`256px`,
-];
+    --font-size-1: 14px;
+    --font-size-2: 18px;
+    --font-size-3: 24px;
+    --font-size-4: 32px;
 
-export const WIDTH = [unsafeCSS`0`, unsafeCSS`500px`, unsafeCSS`1000px`, unsafeCSS`1500px`];
+    --spacer-1: 2px;
+    --spacer-2: 4px;
+    --spacer-3: 8px;
+    --spacer-4: 16px;
+    --spacer-5: 32px;
+    --spacer-6: 64px;
+    --spacer-7: 256px;
+  }
+`;
 
 export const ANCHOR_STYLES = css`
   a {
-    color: ${COLOR[2]};
+    color: var(--color-3);
   }
   a:visited {
-    color: ${COLOR[3]};
+    color: var(--color-4);
   }
 `;
 
 export const FONT_STYLES = css`
   :host {
-    font-family: '${FONT_FAMILY[0]}', serif;
-    color: ${COLOR[2]};
-    font-size: ${FONT_SIZE[2]};
+    font-family: var(--font-family-1);
+    color: var(--color-3);
+    font-size: var(--font-size-2);
   }
   ::-moz-selection {
-    background: ${COLOR[1]};
+    background: var(--color-2);
   }
   ::selection {
-    background: ${COLOR[1]};
+    background: var(--color-2);
   }
   h1 {
-    font-size: ${FONT_SIZE[3]};
-    color: ${COLOR[3]};
+    font-size: var(--font-size-3);
+    color: var(--color-4);
     font-weight: 700;
   }
   h2 {
-    font-size: ${FONT_SIZE[2]};
+    font-size: var(--font-size-2);
     font-weight: 700;
   }
   pre {
-    color: ${COLOR[3]};
-    font-family: '${FONT_FAMILY[1]}', monospace;
-    font-size: ${FONT_SIZE[1]};
+    color: var(--color-4);
+    font-family: var(--font-family-2);
+    font-size: var(--font-size-1);
   }
-  @media screen and (min-width: ${WIDTH[1]}) {
+  @media screen and (min-width: 500px) {
     h1 {
-      font-size: ${FONT_SIZE[4]};
+      font-size: var(--font-size-4);
     }
     h2 {
-      font-size: ${FONT_SIZE[3]};
+      font-size: var(--font-size-3);
     }
   }
 `;
 
 export const SCROLLBAR_STYLES = css`
   ::-webkit-scrollbar {
-    width: ${SPACER[3]};
-    height: ${SPACER[3]};
+    width: var(--spacer-2);
+    height: var(--spacer-2);
   }
   ::-webkit-scrollbar-track {
-    background: ${COLOR[0]};
+    background: var(--color-1);
   }
   ::-webkit-scrollbar-thumb {
-    background-color: ${COLOR[2]};
-    border-radius: ${SPACER[2]};
+    background-color: var(--color-3);
+    border-radius: var(--spacer-1);
   }
   ::-webkit-scrollbar-corner {
-    background: ${COLOR[0]};
+    background: var(--color-1);
   }
 `;
 
@@ -101,7 +96,7 @@ export const LIST_STYLES = css`
   }
   li {
     display: inline;
-    padding-right: ${SPACER[5]};
+    padding-right: var(--spacer-4);
   }
   li:last-of-type {
     padding-right: 0;

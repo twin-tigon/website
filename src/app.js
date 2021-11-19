@@ -1,32 +1,23 @@
 import { html, css, LitElement } from 'lit';
 
-import {
-  ANCHOR_STYLES,
-  FONT_STYLES,
-  SCROLLBAR_STYLES,
-  FONT_SIZE,
-  FONT_FAMILY,
-  COLOR,
-  SPACER,
-  WIDTH,
-} from './styles.js';
+import { HOST_STYLES, ANCHOR_STYLES, FONT_STYLES, SCROLLBAR_STYLES } from './styles.js';
 import './source-editor.js';
 import './source-renderer.js';
 
 const STYLES = css`
   :host {
-    background-color: ${COLOR[0]};
+    background-color: var(--color-1);
     box-sizing: border-box;
     display: block;
     height: 100%;
     width: 100%;
-    padding: ${SPACER[5]};
+    padding: var(--spacer-4);
   }
 
   main {
     display: flex;
     flex-direction: column;
-    height: calc(100% - ${SPACER[7]});
+    height: calc(100% - var(--spacer-6));
   }
 
   source-editor {
@@ -42,7 +33,7 @@ const STYLES = css`
   }
 
   footer {
-    height: ${SPACER[7]};
+    height: var(--spacer-6);
     position: relative;
   }
 
@@ -52,15 +43,15 @@ const STYLES = css`
     bottom: 0;
   }
 
-  @media screen and (min-width: ${WIDTH[1]}) {
+  @media screen and (min-width: 500px) {
     :host {
-      padding: ${SPACER[6]};
+      padding: var(--spacer-5);
     }
   }
 
-  @media screen and (min-width: ${WIDTH[3]}) {
+  @media screen and (min-width: 1500px) {
     :host {
-      padding: ${SPACER[6]};
+      padding: var(--spacer-5);
     }
 
     main {
@@ -75,17 +66,14 @@ const STYLES = css`
 
 async function run() {
   await Promise.all(
-    [
-      `${FONT_SIZE[2]} ${FONT_FAMILY[0]}`,
-      `${FONT_SIZE[3]} ${FONT_FAMILY[0]}`,
-      `${FONT_SIZE[4]} ${FONT_FAMILY[0]}`,
-      `${FONT_SIZE[1]} ${FONT_FAMILY[1]}`,
-    ].map(async font => window.document.fonts.load(font)),
+    ['18px Bitter', '24px Bitter', '32px Bitter', '14px Space Mono'].map(async font =>
+      window.document.fonts.load(font),
+    ),
   );
 
   class WebsiteApp extends LitElement {
     static get styles() {
-      return [ANCHOR_STYLES, FONT_STYLES, SCROLLBAR_STYLES, STYLES];
+      return [HOST_STYLES, ANCHOR_STYLES, FONT_STYLES, SCROLLBAR_STYLES, STYLES];
     }
 
     static get properties() {
