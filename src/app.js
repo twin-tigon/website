@@ -26,7 +26,7 @@ const STYLES = css`
     scrollbar-width: thin;
   }
 
-  html-renderer {
+  source-renderer {
     flex-shrink: 1;
     overflow-y: scroll;
     scrollbar-width: thin;
@@ -58,7 +58,7 @@ const STYLES = css`
       flex-direction: row;
     }
 
-    html-renderer {
+    source-renderer {
       flex-shrink: 2;
     }
   }
