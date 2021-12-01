@@ -12,7 +12,7 @@ const STYLES = css`
   }
 
   img {
-    width: 100%;
+    width: 200px;
   }
 
   hr {
@@ -74,7 +74,7 @@ const STYLES = css`
 
   @media screen and (min-width: 500px) {
     img {
-      width: 400px;
+      width: 300px;
     }
   }
 
@@ -84,11 +84,19 @@ const STYLES = css`
       padding: 0 var(--spacer-6);
       gap: var(--spacer-6);
     }
+
+    img {
+      width: 350px;
+    }
   }
 
   @media screen and (min-width: 1500px) {
     :host {
       padding: 0 var(--spacer-7);
+    }
+
+    img {
+      width: 400px;
     }
   }
 `;
