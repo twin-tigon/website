@@ -1,3 +1,4 @@
+/* eslint-disable no-await-in-loop, no-continue  */
 import { stat, rmdir, mkdir, readFile } from 'fs/promises';
 import puppeteer from 'puppeteer';
 import pixelmatch from 'pixelmatch';
@@ -7,10 +8,25 @@ import { expect } from '@esm-bundle/chai/esm/chai.js';
 
 const DIST_PATH = './dist';
 const SCREENSHOTS_PATH = './test/__screenshots__';
-const DEFAULT_VIEWPORT = {
-  width: 1920,
-  height: 1080,
-};
+
+const VIEWPORTS = [
+  {
+    width: 1920,
+    height: 1080,
+  },
+  {
+    width: 1440,
+    height: 900,
+  },
+  {
+    width: 800,
+    height: 1280,
+  },
+  {
+    width: 360,
+    height: 740,
+  },
+];
 
 const updateVisualBaseline = process.argv.includes('--update-visual-baseline');
 
@@ -51,13 +67,6 @@ async function resetDirectory(path) {
  * @returns
  */
 async function createOrCompareScreenshotFactory(page, filename) {
-  const path = `${SCREENSHOTS_PATH}/${filename}.png`;
-
-  if (updateVisualBaseline) {
-    await page.screenshot({ path });
-    return;
-  }
-
   async function getScreenshotBuffer() {
     const buffer = await page.screenshot({ encoding: 'binary' });
     if (!Buffer.isBuffer(buffer)) {
@@ -67,19 +76,30 @@ async function createOrCompareScreenshotFactory(page, filename) {
     return buffer;
   }
 
-  const baseline = PNG.sync.read(await readFile(path));
-  const current = PNG.sync.read(await getScreenshotBuffer());
+  for (const viewport of VIEWPORTS.reverse()) {
+    const { width, height } = viewport;
+    const path = `${SCREENSHOTS_PATH}/${filename}-${width}x${height}.png`;
 
-  const numDiffPixels = pixelmatch(
-    current.data,
-    baseline.data,
-    null,
-    DEFAULT_VIEWPORT.width,
-    DEFAULT_VIEWPORT.height,
-    { threshold: 0.1 },
-  );
+    await page.setViewport(viewport);
 
-  expect(numDiffPixels).to.equal(0);
+    if (updateVisualBaseline) {
+      await page.screenshot({ path });
+      continue;
+    }
+
+    const baseline = PNG.sync.read(await readFile(path));
+    const current = PNG.sync.read(await getScreenshotBuffer());
+    const numDiffPixels = pixelmatch(
+      current.data,
+      baseline.data,
+      null,
+      viewport.width,
+      viewport.height,
+      { threshold: 0.1 },
+    );
+
+    expect(numDiffPixels).to.equal(0);
+  }
 }
 
 describe('visual-regression', () => {
@@ -105,7 +125,7 @@ describe('visual-regression', () => {
     }
 
     browser = await puppeteer.launch({
-      defaultViewport: DEFAULT_VIEWPORT,
+      defaultViewport: VIEWPORTS[0],
     });
   });
 
