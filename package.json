@@ -22,6 +22,7 @@
     "build:build": "./scripts/build.js",
     "build:copy": "./scripts/copy.js",
     "build:minify": "./scripts/minify.js",
+    "test": "wtr test/**/*.test.js --node-resolve --puppeteer",
     "test:performance": "./test/performance.js"
   },
   "author": "Rodrigo García <yo@rodrigogarcia.me>",
@@ -32,8 +33,12 @@
   "devDependencies": {
     "@open-wc/eslint-config": "^7.0.0",
     "@open-wc/prettier-config": "^0.1.10",
+    "@open-wc/testing": "^3.0.0-next.5",
+    "@types/mocha": "^9.0.0",
     "@types/rimraf": "^3.0.2",
     "@web/dev-server": "^0.1.15",
+    "@web/test-runner": "^0.13.22",
+    "@web/test-runner-puppeteer": "^0.10.4",
     "chrome-launcher": "^0.14.0",
     "es-module-lexer": "^0.4.1",
     "esbuild": "^0.11.14",

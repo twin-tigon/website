@@ -105,7 +105,7 @@ const IMG_URL = '/assets/me.jpg';
 const IMG_ALT = 'me';
 const NAME_EMAIL = 'Email';
 
-class SourceRenderer extends LitElement {
+export class SourceRenderer extends LitElement {
   static get styles() {
     return [HOST_STYLES, ANCHOR_STYLES, FONT_STYLES, LIST_STYLES, STYLES];
   }

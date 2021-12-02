@@ -10,7 +10,7 @@
     "strict": true,
     "noImplicitThis": true,
     "alwaysStrict": true,
-    "types": ["node"],
+    "types": ["node", "mocha"],
     "esModuleInterop": true,
     "suppressImplicitAnyIndexErrors": true
   },
