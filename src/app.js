@@ -64,82 +64,82 @@ const STYLES = css`
   }
 `;
 
+export class WebsiteApp extends LitElement {
+  static get styles() {
+    return [HOST_STYLES, ANCHOR_STYLES, FONT_STYLES, SCROLLBAR_STYLES, STYLES];
+  }
+
+  static get properties() {
+    return {
+      _source: { type: Object, state: true },
+      _hideEditor: { type: Boolean, state: true },
+    };
+  }
+
+  constructor() {
+    super();
+
+    this._source = null;
+    this._hideEditor = true;
+  }
+
+  /**
+   *
+   * @param {CustomEvent} event
+   */
+  onSourceChanged(event) {
+    const { source } = event.detail;
+
+    this._source = source;
+  }
+
+  /**
+   *
+   * @param {MouseEvent} event
+   */
+  toggleEditorVisibility(event) {
+    event.preventDefault();
+
+    this._hideEditor = !this._hideEditor;
+  }
+
+  render() {
+    return html`
+      <main>
+        <source-renderer .source=${this._source}></source-renderer>
+        <source-editor
+          @source-changed=${/**
+           *
+           * @param {CustomEvent} event
+           * @returns
+           */
+          event => this.onSourceChanged(event)}
+          ?hidden=${this._hideEditor}
+        ></source-editor>
+      </main>
+      <footer>
+        <a
+          href="#"
+          @click=${/**
+           *
+           * @param {MouseEvent} event
+           * @returns
+           */
+          event => this.toggleEditorVisibility(event)}
+        >
+          source
+        </a>
+      </footer>
+    `;
+  }
+}
+
 async function run() {
   await Promise.all(
     ['18px Bitter', '24px Bitter', '32px Bitter', '14px Space Mono'].map(async font =>
       window.document.fonts.load(font),
     ),
   );
-
-  class WebsiteApp extends LitElement {
-    static get styles() {
-      return [HOST_STYLES, ANCHOR_STYLES, FONT_STYLES, SCROLLBAR_STYLES, STYLES];
-    }
-
-    static get properties() {
-      return {
-        _source: { type: Object, state: true },
-        _hideEditor: { type: Boolean, state: true },
-      };
-    }
-
-    constructor() {
-      super();
-
-      this._source = null;
-      this._hideEditor = true;
-    }
-
-    /**
-     *
-     * @param {CustomEvent} event
-     */
-    onSourceChanged(event) {
-      const { source } = event.detail;
-
-      this._source = source;
-    }
-
-    /**
-     *
-     * @param {MouseEvent} event
-     */
-    toggleEditorVisibility(event) {
-      event.preventDefault();
-
-      this._hideEditor = !this._hideEditor;
-    }
-
-    render() {
-      return html`
-        <main>
-          <source-renderer .source=${this._source}></source-renderer>
-          <source-editor
-            @source-changed=${/**
-             *
-             * @param {CustomEvent} event
-             * @returns
-             */
-            event => this.onSourceChanged(event)}
-            ?hidden=${this._hideEditor}
-          ></source-editor>
-        </main>
-        <footer>
-          <a
-            href="#"
-            @click=${/**
-             *
-             * @param {MouseEvent} event
-             * @returns
-             */
-            event => this.toggleEditorVisibility(event)}
-          >
-            source
-          </a>
-        </footer>
-      `;
-    }
-  }
 
   customElements.define('website-app', WebsiteApp);
 }
