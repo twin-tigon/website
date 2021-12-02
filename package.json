@@ -22,8 +22,7 @@
     "build:build": "./scripts/build.js",
     "build:copy": "./scripts/copy.js",
     "build:minify": "./scripts/minify.js",
-    "test": "wtr test/**/*.test.js --node-resolve --puppeteer",
-    "test:performance": "./test/performance.js"
+    "test": "wtr test/**/*.test.js --node-resolve --puppeteer"
   },
   "author": "Rodrigo García <yo@rodrigogarcia.me>",
   "license": "MIT",
@@ -49,7 +48,6 @@
     "globby": "^12.0.2",
     "html-minifier": "^4.0.0",
     "husky": "^1.0.0",
-    "lighthouse": "^9.0.0",
     "lint-staged": "^11.0.0",
     "minify-html-literals": "^1.3.5",
     "node-fetch": "^3.1.0",
