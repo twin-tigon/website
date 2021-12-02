@@ -15,5 +15,5 @@
     "suppressImplicitAnyIndexErrors": true
   },
   "include": ["**/*.js"],
-  "exclude": ["node_modules", "dist", "test/performance.js"]
+  "exclude": ["node_modules", "dist", "test/**/*.js"]
 }

@@ -23,4 +23,21 @@ describe('source-renderer', () => {
 
     expect(element).shadowDom.to.equalSnapshot();
   });
+
+  it('_selectedKeyword', async () => {
+    element.source = CONTENT;
+    await element.updateComplete;
+
+    const keywords = element.renderRoot.querySelectorAll('#keywords a');
+
+    /** @type { HTMLAnchorElement | undefined } */
+    const frontendKeyword = Array.from(keywords).find(
+      keyword => keyword.textContent === 'frontend',
+    );
+
+    frontendKeyword?.click();
+    await element.updateComplete;
+
+    expect(element).shadowDom.to.equalSnapshot();
+  });
 });

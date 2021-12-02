@@ -490,3 +490,285 @@ snapshots['source-renderer ok'] = `<div id="details">
 </div>
 `;
 /* end snapshot source-renderer ok */
+
+snapshots['source-renderer _selectedKeyword'] = `<div id="details">
+  <img
+    alt="me"
+    src="/assets/me.jpg"
+  >
+  <h1>
+    Rodrigo García León
+  </h1>
+  <p>
+    Full Stack Developer 🙌✨
+  </p>
+  <hr>
+  <ul>
+    <li>
+      <a
+        href="https://twitter.com/garcialeonrodri"
+        rel="noopener noreferrer nofollow"
+        target="_blank"
+      >
+        Twitter
+      </a>
+    </li>
+    <li>
+      <a
+        href="https://www.instagram.com/rodrigogarcialeon/"
+        rel="noopener noreferrer nofollow"
+        target="_blank"
+      >
+        Instagram
+      </a>
+    </li>
+    <li>
+      <a
+        href="https://www.linkedin.com/in/rgarcialeon/"
+        rel="noopener noreferrer nofollow"
+        target="_blank"
+      >
+        LinkedIn
+      </a>
+    </li>
+  </ul>
+  <p>
+    <a href="mailto:yo@rodrigogarcia.me">
+      yo@rodrigogarcia.me
+    </a>
+  </p>
+</div>
+<div id="projects">
+  <div id="keywords">
+    <ul>
+      <li>
+        <a
+          class="selected"
+          href="#"
+        >
+          frontend
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          react
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          pwa
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          js
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          backend
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          koa
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          graphql
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          nodejs
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          devops
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          gcp
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          kubernetes
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          shell
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          lit
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          skypack
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          esbuild
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          webcomponents
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          esbuild-plugin
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          typescript
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          houdini
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          web-audio
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          wasm
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          rust
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          cli
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          gamedev
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          godot
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          game-jam
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          puzzle-game
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          platform-game
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          matlab
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          dsp
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          psychoacoustics
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          dotfiles
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          cv
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div id="cards">
+    <div class="project">
+      <h2>
+        <a
+          href="https://github.com/rodrigo-garcia-leon/hn-app"
+          rel="noopener noreferrer nofollow"
+          target="_blank"
+        >
+          hn-app
+        </a>
+      </h2>
+      <p>
+        Hacker News PWA built with React Hooks
+      </p>
+    </div>
+    <div class="project">
+      <h2>
+        <a
+          href="https://github.com/rodrigo-garcia-leon/website"
+          rel="noopener noreferrer nofollow"
+          target="_blank"
+        >
+          website
+        </a>
+      </h2>
+      <p>
+        This website 👀
+      </p>
+    </div>
+    <div class="project">
+      <h2>
+        <a
+          href="https://github.com/rodrigo-garcia-leon/web-hacks"
+          rel="noopener noreferrer nofollow"
+          target="_blank"
+        >
+          web-hacks
+        </a>
+      </h2>
+      <p>
+        Web Hacks 🕸🤓
+      </p>
+    </div>
+    <div class="project">
+      <h2>
+        <a
+          href="https://github.com/glissando-daw/glissando-daw"
+          rel="noopener noreferrer nofollow"
+          target="_blank"
+        >
+          glissando-daw
+        </a>
+      </h2>
+      <p>
+        A web-based digital audio workstation using the web platform APIs (Web Audio, Web MIDI) and WebAssembly
+      </p>
+    </div>
+  </div>
+</div>
+`;
+/* end snapshot source-renderer _selectedKeyword */
