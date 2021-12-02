@@ -2,7 +2,7 @@
   "name": "website",
   "version": "1.0.0",
   "type": "module",
-  "description": "My personal website",
+  "description": "My website",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/rodrigo-garcia-leon/website-app.git"
