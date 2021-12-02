@@ -21,7 +21,7 @@ const STYLES = css`
 `;
 const INDENT_SIZE = 4;
 
-class SourceEditor extends LitElement {
+export class SourceEditor extends LitElement {
   static get styles() {
     return [HOST_STYLES, FONT_STYLES, STYLES];
   }
