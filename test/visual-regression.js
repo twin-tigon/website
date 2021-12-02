@@ -14,8 +14,6 @@ const DEFAULT_VIEWPORT = {
 
 const updateVisualBaseline = process.argv.includes('--update-visual-baseline');
 
-console.log(process.argv);
-
 /**
  *
  * @param {string} path
