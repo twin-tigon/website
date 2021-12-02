@@ -141,6 +141,6 @@ describe('visual-regression', () => {
 
     const sourceAnchor = await page?.$('pierce/footer a');
     await sourceAnchor?.click();
-    await createOrCompareScreenshot('showEditor');
+    await createOrCompareScreenshot('show-editor');
   });
 });
