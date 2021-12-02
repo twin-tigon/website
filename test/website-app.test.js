@@ -1,9 +1,9 @@
 import { fixture, expect } from '@open-wc/testing';
 
-import '../src/app.js';
+import '../src/website-app.js';
 
 describe('website-app', () => {
-  /** @type { import('../src/app').WebsiteApp } */
+  /** @type { import('../src/website-app').WebsiteApp } */
   let element;
 
   beforeEach(async () => {

@@ -92,8 +92,8 @@ async function run() {
   }
 
   build({
-    entryPoints: ['src/app.js'],
-    outfile: 'dist/src/app.js',
+    entryPoints: ['./src/website-app.js'],
+    outfile: './dist/src/website-app.js',
     format: 'esm',
     bundle: true,
     minify: true,
