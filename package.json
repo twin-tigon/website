@@ -28,7 +28,8 @@
     "test:visual-regression:update": "concurrently -k -s \"first\" npm:test:visual-regression:start npm:test:visual-regression:test:update",
     "test:visual-regression:start": "wds --root-dir dist",
     "test:visual-regression:test": "mocha test/visual-regression.js",
-    "test:visual-regression:test:update": "mocha test/visual-regression.js --update-visual-baseline"
+    "test:visual-regression:test:update": "mocha test/visual-regression.js --update-visual-baseline",
+    "release": "npm run lint && npm run build && npm run test"
   },
   "author": "Rodrigo García <yo@rodrigogarcia.me>",
   "license": "MIT",
