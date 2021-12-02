@@ -21,6 +21,11 @@ jobs:
         run: npm run lint
       - name: Build
         run: npm run build
+      - name: Download Artifact
+        uses: actions/download-artifact@v2
+        with:
+          name: screenshots
+          path: ./test/__screenshots__
       - name: Test
         run: npm run test
       - name: Archive Production Artifact
