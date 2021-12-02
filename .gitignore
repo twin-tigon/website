@@ -5,3 +5,4 @@ node_modules
 *.log
 lhreport.html
 C*
+__screenshots__
