@@ -3,6 +3,10 @@ import { fixture, expect } from '@open-wc/testing';
 import '../src/source-renderer.js';
 import { CONTENT } from '../src/content.js';
 
+const A11Y_OPTIONS = {
+  ignoredRules: ['color-contrast'],
+};
+
 describe('source-renderer', () => {
   /**
    * @type { import('../src/source-renderer').SourceRenderer }
@@ -15,7 +19,7 @@ describe('source-renderer', () => {
 
   it('empty', () => {
     expect(element).shadowDom.to.be.empty;
-    expect(element).to.be.accessible();
+    expect(element).to.be.accessible(A11Y_OPTIONS);
   });
 
   it('ok', async () => {
@@ -23,7 +27,7 @@ describe('source-renderer', () => {
     await element.updateComplete;
 
     expect(element).shadowDom.to.equalSnapshot();
-    expect(element).to.be.accessible();
+    expect(element).to.be.accessible(A11Y_OPTIONS);
   });
 
   it('_selectedKeyword', async () => {
@@ -42,6 +46,6 @@ describe('source-renderer', () => {
     await element.updateComplete;
 
     expect(element).shadowDom.to.equalSnapshot();
-    expect(element).to.be.accessible();
+    expect(element).to.be.accessible(A11Y_OPTIONS);
   });
 });
