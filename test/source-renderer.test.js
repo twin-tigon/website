@@ -1,6 +1,7 @@
 import { fixture, expect } from '@open-wc/testing';
 
 import '../src/source-renderer.js';
+import { CONTENT } from '../src/content.js';
 
 describe('source-renderer', () => {
   /**
@@ -13,6 +14,13 @@ describe('source-renderer', () => {
   });
 
   it('empty', () => {
-    expect(element).dom.to.equal('<source-renderer>\n</source-renderer>\n');
+    expect(element).shadowDom.to.be.empty;
+  });
+
+  it('ok', async () => {
+    element.source = CONTENT;
+    await element.updateComplete;
+
+    expect(element).shadowDom.to.equalSnapshot();
   });
 });
