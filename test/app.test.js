@@ -16,6 +16,7 @@ describe('website-app', () => {
 
   it('_hideEditor', async () => {
     /** @type { HTMLAnchorElement | undefined } */
+    // @ts-ignore
     const sourceAnchor = element.renderRoot.querySelector('a');
     sourceAnchor?.click();
 

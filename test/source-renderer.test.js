@@ -31,6 +31,7 @@ describe('source-renderer', () => {
     const keywords = element.renderRoot.querySelectorAll('#keywords a');
 
     /** @type { HTMLAnchorElement | undefined } */
+    // @ts-ignore
     const frontendKeyword = Array.from(keywords).find(
       keyword => keyword.textContent === 'frontend',
     );
