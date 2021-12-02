@@ -16,11 +16,14 @@ jobs:
         with:
           node-version: '16'
       - name: Download Screenshots
-        uses: actions/download-artifact@v2
+        uses: dawidd6/action-download-artifact@v2
         with:
+          workflow: update-visual-baseline.yml
+          workflow_conclusion: success
+          event: push
           name: screenshots
           path: ./test/__screenshots__
-      - name: Install dependencies
+      - name: Install Dependencies
         run: npm ci
       - name: Lint
         run: npm run lint
