@@ -15,6 +15,7 @@ describe('source-editor', () => {
 
   it('ok', async () => {
     expect(element).shadowDom.to.equalSnapshot();
+    expect(element).to.be.accessible();
   });
 
   it('source-changed', async () => {

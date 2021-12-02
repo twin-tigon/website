@@ -15,6 +15,7 @@ describe('source-renderer', () => {
 
   it('empty', () => {
     expect(element).shadowDom.to.be.empty;
+    expect(element).to.be.accessible();
   });
 
   it('ok', async () => {
@@ -22,6 +23,7 @@ describe('source-renderer', () => {
     await element.updateComplete;
 
     expect(element).shadowDom.to.equalSnapshot();
+    expect(element).to.be.accessible();
   });
 
   it('_selectedKeyword', async () => {
@@ -40,5 +42,6 @@ describe('source-renderer', () => {
     await element.updateComplete;
 
     expect(element).shadowDom.to.equalSnapshot();
+    expect(element).to.be.accessible();
   });
 });

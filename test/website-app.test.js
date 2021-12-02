@@ -12,6 +12,7 @@ describe('website-app', () => {
 
   it('ok', async () => {
     expect(element).shadowDom.to.equalSnapshot();
+    expect(element).to.be.accessible();
   });
 
   it('_hideEditor', async () => {
@@ -23,5 +24,6 @@ describe('website-app', () => {
     await element.updateComplete;
 
     expect(element).shadowDom.to.equalSnapshot();
+    expect(element).to.be.accessible();
   });
 });
