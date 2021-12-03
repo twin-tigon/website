@@ -1,5 +1,5 @@
 /* eslint-disable no-await-in-loop, no-continue  */
-import { stat, rmdir, mkdir, readFile } from 'fs/promises';
+import { stat, rm, mkdir, readFile } from 'fs/promises';
 import puppeteer from 'puppeteer';
 import pixelmatch from 'pixelmatch';
 import { PNG } from 'pngjs';
@@ -54,7 +54,7 @@ async function pathExists(path) {
  */
 async function resetDirectory(path) {
   if (await pathExists(path)) {
-    await rmdir(path, { recursive: true });
+    await rm(path, { recursive: true });
   }
 
   await mkdir(path);
@@ -126,6 +126,12 @@ describe('visual-regression', () => {
 
     browser = await puppeteer.launch({
       defaultViewport: VIEWPORTS[0],
+      args: [
+        '--disable-gpu',
+        '--disable-dev-shm-usage',
+        '--disable-setuid-sandbox',
+        '--no-sandbox',
+      ],
     });
   });
 
@@ -162,5 +168,5 @@ describe('visual-regression', () => {
     const sourceAnchor = await page?.$('pierce/footer a');
     await sourceAnchor?.click();
     await createOrCompareScreenshot('show-editor');
-  });
+  }).timeout(5000);
 });
