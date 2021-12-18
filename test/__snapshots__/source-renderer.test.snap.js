@@ -56,7 +56,15 @@ snapshots['source-renderer ok'] = `<div id="details">
           class="selected"
           href="#"
         >
-          frontend
+          front-end
+        </a>
+      </li>
+      <li>
+        <a
+          class="selected"
+          href="#"
+        >
+          progressive-web-app
         </a>
       </li>
       <li>
@@ -72,7 +80,7 @@ snapshots['source-renderer ok'] = `<div id="details">
           class="selected"
           href="#"
         >
-          pwa
+          javascript
         </a>
       </li>
       <li>
@@ -80,15 +88,7 @@ snapshots['source-renderer ok'] = `<div id="details">
           class="selected"
           href="#"
         >
-          js
-        </a>
-      </li>
-      <li>
-        <a
-          class="selected"
-          href="#"
-        >
-          backend
+          back-end
         </a>
       </li>
       <li>
@@ -128,7 +128,7 @@ snapshots['source-renderer ok'] = `<div id="details">
           class="selected"
           href="#"
         >
-          gcp
+          google-cloud-platform
         </a>
       </li>
       <li>
@@ -160,7 +160,23 @@ snapshots['source-renderer ok'] = `<div id="details">
           class="selected"
           href="#"
         >
-          skypack
+          web-components
+        </a>
+      </li>
+      <li>
+        <a
+          class="selected"
+          href="#"
+        >
+          open-wc
+        </a>
+      </li>
+      <li>
+        <a
+          class="selected"
+          href="#"
+        >
+          modern-web
         </a>
       </li>
       <li>
@@ -176,7 +192,7 @@ snapshots['source-renderer ok'] = `<div id="details">
           class="selected"
           href="#"
         >
-          webcomponents
+          skypack
         </a>
       </li>
       <li>
@@ -184,7 +200,7 @@ snapshots['source-renderer ok'] = `<div id="details">
           class="selected"
           href="#"
         >
-          esbuild-plugin
+          plugin
         </a>
       </li>
       <li>
@@ -208,6 +224,38 @@ snapshots['source-renderer ok'] = `<div id="details">
           class="selected"
           href="#"
         >
+          flask
+        </a>
+      </li>
+      <li>
+        <a
+          class="selected"
+          href="#"
+        >
+          pymongo
+        </a>
+      </li>
+      <li>
+        <a
+          class="selected"
+          href="#"
+        >
+          mongodb
+        </a>
+      </li>
+      <li>
+        <a
+          class="selected"
+          href="#"
+        >
+          python
+        </a>
+      </li>
+      <li>
+        <a
+          class="selected"
+          href="#"
+        >
           web-audio
         </a>
       </li>
@@ -216,7 +264,7 @@ snapshots['source-renderer ok'] = `<div id="details">
           class="selected"
           href="#"
         >
-          wasm
+          web-assembly
         </a>
       </li>
       <li>
@@ -248,23 +296,7 @@ snapshots['source-renderer ok'] = `<div id="details">
           class="selected"
           href="#"
         >
-          godot
-        </a>
-      </li>
-      <li>
-        <a
-          class="selected"
-          href="#"
-        >
           game-jam
-        </a>
-      </li>
-      <li>
-        <a
-          class="selected"
-          href="#"
-        >
-          puzzle-game
         </a>
       </li>
       <li>
@@ -280,7 +312,7 @@ snapshots['source-renderer ok'] = `<div id="details">
           class="selected"
           href="#"
         >
-          matlab
+          puzzle-game
         </a>
       </li>
       <li>
@@ -288,7 +320,7 @@ snapshots['source-renderer ok'] = `<div id="details">
           class="selected"
           href="#"
         >
-          dsp
+          godot
         </a>
       </li>
       <li>
@@ -304,7 +336,15 @@ snapshots['source-renderer ok'] = `<div id="details">
           class="selected"
           href="#"
         >
-          dotfiles
+          digital-signal-processing
+        </a>
+      </li>
+      <li>
+        <a
+          class="selected"
+          href="#"
+        >
+          matlab
         </a>
       </li>
       <li>
@@ -313,6 +353,14 @@ snapshots['source-renderer ok'] = `<div id="details">
           href="#"
         >
           cv
+        </a>
+      </li>
+      <li>
+        <a
+          class="selected"
+          href="#"
+        >
+          context
         </a>
       </li>
     </ul>
@@ -405,6 +453,20 @@ snapshots['source-renderer ok'] = `<div id="details">
     <div class="project">
       <h2>
         <a
+          href="https://github.com/rodrigo-garcia-leon/todos-lists-api"
+          rel="noopener noreferrer nofollow"
+          target="_blank"
+        >
+          todos-lists-api
+        </a>
+      </h2>
+      <p>
+        Todos Lists API using Flask and PyMongo
+      </p>
+    </div>
+    <div class="project">
+      <h2>
+        <a
           href="https://github.com/glissando-daw/glissando-daw"
           rel="noopener noreferrer nofollow"
           target="_blank"
@@ -456,20 +518,6 @@ snapshots['source-renderer ok'] = `<div id="details">
       </h2>
       <p>
         Collection of MATLAB scripts and toolboxes regarding my Master Thesis on psychoacoustics
-      </p>
-    </div>
-    <div class="project">
-      <h2>
-        <a
-          href="https://github.com/rodrigo-garcia-leon/dotfiles"
-          rel="noopener noreferrer nofollow"
-          target="_blank"
-        >
-          dotfiles
-        </a>
-      </h2>
-      <p>
-        My dotfiles
       </p>
     </div>
     <div class="project">
@@ -546,167 +594,311 @@ snapshots['source-renderer _selectedKeyword'] = `<div id="details">
           class="selected"
           href="#"
         >
-          frontend
+          front-end
         </a>
       </li>
       <li>
-        <a href="#">
+        <a
+          class="selected"
+          href="#"
+        >
+          progressive-web-app
+        </a>
+      </li>
+      <li>
+        <a
+          class="selected"
+          href="#"
+        >
           react
         </a>
       </li>
       <li>
-        <a href="#">
-          pwa
+        <a
+          class="selected"
+          href="#"
+        >
+          javascript
         </a>
       </li>
       <li>
-        <a href="#">
-          js
+        <a
+          class="selected"
+          href="#"
+        >
+          back-end
         </a>
       </li>
       <li>
-        <a href="#">
-          backend
-        </a>
-      </li>
-      <li>
-        <a href="#">
+        <a
+          class="selected"
+          href="#"
+        >
           koa
         </a>
       </li>
       <li>
-        <a href="#">
+        <a
+          class="selected"
+          href="#"
+        >
           graphql
         </a>
       </li>
       <li>
-        <a href="#">
+        <a
+          class="selected"
+          href="#"
+        >
           nodejs
         </a>
       </li>
       <li>
-        <a href="#">
+        <a
+          class="selected"
+          href="#"
+        >
           devops
         </a>
       </li>
       <li>
-        <a href="#">
-          gcp
+        <a
+          class="selected"
+          href="#"
+        >
+          google-cloud-platform
         </a>
       </li>
       <li>
-        <a href="#">
+        <a
+          class="selected"
+          href="#"
+        >
           kubernetes
         </a>
       </li>
       <li>
-        <a href="#">
+        <a
+          class="selected"
+          href="#"
+        >
           shell
         </a>
       </li>
       <li>
-        <a href="#">
+        <a
+          class="selected"
+          href="#"
+        >
           lit
         </a>
       </li>
       <li>
-        <a href="#">
-          skypack
+        <a
+          class="selected"
+          href="#"
+        >
+          web-components
         </a>
       </li>
       <li>
-        <a href="#">
+        <a
+          class="selected"
+          href="#"
+        >
+          open-wc
+        </a>
+      </li>
+      <li>
+        <a
+          class="selected"
+          href="#"
+        >
+          modern-web
+        </a>
+      </li>
+      <li>
+        <a
+          class="selected"
+          href="#"
+        >
           esbuild
         </a>
       </li>
       <li>
-        <a href="#">
-          webcomponents
+        <a
+          class="selected"
+          href="#"
+        >
+          skypack
         </a>
       </li>
       <li>
-        <a href="#">
-          esbuild-plugin
+        <a
+          class="selected"
+          href="#"
+        >
+          plugin
         </a>
       </li>
       <li>
-        <a href="#">
+        <a
+          class="selected"
+          href="#"
+        >
           typescript
         </a>
       </li>
       <li>
-        <a href="#">
+        <a
+          class="selected"
+          href="#"
+        >
           houdini
         </a>
       </li>
       <li>
-        <a href="#">
+        <a
+          class="selected"
+          href="#"
+        >
+          flask
+        </a>
+      </li>
+      <li>
+        <a
+          class="selected"
+          href="#"
+        >
+          pymongo
+        </a>
+      </li>
+      <li>
+        <a
+          class="selected"
+          href="#"
+        >
+          mongodb
+        </a>
+      </li>
+      <li>
+        <a
+          class="selected"
+          href="#"
+        >
+          python
+        </a>
+      </li>
+      <li>
+        <a
+          class="selected"
+          href="#"
+        >
           web-audio
         </a>
       </li>
       <li>
-        <a href="#">
-          wasm
+        <a
+          class="selected"
+          href="#"
+        >
+          web-assembly
         </a>
       </li>
       <li>
-        <a href="#">
+        <a
+          class="selected"
+          href="#"
+        >
           rust
         </a>
       </li>
       <li>
-        <a href="#">
+        <a
+          class="selected"
+          href="#"
+        >
           cli
         </a>
       </li>
       <li>
-        <a href="#">
+        <a
+          class="selected"
+          href="#"
+        >
           gamedev
         </a>
       </li>
       <li>
-        <a href="#">
-          godot
-        </a>
-      </li>
-      <li>
-        <a href="#">
+        <a
+          class="selected"
+          href="#"
+        >
           game-jam
         </a>
       </li>
       <li>
-        <a href="#">
-          puzzle-game
-        </a>
-      </li>
-      <li>
-        <a href="#">
+        <a
+          class="selected"
+          href="#"
+        >
           platform-game
         </a>
       </li>
       <li>
-        <a href="#">
-          matlab
+        <a
+          class="selected"
+          href="#"
+        >
+          puzzle-game
         </a>
       </li>
       <li>
-        <a href="#">
-          dsp
+        <a
+          class="selected"
+          href="#"
+        >
+          godot
         </a>
       </li>
       <li>
-        <a href="#">
+        <a
+          class="selected"
+          href="#"
+        >
           psychoacoustics
         </a>
       </li>
       <li>
-        <a href="#">
-          dotfiles
+        <a
+          class="selected"
+          href="#"
+        >
+          digital-signal-processing
         </a>
       </li>
       <li>
-        <a href="#">
+        <a
+          class="selected"
+          href="#"
+        >
+          matlab
+        </a>
+      </li>
+      <li>
+        <a
+          class="selected"
+          href="#"
+        >
           cv
+        </a>
+      </li>
+      <li>
+        <a
+          class="selected"
+          href="#"
+        >
+          context
         </a>
       </li>
     </ul>
@@ -729,6 +921,34 @@ snapshots['source-renderer _selectedKeyword'] = `<div id="details">
     <div class="project">
       <h2>
         <a
+          href="https://github.com/rodrigo-garcia-leon/hn-api"
+          rel="noopener noreferrer nofollow"
+          target="_blank"
+        >
+          hn-api
+        </a>
+      </h2>
+      <p>
+        Hacker News API using GraphQL
+      </p>
+    </div>
+    <div class="project">
+      <h2>
+        <a
+          href="https://github.com/rodrigo-garcia-leon/cloud"
+          rel="noopener noreferrer nofollow"
+          target="_blank"
+        >
+          cloud
+        </a>
+      </h2>
+      <p>
+        Collection of scripts to manage Google Cloud Platform and Kubernetes ☁️
+      </p>
+    </div>
+    <div class="project">
+      <h2>
+        <a
           href="https://github.com/rodrigo-garcia-leon/website"
           rel="noopener noreferrer nofollow"
           target="_blank"
@@ -738,6 +958,20 @@ snapshots['source-renderer _selectedKeyword'] = `<div id="details">
       </h2>
       <p>
         This website 👀
+      </p>
+    </div>
+    <div class="project">
+      <h2>
+        <a
+          href="https://github.com/rodrigo-garcia-leon/esbuild-skypack-resolver"
+          rel="noopener noreferrer nofollow"
+          target="_blank"
+        >
+          esbuild-skypack-resolver
+        </a>
+      </h2>
+      <p>
+        An esbuild plugin to resolve package names to Skypack CDN URLs
       </p>
     </div>
     <div class="project">
@@ -757,6 +991,20 @@ snapshots['source-renderer _selectedKeyword'] = `<div id="details">
     <div class="project">
       <h2>
         <a
+          href="https://github.com/rodrigo-garcia-leon/todos-lists-api"
+          rel="noopener noreferrer nofollow"
+          target="_blank"
+        >
+          todos-lists-api
+        </a>
+      </h2>
+      <p>
+        Todos Lists API using Flask and PyMongo
+      </p>
+    </div>
+    <div class="project">
+      <h2>
+        <a
           href="https://github.com/glissando-daw/glissando-daw"
           rel="noopener noreferrer nofollow"
           target="_blank"
@@ -766,6 +1014,62 @@ snapshots['source-renderer _selectedKeyword'] = `<div id="details">
       </h2>
       <p>
         A web-based digital audio workstation using the web platform APIs (Web Audio, Web MIDI) and WebAssembly
+      </p>
+    </div>
+    <div class="project">
+      <h2>
+        <a
+          href="https://github.com/rodrigo-garcia-leon/tictactoe-rust"
+          rel="noopener noreferrer nofollow"
+          target="_blank"
+        >
+          tictactoe-cli
+        </a>
+      </h2>
+      <p>
+        Tic-tac-toe implementation in Rust
+      </p>
+    </div>
+    <div class="project">
+      <h2>
+        <a
+          href="https://github.com/rodrigo-garcia-leon/senescence"
+          rel="noopener noreferrer nofollow"
+          target="_blank"
+        >
+          senescence
+        </a>
+      </h2>
+      <p>
+        Senescence is a narrative puzzle platformer made for GMTK Game Jam 2020
+      </p>
+    </div>
+    <div class="project">
+      <h2>
+        <a
+          href="https://github.com/rodrigo-garcia-leon/thesis-matlab"
+          rel="noopener noreferrer nofollow"
+          target="_blank"
+        >
+          thesis-matlab
+        </a>
+      </h2>
+      <p>
+        Collection of MATLAB scripts and toolboxes regarding my Master Thesis on psychoacoustics
+      </p>
+    </div>
+    <div class="project">
+      <h2>
+        <a
+          href="https://github.com/rodrigo-garcia-leon/cv"
+          rel="noopener noreferrer nofollow"
+          target="_blank"
+        >
+          cv
+        </a>
+      </h2>
+      <p>
+        My CV
       </p>
     </div>
   </div>

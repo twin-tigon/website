@@ -12,10 +12,10 @@ const CONTENT_STRING = `<!--?lit$14090330355$-->{
             "description": "Hacker News PWA built with React Hooks",
             "url": "https://github.com/rodrigo-garcia-leon/hn-app",
             "keywords": [
-                "frontend",
+                "front-end",
+                "progressive-web-app",
                 "react",
-                "pwa",
-                "js"
+                "javascript"
             ]
         },
         {
@@ -23,11 +23,11 @@ const CONTENT_STRING = `<!--?lit$14090330355$-->{
             "description": "Hacker News API using GraphQL",
             "url": "https://github.com/rodrigo-garcia-leon/hn-api",
             "keywords": [
-                "backend",
+                "back-end",
                 "koa",
                 "graphql",
                 "nodejs",
-                "js"
+                "javascript"
             ]
         },
         {
@@ -36,7 +36,7 @@ const CONTENT_STRING = `<!--?lit$14090330355$-->{
             "url": "https://github.com/rodrigo-garcia-leon/cloud",
             "keywords": [
                 "devops",
-                "gcp",
+                "google-cloud-platform",
                 "kubernetes",
                 "shell"
             ]
@@ -46,12 +46,14 @@ const CONTENT_STRING = `<!--?lit$14090330355$-->{
             "description": "This website 👀",
             "url": "https://github.com/rodrigo-garcia-leon/website",
             "keywords": [
-                "frontend",
+                "front-end",
                 "lit",
-                "skypack",
+                "web-components",
+                "open-wc",
+                "modern-web",
                 "esbuild",
-                "webcomponents",
-                "js"
+                "skypack",
+                "javascript"
             ]
         },
         {
@@ -60,7 +62,7 @@ const CONTENT_STRING = `<!--?lit$14090330355$-->{
             "url": "https://github.com/rodrigo-garcia-leon/esbuild-skypack-resolver",
             "keywords": [
                 "esbuild",
-                "esbuild-plugin",
+                "plugin",
                 "skypack",
                 "typescript"
             ]
@@ -70,9 +72,21 @@ const CONTENT_STRING = `<!--?lit$14090330355$-->{
             "description": "Web Hacks 🕸🤓",
             "url": "https://github.com/rodrigo-garcia-leon/web-hacks",
             "keywords": [
-                "frontend",
+                "front-end",
                 "houdini",
-                "js"
+                "javascript"
+            ]
+        },
+        {
+            "name": "todos-lists-api",
+            "description": "Todos Lists API using Flask and PyMongo",
+            "url": "https://github.com/rodrigo-garcia-leon/todos-lists-api",
+            "keywords": [
+                "back-end",
+                "flask",
+                "pymongo",
+                "mongodb",
+                "python"
             ]
         },
         {
@@ -80,11 +94,11 @@ const CONTENT_STRING = `<!--?lit$14090330355$-->{
             "description": "A web-based digital audio workstation using the web platform APIs (Web Audio, Web MIDI) and WebAssembly",
             "url": "https://github.com/glissando-daw/glissando-daw",
             "keywords": [
-                "frontend",
+                "front-end",
                 "web-audio",
-                "wasm",
+                "web-assembly",
                 "rust",
-                "js"
+                "javascript"
             ]
         },
         {
@@ -103,10 +117,10 @@ const CONTENT_STRING = `<!--?lit$14090330355$-->{
             "url": "https://github.com/rodrigo-garcia-leon/senescence",
             "keywords": [
                 "gamedev",
-                "godot",
                 "game-jam",
+                "platform-game",
                 "puzzle-game",
-                "platform-game"
+                "godot"
             ]
         },
         {
@@ -114,18 +128,9 @@ const CONTENT_STRING = `<!--?lit$14090330355$-->{
             "description": "Collection of MATLAB scripts and toolboxes regarding my Master Thesis on psychoacoustics",
             "url": "https://github.com/rodrigo-garcia-leon/thesis-matlab",
             "keywords": [
-                "matlab",
-                "dsp",
-                "psychoacoustics"
-            ]
-        },
-        {
-            "name": "dotfiles",
-            "description": "My dotfiles",
-            "url": "https://github.com/rodrigo-garcia-leon/dotfiles",
-            "keywords": [
-                "dotfiles",
-                "shell"
+                "psychoacoustics",
+                "digital-signal-processing",
+                "matlab"
             ]
         },
         {
@@ -133,7 +138,8 @@ const CONTENT_STRING = `<!--?lit$14090330355$-->{
             "description": "My CV",
             "url": "https://github.com/rodrigo-garcia-leon/cv",
             "keywords": [
-                "cv"
+                "cv",
+                "context"
             ]
         }
     ],
