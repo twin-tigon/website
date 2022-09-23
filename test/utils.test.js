@@ -78,6 +78,31 @@ const CONTENT_STRING = `<!--?lit$14090330355$-->{
             ]
         },
         {
+            "name": "chat-groups-app",
+            "description": "Slack clone app built with React",
+            "url": "https://github.com/rodrigo-garcia-leon/chat-groups-app",
+            "keywords": [
+                "front-end",
+                "react",
+                "web-sockets",
+                "javascript"
+            ]
+        },
+        {
+            "name": "chat-groups-api",
+            "description": "Slack clone API built with Django",
+            "url": "https://github.com/rodrigo-garcia-leon/chat-groups-api",
+            "keywords": [
+                "back-end",
+                "django",
+                "web-sockets",
+                "postgresql",
+                "redis",
+                "docker",
+                "python"
+            ]
+        },
+        {
             "name": "todos-lists-api",
             "description": "Todos Lists API using Flask and PyMongo",
             "url": "https://github.com/rodrigo-garcia-leon/todos-lists-api",
@@ -131,15 +156,6 @@ const CONTENT_STRING = `<!--?lit$14090330355$-->{
                 "psychoacoustics",
                 "digital-signal-processing",
                 "matlab"
-            ]
-        },
-        {
-            "name": "cv",
-            "description": "My CV",
-            "url": "https://github.com/rodrigo-garcia-leon/cv",
-            "keywords": [
-                "cv",
-                "context"
             ]
         }
     ],

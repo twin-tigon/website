@@ -224,6 +224,54 @@ snapshots['source-renderer ok'] = `<div id="details">
           class="selected"
           href="#"
         >
+          web-sockets
+        </a>
+      </li>
+      <li>
+        <a
+          class="selected"
+          href="#"
+        >
+          django
+        </a>
+      </li>
+      <li>
+        <a
+          class="selected"
+          href="#"
+        >
+          postgresql
+        </a>
+      </li>
+      <li>
+        <a
+          class="selected"
+          href="#"
+        >
+          redis
+        </a>
+      </li>
+      <li>
+        <a
+          class="selected"
+          href="#"
+        >
+          docker
+        </a>
+      </li>
+      <li>
+        <a
+          class="selected"
+          href="#"
+        >
+          python
+        </a>
+      </li>
+      <li>
+        <a
+          class="selected"
+          href="#"
+        >
           flask
         </a>
       </li>
@@ -241,14 +289,6 @@ snapshots['source-renderer ok'] = `<div id="details">
           href="#"
         >
           mongodb
-        </a>
-      </li>
-      <li>
-        <a
-          class="selected"
-          href="#"
-        >
-          python
         </a>
       </li>
       <li>
@@ -347,22 +387,6 @@ snapshots['source-renderer ok'] = `<div id="details">
           matlab
         </a>
       </li>
-      <li>
-        <a
-          class="selected"
-          href="#"
-        >
-          cv
-        </a>
-      </li>
-      <li>
-        <a
-          class="selected"
-          href="#"
-        >
-          context
-        </a>
-      </li>
     </ul>
   </div>
   <div id="cards">
@@ -453,6 +477,34 @@ snapshots['source-renderer ok'] = `<div id="details">
     <div class="project">
       <h2>
         <a
+          href="https://github.com/rodrigo-garcia-leon/chat-groups-app"
+          rel="noopener noreferrer nofollow"
+          target="_blank"
+        >
+          chat-groups-app
+        </a>
+      </h2>
+      <p>
+        Slack clone app built with React
+      </p>
+    </div>
+    <div class="project">
+      <h2>
+        <a
+          href="https://github.com/rodrigo-garcia-leon/chat-groups-api"
+          rel="noopener noreferrer nofollow"
+          target="_blank"
+        >
+          chat-groups-api
+        </a>
+      </h2>
+      <p>
+        Slack clone API built with Django
+      </p>
+    </div>
+    <div class="project">
+      <h2>
+        <a
           href="https://github.com/rodrigo-garcia-leon/todos-lists-api"
           rel="noopener noreferrer nofollow"
           target="_blank"
@@ -518,20 +570,6 @@ snapshots['source-renderer ok'] = `<div id="details">
       </h2>
       <p>
         Collection of MATLAB scripts and toolboxes regarding my Master Thesis on psychoacoustics
-      </p>
-    </div>
-    <div class="project">
-      <h2>
-        <a
-          href="https://github.com/rodrigo-garcia-leon/cv"
-          rel="noopener noreferrer nofollow"
-          target="_blank"
-        >
-          cv
-        </a>
-      </h2>
-      <p>
-        My CV
       </p>
     </div>
   </div>
@@ -762,6 +800,54 @@ snapshots['source-renderer _selectedKeyword'] = `<div id="details">
           class="selected"
           href="#"
         >
+          web-sockets
+        </a>
+      </li>
+      <li>
+        <a
+          class="selected"
+          href="#"
+        >
+          django
+        </a>
+      </li>
+      <li>
+        <a
+          class="selected"
+          href="#"
+        >
+          postgresql
+        </a>
+      </li>
+      <li>
+        <a
+          class="selected"
+          href="#"
+        >
+          redis
+        </a>
+      </li>
+      <li>
+        <a
+          class="selected"
+          href="#"
+        >
+          docker
+        </a>
+      </li>
+      <li>
+        <a
+          class="selected"
+          href="#"
+        >
+          python
+        </a>
+      </li>
+      <li>
+        <a
+          class="selected"
+          href="#"
+        >
           flask
         </a>
       </li>
@@ -779,14 +865,6 @@ snapshots['source-renderer _selectedKeyword'] = `<div id="details">
           href="#"
         >
           mongodb
-        </a>
-      </li>
-      <li>
-        <a
-          class="selected"
-          href="#"
-        >
-          python
         </a>
       </li>
       <li>
@@ -885,22 +963,6 @@ snapshots['source-renderer _selectedKeyword'] = `<div id="details">
           matlab
         </a>
       </li>
-      <li>
-        <a
-          class="selected"
-          href="#"
-        >
-          cv
-        </a>
-      </li>
-      <li>
-        <a
-          class="selected"
-          href="#"
-        >
-          context
-        </a>
-      </li>
     </ul>
   </div>
   <div id="cards">
@@ -991,6 +1053,34 @@ snapshots['source-renderer _selectedKeyword'] = `<div id="details">
     <div class="project">
       <h2>
         <a
+          href="https://github.com/rodrigo-garcia-leon/chat-groups-app"
+          rel="noopener noreferrer nofollow"
+          target="_blank"
+        >
+          chat-groups-app
+        </a>
+      </h2>
+      <p>
+        Slack clone app built with React
+      </p>
+    </div>
+    <div class="project">
+      <h2>
+        <a
+          href="https://github.com/rodrigo-garcia-leon/chat-groups-api"
+          rel="noopener noreferrer nofollow"
+          target="_blank"
+        >
+          chat-groups-api
+        </a>
+      </h2>
+      <p>
+        Slack clone API built with Django
+      </p>
+    </div>
+    <div class="project">
+      <h2>
+        <a
           href="https://github.com/rodrigo-garcia-leon/todos-lists-api"
           rel="noopener noreferrer nofollow"
           target="_blank"
@@ -1056,20 +1146,6 @@ snapshots['source-renderer _selectedKeyword'] = `<div id="details">
       </h2>
       <p>
         Collection of MATLAB scripts and toolboxes regarding my Master Thesis on psychoacoustics
-      </p>
-    </div>
-    <div class="project">
-      <h2>
-        <a
-          href="https://github.com/rodrigo-garcia-leon/cv"
-          rel="noopener noreferrer nofollow"
-          target="_blank"
-        >
-          cv
-        </a>
-      </h2>
-      <p>
-        My CV
       </p>
     </div>
   </div>
