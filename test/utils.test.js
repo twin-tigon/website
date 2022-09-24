@@ -115,6 +115,17 @@ const CONTENT_STRING = `<!--?lit$14090330355$-->{
             ]
         },
         {
+            "description": "Authentication API using JWT built with Go and Redis",
+            "keywords": [
+                "back-end",
+                "jwt",
+                "redis",
+                "go"
+            ],
+            "name": "authentication-api",
+            "url": "https://github.com/rodrigo-garcia-leon/authentication-api"
+        },
+        {
             "name": "glissando-daw",
             "description": "A web-based digital audio workstation using the web platform APIs (Web Audio, Web MIDI) and WebAssembly",
             "url": "https://github.com/glissando-daw/glissando-daw",

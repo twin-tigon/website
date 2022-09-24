@@ -117,6 +117,17 @@ snapshots['source-editor ok'] = `<pre
             ]
         },
         {
+            "name": "authentication-api",
+            "description": "Authentication API using JWT built with Go and Redis",
+            "url": "https://github.com/rodrigo-garcia-leon/authentication-api",
+            "keywords": [
+                "back-end",
+                "jwt",
+                "redis",
+                "go"
+            ]
+        },
+        {
             "name": "glissando-daw",
             "description": "A web-based digital audio workstation using the web platform APIs (Web Audio, Web MIDI) and WebAssembly",
             "url": "https://github.com/glissando-daw/glissando-daw",

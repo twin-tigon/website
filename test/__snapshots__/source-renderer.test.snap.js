@@ -296,6 +296,22 @@ snapshots['source-renderer ok'] = `<div id="details">
           class="selected"
           href="#"
         >
+          jwt
+        </a>
+      </li>
+      <li>
+        <a
+          class="selected"
+          href="#"
+        >
+          go
+        </a>
+      </li>
+      <li>
+        <a
+          class="selected"
+          href="#"
+        >
           web-audio
         </a>
       </li>
@@ -514,6 +530,20 @@ snapshots['source-renderer ok'] = `<div id="details">
       </h2>
       <p>
         Todos Lists API using Flask and PyMongo
+      </p>
+    </div>
+    <div class="project">
+      <h2>
+        <a
+          href="https://github.com/rodrigo-garcia-leon/authentication-api"
+          rel="noopener noreferrer nofollow"
+          target="_blank"
+        >
+          authentication-api
+        </a>
+      </h2>
+      <p>
+        Authentication API using JWT built with Go and Redis
       </p>
     </div>
     <div class="project">
@@ -872,6 +902,22 @@ snapshots['source-renderer _selectedKeyword'] = `<div id="details">
           class="selected"
           href="#"
         >
+          jwt
+        </a>
+      </li>
+      <li>
+        <a
+          class="selected"
+          href="#"
+        >
+          go
+        </a>
+      </li>
+      <li>
+        <a
+          class="selected"
+          href="#"
+        >
           web-audio
         </a>
       </li>
@@ -1090,6 +1136,20 @@ snapshots['source-renderer _selectedKeyword'] = `<div id="details">
       </h2>
       <p>
         Todos Lists API using Flask and PyMongo
+      </p>
+    </div>
+    <div class="project">
+      <h2>
+        <a
+          href="https://github.com/rodrigo-garcia-leon/authentication-api"
+          rel="noopener noreferrer nofollow"
+          target="_blank"
+        >
+          authentication-api
+        </a>
+      </h2>
+      <p>
+        Authentication API using JWT built with Go and Redis
       </p>
     </div>
     <div class="project">
