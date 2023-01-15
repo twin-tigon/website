@@ -6,24 +6,6 @@ export const CONTENT = {
   description: 'Full Stack Developer 🙌✨',
   projects: [
     {
-      name: 'hn-app',
-      description: 'Hacker News PWA built with React Hooks',
-      url: 'https://github.com/rodrigo-garcia-leon/hn-app',
-      keywords: ['front-end', 'progressive-web-app', 'react', 'javascript'],
-    },
-    {
-      name: 'hn-api',
-      description: 'Hacker News API using GraphQL',
-      url: 'https://github.com/rodrigo-garcia-leon/hn-api',
-      keywords: ['back-end', 'koa', 'graphql', 'nodejs', 'javascript'],
-    },
-    {
-      name: 'cloud',
-      description: 'Collection of scripts to manage Google Cloud Platform and Kubernetes ☁️',
-      url: 'https://github.com/rodrigo-garcia-leon/cloud',
-      keywords: ['devops', 'google-cloud-platform', 'kubernetes', 'shell'],
-    },
-    {
       name: 'website',
       description: 'This website 👀',
       url: 'https://github.com/rodrigo-garcia-leon/website',
@@ -63,10 +45,11 @@ export const CONTENT = {
       keywords: ['back-end', 'django', 'web-sockets', 'postgresql', 'redis', 'docker', 'python'],
     },
     {
-      name: 'todos-lists-api',
-      description: 'Todos Lists API using Flask and PyMongo',
-      url: 'https://github.com/rodrigo-garcia-leon/todos-lists-api',
-      keywords: ['back-end', 'flask', 'pymongo', 'mongodb', 'python'],
+      name: 'thesis-matlab',
+      description:
+        'Collection of MATLAB scripts and toolboxes regarding my Master Thesis on psychoacoustics',
+      url: 'https://github.com/rodrigo-garcia-leon/thesis-matlab',
+      keywords: ['psychoacoustics', 'digital-signal-processing', 'matlab'],
     },
     {
       name: 'authentication-api',
@@ -82,6 +65,24 @@ export const CONTENT = {
       keywords: ['front-end', 'web-audio', 'web-assembly', 'rust', 'javascript'],
     },
     {
+      name: 'hn-app',
+      description: 'Hacker News PWA built with React Hooks',
+      url: 'https://github.com/rodrigo-garcia-leon/hn-app',
+      keywords: ['front-end', 'progressive-web-app', 'react', 'javascript'],
+    },
+    {
+      name: 'hn-api',
+      description: 'Hacker News API using GraphQL',
+      url: 'https://github.com/rodrigo-garcia-leon/hn-api',
+      keywords: ['back-end', 'koa', 'graphql', 'nodejs', 'javascript'],
+    },
+    {
+      name: 'cloud',
+      description: 'Collection of scripts to manage Google Cloud Platform and Kubernetes ☁️',
+      url: 'https://github.com/rodrigo-garcia-leon/cloud',
+      keywords: ['devops', 'google-cloud-platform', 'kubernetes', 'shell'],
+    },
+    {
       name: 'tictactoe-cli',
       description: 'Tic-tac-toe implementation in Rust',
       url: 'https://github.com/rodrigo-garcia-leon/tictactoe-rust',
@@ -92,13 +93,6 @@ export const CONTENT = {
       description: 'Senescence is a narrative puzzle platformer made for GMTK Game Jam 2020 ',
       url: 'https://github.com/rodrigo-garcia-leon/senescence',
       keywords: ['gamedev', 'game-jam', 'platform-game', 'puzzle-game', 'godot'],
-    },
-    {
-      name: 'thesis-matlab',
-      description:
-        'Collection of MATLAB scripts and toolboxes regarding my Master Thesis on psychoacoustics',
-      url: 'https://github.com/rodrigo-garcia-leon/thesis-matlab',
-      keywords: ['psychoacoustics', 'digital-signal-processing', 'matlab'],
     },
   ],
   contactInfo: [
