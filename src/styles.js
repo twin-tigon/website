@@ -11,9 +11,9 @@ export const HOST_STYLES = css`
     --font-family-2: 'Space Mono', monospace;
 
     --font-size-1: 14px;
-    --font-size-2: 18px;
-    --font-size-3: 24px;
-    --font-size-4: 32px;
+    --font-size-2: 16px;
+    --font-size-3: 20px;
+    --font-size-4: 24px;
 
     --spacer-1: 2px;
     --spacer-2: 4px;
