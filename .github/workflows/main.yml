@@ -27,9 +27,8 @@ jobs:
         run: npm run build
       - name: Test
         run: npm run test
-      - name: Deploy to Firebase
-        uses: w9jds/firebase-action@v2.0.0
+      - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
-          args: deploy --only hosting --public dist
-        env:
-          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+          repoToken: '${{ secrets.GITHUB_TOKEN }}'
+          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_WEBSITE_A9706 }}'
+          projectId: website-a9706
