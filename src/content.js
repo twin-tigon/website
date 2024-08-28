@@ -27,6 +27,12 @@ export const CONTENT = {
       keywords: ['esbuild', 'plugin', 'skypack', 'typescript'],
     },
     {
+      name: 'hypermodern-python-talk',
+      description: 'Resources for the Hypermodern Web Development using Python and FastAPI talk',
+      url: 'https://github.com/twin-tigon/hypermodern-python-talk',
+      keywords: ['python', 'fastapi', 'typescript', 'vue', 'slidev'],
+    },
+    {
       name: 'web-hacks',
       description: 'Web Hacks 🕸🤓',
       url: 'https://github.com/twin-tigon/web-hacks',
