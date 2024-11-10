@@ -42,9 +42,9 @@ const CONTENT_STRING = `<!--?lit$14090330355$-->{
     },
     {
       "name": "chat-groups-app",
-      "description": "Slack clone app built with React",
+      "description": "Slack clone app built with Vue",
       "url": "https://github.com/twin-tigon/chat-groups-app",
-      "keywords": ["front-end", "react", "web-sockets", "javascript"]
+      "keywords": ["front-end", "vue", "web-sockets", "javascript"]
     },
     {
       "name": "chat-groups-api",

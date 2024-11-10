@@ -59,11 +59,11 @@ snapshots['source-editor ok'] = `<pre
         },
         {
             "name": "chat-groups-app",
-            "description": "Slack clone app built with React",
+            "description": "Slack clone app built with Vue",
             "url": "https://github.com/twin-tigon/chat-groups-app",
             "keywords": [
                 "front-end",
-                "react",
+                "vue",
                 "web-sockets",
                 "javascript"
             ]

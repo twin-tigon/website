@@ -176,14 +176,6 @@ snapshots['source-renderer ok'] = `<div id="details">
           class="selected"
           href="#"
         >
-          react
-        </a>
-      </li>
-      <li>
-        <a
-          class="selected"
-          href="#"
-        >
           web-sockets
         </a>
       </li>
@@ -297,6 +289,14 @@ snapshots['source-renderer ok'] = `<div id="details">
           href="#"
         >
           progressive-web-app
+        </a>
+      </li>
+      <li>
+        <a
+          class="selected"
+          href="#"
+        >
+          react
         </a>
       </li>
       <li>
@@ -473,7 +473,7 @@ snapshots['source-renderer ok'] = `<div id="details">
         </a>
       </h2>
       <p>
-        Slack clone app built with React
+        Slack clone app built with Vue
       </p>
     </div>
     <div class="project">
@@ -782,14 +782,6 @@ snapshots['source-renderer _selectedKeyword'] = `<div id="details">
           class="selected"
           href="#"
         >
-          react
-        </a>
-      </li>
-      <li>
-        <a
-          class="selected"
-          href="#"
-        >
           web-sockets
         </a>
       </li>
@@ -903,6 +895,14 @@ snapshots['source-renderer _selectedKeyword'] = `<div id="details">
           href="#"
         >
           progressive-web-app
+        </a>
+      </li>
+      <li>
+        <a
+          class="selected"
+          href="#"
+        >
+          react
         </a>
       </li>
       <li>
@@ -1079,7 +1079,7 @@ snapshots['source-renderer _selectedKeyword'] = `<div id="details">
         </a>
       </h2>
       <p>
-        Slack clone app built with React
+        Slack clone app built with Vue
       </p>
     </div>
     <div class="project">
