@@ -91,7 +91,7 @@ export const CONTENT = {
     {
       name: 'tictactoe-cli',
       description: 'Tic-tac-toe implementation in Rust',
-      url: 'https://github.com/twin-tigon/tictactoe-rust',
+      url: 'https://github.com/twin-tigon/tictactoe-cli',
       keywords: ['cli', 'gamedev', 'rust'],
     },
     {

@@ -10,43 +10,9 @@ snapshots['source-editor ok'] = `<pre
     "description": "Full Stack Developer 🙌✨",
     "projects": [
         {
-            "name": "hn-app",
-            "description": "Hacker News PWA built with React Hooks",
-            "url": "https://github.com/rodrigo-garcia-leon/hn-app",
-            "keywords": [
-                "front-end",
-                "progressive-web-app",
-                "react",
-                "javascript"
-            ]
-        },
-        {
-            "name": "hn-api",
-            "description": "Hacker News API using GraphQL",
-            "url": "https://github.com/rodrigo-garcia-leon/hn-api",
-            "keywords": [
-                "back-end",
-                "koa",
-                "graphql",
-                "nodejs",
-                "javascript"
-            ]
-        },
-        {
-            "name": "cloud",
-            "description": "Collection of scripts to manage Google Cloud Platform and Kubernetes ☁️",
-            "url": "https://github.com/rodrigo-garcia-leon/cloud",
-            "keywords": [
-                "devops",
-                "google-cloud-platform",
-                "kubernetes",
-                "shell"
-            ]
-        },
-        {
             "name": "website",
             "description": "This website 👀",
-            "url": "https://github.com/rodrigo-garcia-leon/website",
+            "url": "https://github.com/twin-tigon/website",
             "keywords": [
                 "front-end",
                 "lit",
@@ -61,7 +27,7 @@ snapshots['source-editor ok'] = `<pre
         {
             "name": "esbuild-skypack-resolver",
             "description": "An esbuild plugin to resolve package names to Skypack CDN URLs",
-            "url": "https://github.com/rodrigo-garcia-leon/esbuild-skypack-resolver",
+            "url": "https://github.com/twin-tigon/esbuild-skypack-resolver",
             "keywords": [
                 "esbuild",
                 "plugin",
@@ -70,9 +36,21 @@ snapshots['source-editor ok'] = `<pre
             ]
         },
         {
+            "name": "hypermodern-python-talk",
+            "description": "Resources for the Hypermodern Web Development using Python and FastAPI talk",
+            "url": "https://github.com/twin-tigon/hypermodern-python-talk",
+            "keywords": [
+                "python",
+                "fastapi",
+                "typescript",
+                "vue",
+                "slidev"
+            ]
+        },
+        {
             "name": "web-hacks",
             "description": "Web Hacks 🕸🤓",
-            "url": "https://github.com/rodrigo-garcia-leon/web-hacks",
+            "url": "https://github.com/twin-tigon/web-hacks",
             "keywords": [
                 "front-end",
                 "houdini",
@@ -82,7 +60,7 @@ snapshots['source-editor ok'] = `<pre
         {
             "name": "chat-groups-app",
             "description": "Slack clone app built with React",
-            "url": "https://github.com/rodrigo-garcia-leon/chat-groups-app",
+            "url": "https://github.com/twin-tigon/chat-groups-app",
             "keywords": [
                 "front-end",
                 "react",
@@ -93,7 +71,7 @@ snapshots['source-editor ok'] = `<pre
         {
             "name": "chat-groups-api",
             "description": "Slack clone API built with Django",
-            "url": "https://github.com/rodrigo-garcia-leon/chat-groups-api",
+            "url": "https://github.com/twin-tigon/chat-groups-api",
             "keywords": [
                 "back-end",
                 "django",
@@ -105,21 +83,19 @@ snapshots['source-editor ok'] = `<pre
             ]
         },
         {
-            "name": "todos-lists-api",
-            "description": "Todos Lists API using Flask and PyMongo",
-            "url": "https://github.com/rodrigo-garcia-leon/todos-lists-api",
+            "name": "thesis-matlab",
+            "description": "Collection of MATLAB scripts and toolboxes regarding my Master Thesis on psychoacoustics",
+            "url": "https://github.com/twin-tigon/thesis-matlab",
             "keywords": [
-                "back-end",
-                "flask",
-                "pymongo",
-                "mongodb",
-                "python"
+                "psychoacoustics",
+                "digital-signal-processing",
+                "matlab"
             ]
         },
         {
             "name": "authentication-api",
             "description": "Authentication API using JWT built with Go and Redis",
-            "url": "https://github.com/rodrigo-garcia-leon/authentication-api",
+            "url": "https://github.com/twin-tigon/authentication-api",
             "keywords": [
                 "back-end",
                 "jwt",
@@ -140,9 +116,43 @@ snapshots['source-editor ok'] = `<pre
             ]
         },
         {
+            "name": "hn-app",
+            "description": "Hacker News PWA built with React Hooks",
+            "url": "https://github.com/twin-tigon/hn-app",
+            "keywords": [
+                "front-end",
+                "progressive-web-app",
+                "react",
+                "javascript"
+            ]
+        },
+        {
+            "name": "hn-api",
+            "description": "Hacker News API using GraphQL",
+            "url": "https://github.com/twin-tigon/hn-api",
+            "keywords": [
+                "back-end",
+                "koa",
+                "graphql",
+                "nodejs",
+                "javascript"
+            ]
+        },
+        {
+            "name": "cloud",
+            "description": "Collection of scripts to manage Google Cloud Platform and Kubernetes ☁️",
+            "url": "https://github.com/twin-tigon/cloud",
+            "keywords": [
+                "devops",
+                "google-cloud-platform",
+                "kubernetes",
+                "shell"
+            ]
+        },
+        {
             "name": "tictactoe-cli",
             "description": "Tic-tac-toe implementation in Rust",
-            "url": "https://github.com/rodrigo-garcia-leon/tictactoe-rust",
+            "url": "https://github.com/twin-tigon/tictactoe-cli",
             "keywords": [
                 "cli",
                 "gamedev",
@@ -152,7 +162,7 @@ snapshots['source-editor ok'] = `<pre
         {
             "name": "senescence",
             "description": "Senescence is a narrative puzzle platformer made for GMTK Game Jam 2020 ",
-            "url": "https://github.com/rodrigo-garcia-leon/senescence",
+            "url": "https://github.com/twin-tigon/senescence",
             "keywords": [
                 "gamedev",
                 "game-jam",
@@ -160,26 +170,16 @@ snapshots['source-editor ok'] = `<pre
                 "puzzle-game",
                 "godot"
             ]
-        },
-        {
-            "name": "thesis-matlab",
-            "description": "Collection of MATLAB scripts and toolboxes regarding my Master Thesis on psychoacoustics",
-            "url": "https://github.com/rodrigo-garcia-leon/thesis-matlab",
-            "keywords": [
-                "psychoacoustics",
-                "digital-signal-processing",
-                "matlab"
-            ]
         }
     ],
     "contactInfo": [
         {
             "name": "Twitter",
-            "value": "https://twitter.com/garcialeonrodri"
+            "value": "https://twitter.com/twin_tigon"
         },
         {
             "name": "Instagram",
-            "value": "https://www.instagram.com/rodrigogarcialeon/"
+            "value": "https://www.instagram.com/twin_tigon"
         },
         {
             "name": "LinkedIn",
