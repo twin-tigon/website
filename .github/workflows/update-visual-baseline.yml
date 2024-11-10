@@ -18,7 +18,7 @@ jobs:
       - name: Update Visual Baseline
         run: npm run test:visual-regression:update
       - name: Archive Production Artifact
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: screenshots
           path: ./test/__screenshots__
