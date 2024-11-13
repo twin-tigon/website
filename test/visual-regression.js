@@ -68,7 +68,8 @@ async function resetDirectory(path) {
  */
 async function createOrCompareScreenshotFactory(page, filename) {
   async function getScreenshotBuffer() {
-    const buffer = await page.screenshot({ encoding: 'binary' });
+    const screenshot = await page.screenshot({ encoding: 'binary' });
+    const buffer = Buffer.from(screenshot);
     if (!Buffer.isBuffer(buffer)) {
       throw new Error('Screenshot is not a Buffer');
     }
