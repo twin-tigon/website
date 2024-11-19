@@ -50,7 +50,7 @@
     "@web/dev-server": "^0.1.15",
     "@web/test-runner": "^0.13.22",
     "@web/test-runner-puppeteer": "^0.17.0",
-    "chrome-launcher": "^0.14.0",
+    "chrome-launcher": "^1.1.2",
     "concurrently": "^6.4.0",
     "es-module-lexer": "^0.4.1",
     "esbuild": "^0.24.0",
