@@ -182,12 +182,14 @@ export class SourceRenderer extends LitElement {
                   <li>
                     <a
                       href="#"
-                      @click="${/**
-                       *
-                       * @param {MouseEvent & { target: HTMLAnchorElement }} event
-                       * @returns
-                       */
-                      event => this.onClick(event)}"
+                      @click="${
+                        /**
+                         *
+                         * @param {MouseEvent & { target: HTMLAnchorElement }} event
+                         * @returns
+                         */
+                        event => this.onClick(event)
+                      }"
                       class=${!this._selectedKeyword || this._selectedKeyword === keyword
                         ? 'selected'
                         : ''}

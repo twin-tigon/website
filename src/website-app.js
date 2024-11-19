@@ -108,24 +108,28 @@ export class WebsiteApp extends LitElement {
       <main>
         <source-renderer .source=${this._source}></source-renderer>
         <source-editor
-          @source-changed=${/**
-           *
-           * @param {CustomEvent} event
-           * @returns
-           */
-          event => this.onSourceChanged(event)}
+          @source-changed=${
+            /**
+             *
+             * @param {CustomEvent} event
+             * @returns
+             */
+            event => this.onSourceChanged(event)
+          }
           ?hidden=${this._hideEditor}
         ></source-editor>
       </main>
       <footer>
         <a
           href="#"
-          @click=${/**
-           *
-           * @param {MouseEvent} event
-           * @returns
-           */
-          event => this.toggleEditorVisibility(event)}
+          @click=${
+            /**
+             *
+             * @param {MouseEvent} event
+             * @returns
+             */
+            event => this.toggleEditorVisibility(event)
+          }
         >
           source
         </a>
