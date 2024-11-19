@@ -40,6 +40,7 @@
     "lit": "^2.0.2"
   },
   "devDependencies": {
+    "@babel/eslint-parser": "^7.25.9",
     "@esm-bundle/chai": "^4.3.4",
     "@open-wc/eslint-config": "^7.0.0",
     "@open-wc/prettier-config": "^1.1.0",
