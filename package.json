@@ -47,7 +47,7 @@
     "@types/mocha": "^10.0.10",
     "@types/pixelmatch": "^5.2.4",
     "@types/pngjs": "^6.0.1",
-    "@web/dev-server": "^0.1.15",
+    "@web/dev-server": "^0.4.6",
     "@web/test-runner": "^0.13.22",
     "@web/test-runner-puppeteer": "^0.17.0",
     "chrome-launcher": "^1.1.2",
