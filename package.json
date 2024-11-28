@@ -44,7 +44,7 @@
     "@open-wc/eslint-config": "^7.0.0",
     "@open-wc/prettier-config": "^1.1.0",
     "@open-wc/testing": "^4.0.0",
-    "@types/mocha": "^10.0.9",
+    "@types/mocha": "^10.0.10",
     "@types/pixelmatch": "^5.2.4",
     "@types/pngjs": "^6.0.1",
     "@web/dev-server": "^0.1.15",
