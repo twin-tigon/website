@@ -12,7 +12,7 @@ jobs:
       - name: Checkout Repo
         uses: actions/checkout@v2
       - name: Download Screenshots
-        uses: dawidd6/action-download-artifact@v4
+        uses: dawidd6/action-download-artifact@v6
         with:
           workflow: update-visual-baseline.yml
           workflow_conclusion: success
