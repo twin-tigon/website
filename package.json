@@ -67,7 +67,7 @@
     "mocha": "^10.8.2",
     "node-fetch": "^3.3.2",
     "pixelmatch": "^6.0.0",
-    "pngjs": "^6.0.0",
+    "pngjs": "^7.0.0",
     "puppeteer": "^23.7.1",
     "typescript": "^4.4.4"
   },
