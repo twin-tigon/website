@@ -58,7 +58,7 @@
     "eslint": "^8.2.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-lit-a11y": "^4.1.4",
-    "firebase-tools": "^13.25.0",
+    "firebase-tools": "^13.27.0",
     "globby": "^12.0.2",
     "html-minifier": "^4.0.0",
     "husky": "^9.1.7",
