@@ -37,7 +37,7 @@
   "author": "Rodrigo García <yo@rodrigogarcia.me>",
   "license": "MIT",
   "dependencies": {
-    "lit": "^2.0.2"
+    "lit": "^3.2.1"
   },
   "devDependencies": {
     "@esm-bundle/chai": "^4.3.4",
