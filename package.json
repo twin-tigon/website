@@ -68,7 +68,7 @@
     "node-fetch": "^3.3.2",
     "pixelmatch": "^6.0.0",
     "pngjs": "^6.0.0",
-    "puppeteer": "^23.7.1",
+    "puppeteer": "^23.10.1",
     "typescript": "^4.4.4"
   },
   "eslintConfig": {
