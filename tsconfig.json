@@ -3,6 +3,7 @@
     "target": "esnext",
     "module": "esnext",
     "moduleResolution": "node",
+    "ignoreDeprecations": "6.0",
     "lib": ["es2017", "dom"],
     "allowJs": true,
     "checkJs": true,
@@ -11,8 +12,7 @@
     "noImplicitThis": true,
     "alwaysStrict": true,
     "types": ["node", "mocha"],
-    "esModuleInterop": true,
-    "suppressImplicitAnyIndexErrors": true
+    "esModuleInterop": true
   },
   "include": ["**/*.js"],
   "exclude": ["node_modules", "dist"]
