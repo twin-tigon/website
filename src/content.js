@@ -27,16 +27,16 @@ export const CONTENT = {
       keywords: ['esbuild', 'plugin', 'skypack', 'typescript'],
     },
     {
+      name: 'mortality-risk-ml',
+      description: 'Predicting Mortality Risk for Palliative and Hospice Care: A Machine Learning Approach',
+      url: 'https://github.com/twin-tigon/mortality-risk-ml',
+      keywords: ['python', 'machine-learning', 'healthcare', 'xgboost', 'polars', 'marimo']
+    },
+    {
       name: 'hypermodern-python-talk',
       description: 'Resources for the Hypermodern Web Development using Python and FastAPI talk',
       url: 'https://github.com/twin-tigon/hypermodern-python-talk',
       keywords: ['python', 'fastapi', 'typescript', 'vue', 'slidev'],
-    },
-    {
-      name: 'web-hacks',
-      description: 'Web Hacks 🕸🤓',
-      url: 'https://github.com/twin-tigon/web-hacks',
-      keywords: ['front-end', 'houdini', 'javascript'],
     },
     {
       name: 'chat-groups-app',
@@ -62,13 +62,6 @@ export const CONTENT = {
       description: 'Authentication API using JWT built with Go and Redis',
       url: 'https://github.com/twin-tigon/authentication-api',
       keywords: ['back-end', 'jwt', 'redis', 'go'],
-    },
-    {
-      name: 'glissando-daw',
-      description:
-        'A web-based digital audio workstation using the web platform APIs (Web Audio, Web MIDI) and WebAssembly',
-      url: 'https://github.com/glissando-daw/glissando-daw',
-      keywords: ['front-end', 'web-audio', 'web-assembly', 'rust', 'javascript'],
     },
     {
       name: 'hn-app',
