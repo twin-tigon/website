@@ -13,8 +13,8 @@ async function run() {
     paths.map(async path => {
       const outPath = `${process.cwd()}/${OUTPUT_DIR}/${path}`;
       const outDir = dirname(outPath);
-      mkdir(outDir, { recursive: true });
-      copyFile(path, outPath);
+      await mkdir(outDir, { recursive: true });
+      await copyFile(path, outPath);
     }),
   );
 }
